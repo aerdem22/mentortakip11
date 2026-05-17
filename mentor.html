@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11. Sınıf Müfredat Takibi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e0f13;--surface:#16181f;--surface2:#1e2029;
+    --border:#2a2d38;--text:#e8eaf0;--muted:#6b7080;--faint:#3a3d4a;
+    --mat:#f0a500;--fiz:#3d9bff;--kim:#4ecb71;--bio:#b07eff;
+    --ok:#4ecb71;--err:#ff5f5f;--r:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;min-height:100vh}
+  h1,h2,h3,h4,.logo,.tab-btn,.unit-lbl,.q-num,.badge,.btn,.score-badge{font-family:'Syne',sans-serif}
+
+  /* ── LAYOUT ── */
+  .app{display:grid;grid-template-columns:268px 1fr;min-height:100vh}
+
+  /* ── SIDEBAR ── */
+  .sidebar{background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow:hidden}
+  .sb-head{padding:22px 20px 16px;border-bottom:1px solid var(--border)}
+  .logo{font-size:17px;font-weight:800;letter-spacing:-.5px;margin-bottom:3px}
+  .logo span{color:var(--mat)}
+  .sb-sub{font-size:11px;color:var(--muted)}
+
+  /* ── DERS TABS ── */
+  .ders-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:10px}
+  .tab-btn{padding:7px 0;border-radius:7px;border:1px solid var(--border);background:transparent;font-size:11px;font-weight:700;cursor:pointer;color:var(--muted);transition:all .15s;text-align:center;letter-spacing:.02em}
+  .tab-btn:hover{background:var(--surface2);color:var(--text)}
+  .tb-mat.active{background:rgba(240,165,0,.12);border-color:var(--mat);color:var(--mat)}
+  .tb-fiz.active{background:rgba(61,155,255,.12);border-color:var(--fiz);color:var(--fiz)}
+  .tb-kim.active{background:rgba(78,203,113,.12);border-color:var(--kim);color:var(--kim)}
+  .tb-bio.active{background:rgba(176,126,255,.12);border-color:var(--bio);color:var(--bio)}
+
+  /* ── PROGRESS ── */
+  .prog-wrap{padding:0 12px 10px;border-bottom:1px solid var(--border)}
+  .prog-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:5px}
+  .prog-pct{font-weight:700;font-size:12px}
+  .prog-track{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+  .prog-fill{height:3px;border-radius:2px;transition:width .4s ease}
+  .pf-mat{background:var(--mat)}.pf-fiz{background:var(--fiz)}.pf-kim{background:var(--kim)}.pf-bio{background:var(--bio)}
+
+  /* ── KONU LİST ── */
+  .konu-list{flex:1;overflow-y:auto;padding:4px 0 16px;scrollbar-width:thin;scrollbar-color:var(--faint) transparent}
+  .konu-list::-webkit-scrollbar{width:3px}
+  .konu-list::-webkit-scrollbar-thumb{background:var(--faint);border-radius:2px}
+  .unit-lbl{padding:10px 14px 4px;font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+  .krow{display:flex;align-items:flex-start;gap:9px;padding:7px 14px;cursor:pointer;transition:background .1s;border-radius:0}
+  .krow:hover{background:var(--surface2)}
+  .krow.sel{background:var(--surface2)}
+  .kchk{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--faint);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:9px;transition:all .2s;color:transparent}
+  .kchk.d-mat{background:var(--mat);border-color:var(--mat);color:#000}
+  .kchk.d-fiz{background:var(--fiz);border-color:var(--fiz);color:#000}
+  .kchk.d-kim{background:var(--kim);border-color:var(--kim);color:#000}
+  .kchk.d-bio{background:var(--bio);border-color:var(--bio);color:#000}
+  .kname{font-size:12px;line-height:1.4;color:var(--text)}
+  .kname.done{color:var(--muted);text-decoration:line-through}
+
+  /* ── MAIN ── */
+  .main{padding:32px 36px;display:flex;flex-direction:column;overflow-y:auto}
+
+  /* ── WELCOME ── */
+  .welcome{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:40px}
+  .w-icon{font-size:36px;margin-bottom:4px}
+  .w-title{font-size:22px;font-weight:800;letter-spacing:-.5px}
+  .w-sub{font-size:14px;color:var(--muted);line-height:1.7;max-width:380px}
+
+  /* ── QUIZ ── */
+  .quiz-wrap{max-width:620px;width:100%;display:flex;flex-direction:column;gap:16px}
+  .quiz-header{padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .quiz-bc{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+  .quiz-konu{font-size:18px;font-weight:700;letter-spacing:-.3px}
+  .badge{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+  .bg-mat{background:rgba(240,165,0,.15);color:var(--mat)}.bg-fiz{background:rgba(61,155,255,.15);color:var(--fiz)}
+  .bg-kim{background:rgba(78,203,113,.15);color:var(--kim)}.bg-bio{background:rgba(176,126,255,.15);color:var(--bio)}
+
+  /* ── QUESTION CARD ── */
+  .q-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px}
+  .q-num{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+  .q-text{font-size:14px;line-height:1.7;margin-bottom:16px}
+  .opts{display:flex;flex-direction:column;gap:7px}
+  .obtn{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-radius:9px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:13px;cursor:pointer;text-align:left;transition:all .12s;line-height:1.45;width:100%;font-family:'DM Sans',sans-serif}
+  .obtn:hover:not(:disabled){border-color:var(--faint);background:#252833}
+  .obtn:disabled{cursor:default}
+  .obtn.correct{border-color:rgba(78,203,113,.5);background:rgba(78,203,113,.08)}
+  .obtn.wrong{border-color:rgba(255,95,95,.5);background:rgba(255,95,95,.08)}
+  .oltr{width:24px;height:24px;min-width:24px;border-radius:6px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:var(--surface);color:var(--muted);transition:all .12s;font-family:'Syne',sans-serif}
+  .obtn.correct .oltr{background:rgba(78,203,113,.2);border-color:var(--ok);color:var(--ok)}
+  .obtn.wrong .oltr{background:rgba(255,95,95,.15);border-color:var(--err);color:var(--err)}
+  .ac-box{margin-top:14px;padding:11px 14px;border-radius:9px;font-size:13px;line-height:1.6}
+  .ac-ok{background:rgba(78,203,113,.07);color:#6ee09a;border:1px solid rgba(78,203,113,.2)}
+  .ac-no{background:rgba(255,95,95,.07);color:#ff8080;border:1px solid rgba(255,95,95,.2)}
+  .next-row{display:flex;justify-content:flex-end;margin-top:6px}
+
+  /* ── RESULT ── */
+  .result-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;max-width:480px;width:100%}
+  .r-icon{font-size:40px}
+  .r-title{font-size:20px;font-weight:800;letter-spacing:-.4px}
+  .score-badge{padding:5px 18px;border-radius:20px;font-size:14px;font-weight:700}
+  .sc-pass{background:rgba(78,203,113,.15);color:var(--ok);border:1px solid rgba(78,203,113,.3)}
+  .sc-fail{background:rgba(255,95,95,.1);color:var(--err);border:1px solid rgba(255,95,95,.2)}
+  .r-sub{font-size:13px;color:var(--muted);line-height:1.65;max-width:360px}
+  .r-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:4px}
+
+  /* ── BUTTONS ── */
+  .btn{padding:9px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.01em;transition:opacity .15s;border:none}
+  .btn:hover{opacity:.85}
+  .btn-mat{background:var(--mat);color:#000}.btn-fiz{background:var(--fiz);color:#000}
+  .btn-kim{background:var(--kim);color:#000}.btn-bio{background:var(--bio);color:#000}
+  .btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+  .btn-ghost:hover{background:var(--surface2);opacity:1}
+
+  /* ── LOADING ── */
+  .loading{display:flex;flex-direction:column;align-items:center;gap:14px;padding:50px}
+  .spin{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .spin-txt{font-size:13px;color:var(--muted);font-family:'Syne',sans-serif;font-weight:600}
+
+  /* ── NO Q FALLBACK ── */
+  .no-q{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center;color:var(--muted);font-size:14px;max-width:480px}
+
+  @media(max-width:680px){
+    .app{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+    .sidebar{height:auto;position:static;max-height:320px}
+    .konu-list{max-height:200px}
+    .main{padding:20px 16px}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- ══ SIDEBAR ══════════════════════════════════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sb-head">
+    <div class="logo">11. Sınıf <span>Takip</span></div>
+    <div class="sb-sub">Konu seç → Test çöz → Tik al</div>
+  </div>
+  <div class="ders-tabs" id="ders-tabs"></div>
+  <div class="prog-wrap">
+    <div class="prog-row"><span id="prog-lbl">0 / 0 tamamlandı</span><span class="prog-pct" id="prog-pct">%0</span></div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+  </div>
+  <div class="konu-list" id="konu-list"></div>
+</aside>
+
+<!-- ══ MAIN ═════════════════════════════════════════════════════════════ -->
+<main class="main" id="main"></main>
+
+</div>
+
+<!-- ══ SORULAR (inline JSON) ════════════════════════════════════════════ -->
+<script>
+// Soru veritabanı questions.js'den yükleniyor
+// Eğer ayrı dosya olarak yüklemek istersen:
+// <script src="questions.js"></script>
+// ve aşağıdaki QUESTIONS = {...} satırını kaldır.
+</script>
+<script src="questions.js"></script>
+<script>
+// ── MÜFREDAT YAPISI ──────────────────────────────────────────────────────
+const DERSLER = {
+  mat:{ad:"Matematik",kisa:"MAT",c:"mat",uniteler:[
+    {ad:"Trigonometri",konular:["Yönlü Açılar ve Esas Ölçü","Trigonometrik Fonksiyonlar (sin, cos, tan, cot)","Birim Çember ve Trigonometrik Değerler","Trigonometrik Özdeşlikler","Toplam-Fark Formülleri","İki Kat Açı Formülleri","Trigonometrik Denklemler","Trigonometrik Fonksiyonların Grafikleri"]},
+    {ad:"Fonksiyonlarda Uygulamalar",konular:["Fonksiyonlarda Tek-Çift Simetri","Fonksiyonlarda Dönüşümler","Bileşke Fonksiyon","Ters Fonksiyon","Üstel Fonksiyon ve Grafiği","Logaritma Fonksiyonu ve Grafiği","Üstel ve Logaritmik Denklemler","Üstel ve Logaritmik Eşitsizlikler"]},
+    {ad:"Denklem ve Eşitsizlik Sistemleri",konular:["Parametreli Denklemler","Mutlak Değer İçeren Denklem ve Eşitsizlikler","Doğrusal Denklem Sistemleri","Doğrusal Olmayan Denklem Sistemleri","Eşitsizlik Sistemleri"]},
+    {ad:"Analitik Geometri",konular:["Koordinat Sisteminde Nokta ve Doğru","İki Nokta Arasındaki Uzaklık","Noktanın Doğruya Uzaklığı","Doğruların Paralelliği ve Dikliği","İki Doğru Arasındaki Açı","Çemberin Analitik İncelenmesi","Çembere Teğet Doğrular","İki Çemberin Birbirine Göre Konumu"]},
+    {ad:"Çember ve Daire",konular:["Çemberde Açılar (Merkez, Çevre, İç-Dış)","Çemberde Kiriş ve Bağıntılar","Çembere Çizilen Teğet","Çevrel Çember ve İç Teğet Çember","Daire Dilimi ve Yay Uzunluğu"]},
+    {ad:"Uzay Geometri",konular:["Uzayda Doğru ve Düzlem İlişkileri","Prizmalar (Yüzey Alanı ve Hacim)","Piramitler (Yüzey Alanı ve Hacim)","Silindir (Yüzey Alanı ve Hacim)","Koni (Yüzey Alanı ve Hacim)","Küre (Yüzey Alanı ve Hacim)","Katı Cisimlerin Kesitleri"]},
+    {ad:"Olasılık",konular:["Olaylar ve Olay Çeşitleri","Klasik Olasılık Tanımı","Toplama Kuralı","Çarpma Kuralı","Koşullu Olasılık","Bağımsız ve Bağımlı Olaylar","Deneysel ve Teorik Olasılık"]},
+  ]},
+  fiz:{ad:"Fizik",kisa:"FİZ",c:"fiz",uniteler:[
+    {ad:"Kuvvet ve Hareket",konular:["Vektörler","Bağıl Hareket","Newton'ın Hareket Yasaları","Bir Boyutta Sabit İvmeli Hareket","Serbest Düşme","Limit Hız","Düşey Doğrultuda Atış Hareketi","İki Boyutta Hareket (Eğik Atış)","Dairesel Hareket","Basit Harmonik Hareket","Tork (Kuvvet Momenti)","Statik Denge","İş-Enerji Teoremi","Mekanik Enerjinin Korunumu","Sürtünmeli Yüzeylerde Enerji","İtme ve Çizgisel Momentum","Momentumun Korunumu","Çarpışmalar (Elastik ve İnelastik)","Basit Makineler"]},
+    {ad:"Elektrik ve Manyetizma",konular:["Elektriksel Kuvvet ve Coulomb Yasası","Noktasal Yük Elektrik Alanı","Elektrik Alan Çizgileri","Elektriksel Potansiyel Enerji","Elektriksel Potansiyel Fark","Sığa ve Kondansatörler","Elektrik Akımı ve Devre Elemanları","Ohm Yasası","Seri ve Paralel Devreler","Kirchhoff Yasaları","Elektrik Enerjisi ve Güç","Manyetik Alan","Manyetik Kuvvet (Lorentz)","Elektromanyetik İndüksiyon","Faraday Yasası","Alternatif Akım Temel Kavramlar"]},
+  ]},
+  kim:{ad:"Kimya",kisa:"KİM",c:"kim",uniteler:[
+    {ad:"Modern Atom Teorisi",konular:["Dalga Mekaniği (Kuantum Modeli)","Kuantum Sayıları","Orbitaller ve Şekilleri","Elektron Dizilimi (Konfigürasyon)","Periyodik Sistemde Elektron Dağılımı","Periyodik Özellikler"]},
+    {ad:"Gazlar",konular:["Gaz Basıncı ve Ölçümü","Boyle Yasası","Charles Yasası","Gay-Lussac Yasası","Avogadro İlkesi","İdeal Gaz Yasası (PV=nRT)","Dalton'ın Kısmi Basınçlar Yasası","Graham'ın Yayılma Yasası","Gaz Stokiyometrisi","Gerçek Gazlar"]},
+    {ad:"Sıvı Çözeltiler ve Çözünürlük",konular:["Çözünme Süreci ve Entalpisi","Çözünürlük ve Bunu Etkileyen Faktörler","Derişim Birimleri","Donma Noktası Düşmesi","Kaynama Noktası Yükselmesi","Osmotik Basınç","Çözünürlük Çarpımı (Kçç)"]},
+    {ad:"Kimyasal Tepkimelerde Enerji",konular:["İç Enerji ve Entalpi","Ekzotermik ve Endotermik Tepkimeler","Hess Yasası","Standart Oluşum Entalpileri","Bağ Enerjileri","Kalorimetri"]},
+    {ad:"Kimyasal Tepkimelerde Hız",konular:["Reaksiyon Hızı ve Ölçümü","Hız Sabiti ve Hız Denklemi","Reaksiyon Hızına Etki Eden Faktörler","Aktifleşme Enerjisi","Reaksiyon Mekanizması"]},
+    {ad:"Kimyasal Tepkimelerde Denge",konular:["Kimyasal Denge Kavramı","Denge Sabiti (Kc ve Kp)","Le Chatelier İlkesi","Dengeyi Etkileyen Faktörler","Asit-Baz Dengesi","pH ve pOH Hesaplamaları","Tampon Çözeltiler","Hidroliz","Çözünürlük Dengesi"]},
+  ]},
+  bio:{ad:"Biyoloji",kisa:"BİY",c:"bio",uniteler:[
+    {ad:"Denetleyici ve Düzenleyici Sistem",konular:["Sinir Sisteminin Yapısı ve İşlevi","Endokrin Sistem ve Hormonlar","Sinir Sistemi Rahatsızlıkları ve Korunma","Duyu Organlarının Yapısı ve İşlevi","Duyu Organları Rahatsızlıkları ve Korunma"]},
+    {ad:"Destek ve Hareket Sistemi",konular:["Destek ve Hareket Sisteminin Yapısı ve İşlevi","Destek ve Hareket Sistemi Rahatsızlıkları","Destek ve Hareket Sisteminin Korunması"]},
+    {ad:"Sindirim Sistemi",konular:["Sindirim Sisteminin Yapısı ve İşlevi","Emilim ve Besinlerin Taşınması","Sindirim Sistemi Rahatsızlıkları","Sindirim Sisteminin Korunması"]},
+    {ad:"Dolaşım Sistemi ve Bağışıklık",konular:["Kalp, Kan ve Damarların Yapısı ve İşlevi","Lenf Dolaşımı","Dolaşım Sistemi Rahatsızlıkları ve Korunma","Bağışıklık Çeşitleri ve Doğal Savunma","Edinilmiş Bağışıklık, Aşı ve Serum"]},
+    {ad:"Solunum Sistemi",konular:["Solunum Sisteminin Yapısı ve İşlevi","Soluk Alıp Verme Mekanizması","Alveollerden Dokulara Gaz Taşınması","Solunum Sistemi Rahatsızlıkları ve Korunma"]},
+    {ad:"Üriner Sistem",konular:["Üriner Sistemin Yapısı ve İşlevi","Homeostasinin Sağlanmasında Böbreklerin Rolü","Üriner Sistem Rahatsızlıkları ve Korunma"]},
+    {ad:"Üreme Sistemi",konular:["Üreme Sisteminin Yapısı ve İşlevi","Üreme Sisteminin Sağlıklı Yapısının Korunması","İnsanda Embriyonik Gelişim Süreci"]},
+    {ad:"Komünite Ekolojisi",konular:["Komünitenin Yapısına Etki Eden Faktörler","Tür İçi ve Türler Arası Rekabet","Simbiyotik İlişkiler","Yırtıcı-Av İlişkisi","Sükseyon (Ekolojik Ardışıklık)"]},
+    {ad:"Popülasyon Ekolojisi",konular:["Popülasyon Dinamiğine Etki Eden Faktörler","Büyüme Modelleri (J ve S eğrisi)","Taşıma Kapasitesi","Popülasyon Yoğunluğunu Düzenleyen Faktörler"]},
+  ]},
+};
+
+// ── STATE ─────────────────────────────────────────────────────────────────
+let aktif = "mat", selUnite = null, selKonu = null;
+let sorular = [], cevaplar = [];
+let tamamlananlar = {};
+try { tamamlananlar = JSON.parse(localStorage.getItem("muf11_q") || "{}"); } catch(e) {}
+function kaydet(){ try{ localStorage.setItem("muf11_q", JSON.stringify(tamamlananlar)); }catch(e){} }
+const key = (d,u,k) => `${d}::${u}::${k}`;
+
+// ── SIDEBAR ───────────────────────────────────────────────────────────────
+function renderSidebar(){
+  const D = DERSLER[aktif];
+  document.getElementById("ders-tabs").innerHTML = Object.entries(DERSLER).map(([id,d])=>
+    `<button class="tab-btn tb-${id}${id===aktif?' active':''}" onclick="switchDers('${id}')">${d.kisa}</button>`
+  ).join("");
+
+  let tot=0, don=0;
+  D.uniteler.forEach(u => u.konular.forEach(k => { tot++; if(tamamlananlar[key(aktif,u.ad,k)]) don++; }));
+  const pct = tot ? Math.round(don/tot*100) : 0;
+  document.getElementById("prog-lbl").textContent = `${don} / ${tot} tamamlandı`;
+  document.getElementById("prog-pct").textContent = "%" + pct;
+  const pf = document.getElementById("prog-fill");
+  pf.style.width = pct + "%";
+  pf.className = `prog-fill pf-${aktif}`;
+
+  const kl = document.getElementById("konu-list");
+  kl.innerHTML = "";
+  D.uniteler.forEach(u => {
+    const lbl = document.createElement("div");
+    lbl.className = "unit-lbl"; lbl.textContent = u.ad; kl.appendChild(lbl);
+    u.konular.forEach(k => {
+      const done = !!tamamlananlar[key(aktif,u.ad,k)];
+      const sel = selUnite===u.ad && selKonu===k;
+      const row = document.createElement("div");
+      row.className = "krow" + (sel?" sel":"");
+      row.onclick = () => startQuiz(u.ad, k);
+      const chk = document.createElement("div");
+      chk.className = "kchk" + (done ? " d-"+aktif : "");
+      chk.textContent = done ? "✓" : "";
+      const nm = document.createElement("div");
+      nm.className = "kname" + (done ? " done" : "");
+      nm.textContent = k;
+      row.appendChild(chk); row.appendChild(nm); kl.appendChild(row);
+    });
+  });
+}
+
+function switchDers(d){ aktif=d; selKonu=null; selUnite=null; renderSidebar(); showWelcome(); }
+
+function showWelcome(){
+  document.getElementById("main").innerHTML = `
+    <div class="welcome">
+      <div class="w-icon">📚</div>
+      <h2 class="w-title">${DERSLER[aktif].ad}</h2>
+      <p class="w-sub">Sol taraftan bir konuya tıkla. 2 soru çıkacak — ikisini de doğru yaparsan konu tamamlanır.</p>
+    </div>`;
+}
+
+// ── QUIZ ──────────────────────────────────────────────────────────────────
+function startQuiz(unite, konu){
+  selUnite=unite; selKonu=konu; cevaplar=[];
+  renderSidebar();
+
+  // Soruları QUESTIONS objesinden al
+  const qKey = key(aktif, unite, konu);
+  const havuz = (typeof QUESTIONS !== "undefined" && QUESTIONS[qKey]) ? QUESTIONS[qKey] : null;
+
+  if(!havuz || havuz.length < 2){
+    // Bu konu için soru yoksa bilgi ver
+    document.getElementById("main").innerHTML = `
+      <div class="quiz-wrap">
+        <div class="quiz-header">
+          <div class="quiz-bc">${DERSLER[aktif].ad} / ${unite}</div>
+          <div class="quiz-konu">${konu}</div>
+        </div>
+        <div class="no-q">
+          Bu konu için henüz soru eklenmemiş.<br>
+          <small style="margin-top:6px;display:block;opacity:.6">Yakında eklenecek.</small>
+        </div>
+      </div>`;
+    return;
+  }
+
+  // Havuzdan rastgele 2 soru seç
+  const shuffled = [...havuz].sort(() => Math.random() - 0.5);
+  sorular = shuffled.slice(0, 2);
+  renderSoru(0);
+}
+
+function renderSoru(idx){
+  if(idx >= sorular.length){ showSonuc(); return; }
+  const s = sorular[idx];
+  const H = ["A","B","C","D"];
+  document.getElementById("main").innerHTML = `
+    <div class="quiz-wrap">
+      <div class="quiz-header">
+        <div class="quiz-bc">${DERSLER[aktif].ad} / ${selUnite}</div>
+        <div class="quiz-konu">${selKonu}</div>
+        <span class="badge bg-${aktif}">${idx+1} / ${sorular.length}</span>
+      </div>
+      <div class="q-card" id="qcard">
+        <div class="q-num">Soru ${idx+1}</div>
+        <div class="q-text">${s.soru}</div>
+        <div class="opts">
+          ${H.map(h=>`<button class="obtn" id="ob${h}" onclick="cevapla('${h}',${idx})">
+            <span class="oltr">${h}</span><span>${s.siklar[h]||''}</span>
+          </button>`).join("")}
+        </div>
+      </div>
+    </div>`;
+}
+
+function cevapla(sec, idx){
+  const s = sorular[idx];
+  ["A","B","C","D"].forEach(h=>{
+    const b = document.getElementById("ob"+h);
+    if(!b) return;
+    b.disabled = true;
+    if(h===s.dogru) b.classList.add("correct");
+    else if(h===sec && sec!==s.dogru) b.classList.add("wrong");
+  });
+  cevaplar.push({sec, dogru:s.dogru, ok:sec===s.dogru});
+
+  const card = document.getElementById("qcard");
+  const ac = document.createElement("div");
+  ac.className = "ac-box " + (sec===s.dogru?"ac-ok":"ac-no");
+  ac.innerHTML = sec===s.dogru
+    ? `<strong>✓ Doğru!</strong> ${s.aciklama}`
+    : `<strong>✗ Yanlış.</strong> Doğru cevap: <strong>${s.dogru}</strong>. ${s.aciklama}`;
+  card.appendChild(ac);
+
+  const qw = document.querySelector(".quiz-wrap");
+  const nr = document.createElement("div");
+  nr.className = "next-row";
+  nr.innerHTML = `<button class="btn btn-${aktif}" onclick="renderSoru(${idx+1})">
+    ${idx+1<sorular.length ? "Sonraki soru →" : "Sonucu gör →"}
+  </button>`;
+  qw.appendChild(nr);
+}
+
+function showSonuc(){
+  const dogru = cevaplar.filter(c=>c.ok).length;
+  const gecti = dogru === sorular.length;
+  if(gecti){ tamamlananlar[key(aktif,selUnite,selKonu)]=true; kaydet(); renderSidebar(); }
+
+  document.getElementById("main").innerHTML = `
+    <div class="result-card">
+      <div class="r-icon">${gecti?"🎉":"📖"}</div>
+      <h2 class="r-title">${gecti?"Tebrikler!":"Henüz değil…"}</h2>
+      <div class="score-badge ${gecti?"sc-pass":"sc-fail"}">${dogru} / ${sorular.length} doğru</div>
+      <p class="r-sub">${gecti
+        ? `"<strong>${selKonu}</strong>" konusu tamamlandı ve işaretlendi.`
+        : `2/2 tam doğru yapman gerekiyor. Konuyu tekrar çalış ve dene.`}</p>
+      <div class="r-btns">
+        ${!gecti?`<button class="btn btn-${aktif}" onclick="startQuiz('${selUnite.replace(/'/g,"\\'")}','${selKonu.replace(/'/g,"\\'")}')">Tekrar dene</button>`:""}
+        <button class="btn btn-ghost" onclick="showWelcome();selKonu=null;selUnite=null;renderSidebar()">Konulara dön</button>
+      </div>
+    </div>`;
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────
+switchDers("mat");
+</script>
+</body>
+</html>
