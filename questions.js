@@ -2311,6 +2311,118 @@ const QUESTIONS = {
       "aciklama": "İkinci denklem birincinin 2 katı; aynı doğruyu temsil eder."
     }
   ],
+  "mat::Denklem ve Eşitsizlik Sistemleri::Doğrusal Olmayan Denklem Sistemleri": [
+    {
+      "soru": "x² - y = 5 ve y = x + 1 sistemini sağlayan x değerlerinin toplamı kaçtır?",
+      "siklar": {
+        "A": "1",
+        "B": "-1",
+        "C": "6",
+        "D": "-6"
+      },
+      "dogru": "A",
+      "aciklama": "x² - (x+1) = 5 → x² - x - 6 = 0 → (x-3)(x+2)=0 → x=3 veya x=-2; toplam = 1."
+    },
+    {
+      "soru": "y = x² - 4x + 3 parabolü ile y = 0 doğrusunun kesim noktaları arasındaki uzaklık kaçtır?",
+      "siklar": {
+        "A": "4",
+        "B": "2",
+        "C": "1",
+        "D": "3"
+      },
+      "dogru": "B",
+      "aciklama": "x² - 4x + 3 = 0 → (x-1)(x-3)=0 → x=1 ve x=3; aralarındaki uzaklık = 2."
+    },
+    {
+      "soru": "x² + y² = 8 çemberi ile y = x doğrusunun kesişim noktalarından biri aşağıdakilerden hangisidir?",
+      "siklar": {
+        "A": "(2,-2)",
+        "B": "(-2,2)",
+        "C": "(2,2)",
+        "D": "(4,4)"
+      },
+      "dogru": "C",
+      "aciklama": "y=x yerine yazılırsa 2x²=8 → x²=4 → x=±2; bu durumda noktalar (2,2) ve (-2,-2) olur."
+    },
+    {
+      "soru": "x·y = 12 ve x + y = 7 sistemini sağlayan x ve y değerleri için x² + y² kaçtır?",
+      "siklar": {
+        "A": "24",
+        "B": "49",
+        "C": "13",
+        "D": "25"
+      },
+      "dogru": "D",
+      "aciklama": "x²+y² = (x+y)² - 2xy = 7² - 2·12 = 49 - 24 = 25."
+    },
+    {
+      "soru": "y = x² ve y = -x + 6 sisteminin çözüm kümesindeki x değerlerinin çarpımı kaçtır?",
+      "siklar": {
+        "A": "-6",
+        "B": "6",
+        "C": "-1",
+        "D": "1"
+      },
+      "dogru": "A",
+      "aciklama": "x² = -x + 6 → x² + x - 6 = 0 → (x+3)(x-2)=0 → x=-3 veya x=2; çarpım = -6."
+    },
+    {
+      "soru": "x² + y² = 1 birim çemberi ile y = 2 doğrusu için ne söylenebilir?",
+      "siklar": {
+        "A": "1 ortak nokta (teğet)",
+        "B": "Ortak nokta yok",
+        "C": "2 ortak nokta",
+        "D": "Sonsuz ortak nokta"
+      },
+      "dogru": "B",
+      "aciklama": "Çemberin yarıçapı 1, y=2 doğrusu merkeze 2 birim uzaklıkta; 2 > 1 olduğundan doğru çemberin tamamen dışındadır, ortak nokta yoktur."
+    },
+    {
+      "soru": "y = x² - 6x + 9 ve y = 0 doğrusunun ortak noktaları için ne söylenebilir?",
+      "siklar": {
+        "A": "2 farklı nokta",
+        "B": "Ortak nokta yok",
+        "C": "Tek nokta (teğet)",
+        "D": "Sonsuz nokta"
+      },
+      "dogru": "C",
+      "aciklama": "x² - 6x + 9 = (x-3)² = 0 → çift kök x=3; doğru parabole tek noktada (teğet olarak) değer."
+    },
+    {
+      "soru": "2x² - y = 1 ve y = x + 5 sistemini sağlayan x değerlerinden büyük olanı kaçtır?",
+      "siklar": {
+        "A": "-3/2",
+        "B": "3/2",
+        "C": "-2",
+        "D": "2"
+      },
+      "dogru": "D",
+      "aciklama": "2x² - (x+5) = 1 → 2x² - x - 6 = 0 → (2x+3)(x-2)=0 → x=-3/2 veya x=2; büyük olan 2."
+    },
+    {
+      "soru": "x² + y² = 20 çemberi ile y = x + 2 doğrusu kaç noktada kesişir?",
+      "siklar": {
+        "A": "2 nokta",
+        "B": "1 nokta",
+        "C": "0 nokta",
+        "D": "Belirsiz"
+      },
+      "dogru": "A",
+      "aciklama": "x² + (x+2)² = 20 → 2x² + 4x - 16 = 0 → x² + 2x - 8 = 0; diskriminant = 36 > 0, iki farklı kök → 2 kesişim noktası."
+    },
+    {
+      "soru": "x - y² = 0 ve x = 4 doğrusunun ortak çözüm kümesindeki y değerlerinin toplamı kaçtır?",
+      "siklar": {
+        "A": "4",
+        "B": "0",
+        "C": "2",
+        "D": "-2"
+      },
+      "dogru": "B",
+      "aciklama": "x=4 olduğundan y²=4 → y=2 veya y=-2; toplamları 0'dır."
+    }
+  ],
   "mat::Denklem ve Eşitsizlik Sistemleri::İkinci Dereceden İki Bilinmeyenli Denklem Sistemleri": [
     {
       "soru": "Bir doğru (y=ax+b) ile bir parabolün (y=x²) kesişim noktalarını bulmak için hangi yöntem kullanılır?",
@@ -3101,6 +3213,454 @@ const QUESTIONS = {
       "aciklama": "PA·PB = PC·PD → 3·8 = 4·PD → PD = 6."
     }
   ],
+  "mat::Çember ve Daire::Çemberde Kiriş ve Bağıntılar": [
+    {
+      "soru": "Bir çemberde merkeze 3 cm uzaklıkta olan bir kirişin uzunluğu 8 cm'dir. Çemberin yarıçapı kaç cm'dir?",
+      "siklar": {
+        "A": "5",
+        "B": "6",
+        "C": "4",
+        "D": "7"
+      },
+      "dogru": "A",
+      "aciklama": "Merkezden kirişe inilen dikme kirişi ortalar; yarım kiriş 4 cm. r² = 3² + 4² = 25 → r = 5 cm."
+    },
+    {
+      "soru": "Bir çemberde [AB] ve [CD] kirişleri çember içinde P noktasında kesişiyor. PA=6, PB=4, PC=8 ise PD kaçtır?",
+      "siklar": {
+        "A": "4",
+        "B": "3",
+        "C": "6",
+        "D": "2"
+      },
+      "dogru": "B",
+      "aciklama": "Kesişen kirişler bağıntısı: PA·PB = PC·PD → 6·4 = 8·PD → PD = 24/8 = 3."
+    },
+    {
+      "soru": "Yarıçapı 10 cm olan bir çemberde merkeze 6 cm uzaklıktaki bir kirişin uzunluğu kaç cm'dir?",
+      "siklar": {
+        "A": "8",
+        "B": "12",
+        "C": "16",
+        "D": "20"
+      },
+      "dogru": "C",
+      "aciklama": "Yarım kiriş = √(10² - 6²) = √64 = 8; kirişin tam uzunluğu 2·8 = 16 cm."
+    },
+    {
+      "soru": "Bir çemberde eşit uzunluktaki iki kirişin merkeze uzaklıkları için ne söylenebilir?",
+      "siklar": {
+        "A": "Birbirinden farklıdır",
+        "B": "Toplamları yarıçapa eşittir",
+        "C": "Biri diğerinin iki katıdır",
+        "D": "Birbirine eşittir"
+      },
+      "dogru": "D",
+      "aciklama": "Bir çemberde eşit uzunluktaki kirişler merkeze eşit uzaklıktadır (ve tersi de doğrudur)."
+    },
+    {
+      "soru": "Merkezi O olan bir çemberde [AB] kirişine merkezden çizilen dikme [AB]'yi nasıl böler?",
+      "siklar": {
+        "A": "İki eşit parçaya böler",
+        "B": "1:2 oranında böler",
+        "C": "Her zaman A noktasından geçer",
+        "D": "Kirişi bölmez"
+      },
+      "dogru": "A",
+      "aciklama": "Merkezden bir kirişe çizilen dikme, o kirişi tam ortadan iki eşit parçaya böler."
+    },
+    {
+      "soru": "Bir çemberde [AB] ve [CD] kirişleri çember içinde P noktasında kesişiyor. PA·PB=36 ve PC=PD ise PC kaçtır?",
+      "siklar": {
+        "A": "36",
+        "B": "6",
+        "C": "18",
+        "D": "9"
+      },
+      "dogru": "B",
+      "aciklama": "PA·PB = PC·PD ve PC=PD olduğundan PC² = 36 → PC = 6."
+    },
+    {
+      "soru": "Yarıçapı 13 cm olan bir çemberde uzunluğu 24 cm olan bir kirişin merkeze uzaklığı kaç cm'dir?",
+      "siklar": {
+        "A": "10",
+        "B": "12",
+        "C": "5",
+        "D": "6"
+      },
+      "dogru": "C",
+      "aciklama": "Yarım kiriş = 12 cm. Merkeze uzaklık d için 13² = 12² + d² → d² = 169-144=25 → d=5 cm."
+    },
+    {
+      "soru": "Bir çemberde merkezden geçen kiriş (çap) için aşağıdakilerden hangisi söylenemez?",
+      "siklar": {
+        "A": "Çemberin en uzun kirişidir",
+        "B": "Uzunluğu 2r'dir",
+        "C": "Merkeze uzaklığı 0'dır",
+        "D": "Çembere teğettir"
+      },
+      "dogru": "D",
+      "aciklama": "Çap, çemberin içinden geçen bir kirişdir; teğet ise çemberin dışından, çembere bir noktada değen doğrudur. Bu nedenle 'çap çembere teğettir' söylenemez."
+    },
+    {
+      "soru": "Bir çemberde merkeze uzaklığı 0 olan bir kirişin uzunluğu, yarıçapı 7 cm olan çemberde kaç cm'dir?",
+      "siklar": {
+        "A": "14",
+        "B": "7",
+        "C": "3.5",
+        "D": "49"
+      },
+      "dogru": "A",
+      "aciklama": "Merkeze uzaklığı 0 olan kiriş çaptır; uzunluğu 2r = 2·7 = 14 cm."
+    },
+    {
+      "soru": "[AB] ve [CD] kirişleri çemberin içinde P noktasında kesişiyor. PA=5, PB=12, PC=10 ise PD kaçtır?",
+      "siklar": {
+        "A": "5",
+        "B": "6",
+        "C": "10",
+        "D": "12"
+      },
+      "dogru": "B",
+      "aciklama": "PA·PB = PC·PD → 5·12 = 10·PD → PD = 60/10 = 6."
+    }
+  ],
+  "mat::Çember ve Daire::Çembere Çizilen Teğet": [
+    {
+      "soru": "Merkezi O, yarıçapı 6 cm olan bir çemberin dışındaki P noktasından çizilen [PT] teğetinin uzunluğu, |PO|=10 cm ise kaç cm'dir?",
+      "siklar": {
+        "A": "8",
+        "B": "4",
+        "C": "6",
+        "D": "16"
+      },
+      "dogru": "A",
+      "aciklama": "[OT] ⊥ [PT] olduğundan dik üçgende PT² = PO² - r² = 10² - 6² = 64 → PT = 8 cm."
+    },
+    {
+      "soru": "Bir çemberin dışındaki bir noktadan çizilen iki teğet için aşağıdakilerden hangisi doğrudur?",
+      "siklar": {
+        "A": "Birbirine dik olmak zorundadır",
+        "B": "Teğet uzunlukları birbirine eşittir",
+        "C": "Değme noktaları çemberin merkezinden geçer",
+        "D": "Teğetler birbirine paralel olmalıdır"
+      },
+      "dogru": "B",
+      "aciklama": "Bir noktadan bir çembere çizilen iki teğetin uzunlukları her zaman birbirine eşittir."
+    },
+    {
+      "soru": "Bir çembere dışındaki bir noktadan çizilen teğet, değme noktasındaki yarıçapla kaç derecelik açı oluşturur?",
+      "siklar": {
+        "A": "45°",
+        "B": "60°",
+        "C": "90°",
+        "D": "180°"
+      },
+      "dogru": "C",
+      "aciklama": "Teğet doğrusu, değme noktasından geçen yarıçapa her zaman diktir, yani 90° açı oluşturur."
+    },
+    {
+      "soru": "Bir çemberde teğet-kiriş açısı 35° ise bu açının gördüğü yay kaç derecedir?",
+      "siklar": {
+        "A": "35°",
+        "B": "17.5°",
+        "C": "105°",
+        "D": "70°"
+      },
+      "dogru": "D",
+      "aciklama": "Teğet-kiriş açısı, gördüğü yayın yarısına eşittir; yay = 2·35° = 70°."
+    },
+    {
+      "soru": "Yarıçapı 5 cm olan bir çemberin merkezine 13 cm uzaklıktaki bir noktadan çizilen teğetin uzunluğu kaç cm'dir?",
+      "siklar": {
+        "A": "12",
+        "B": "8",
+        "C": "18",
+        "D": "13"
+      },
+      "dogru": "A",
+      "aciklama": "PT² = PO² - r² = 13² - 5² = 169 - 25 = 144 → PT = 12 cm."
+    },
+    {
+      "soru": "Bir çemberin dışındaki bir noktadan çizilen iki teğet arasındaki açı 50° ise, bu teğetlerin değme noktalarının belirlediği büyük yay ile küçük yay arasındaki fark kaç derecedir?",
+      "siklar": {
+        "A": "50°",
+        "B": "100°",
+        "C": "130°",
+        "D": "260°"
+      },
+      "dogru": "B",
+      "aciklama": "İki dış teğetin oluşturduğu açı = (büyük yay - küçük yay) / 2 → 50° = fark/2 → fark = 100°."
+    },
+    {
+      "soru": "Bir doğrunun bir çembere teğet olabilmesi için doğru ile çemberin ortak nokta sayısı kaç olmalıdır?",
+      "siklar": {
+        "A": "0",
+        "B": "2",
+        "C": "1",
+        "D": "Sonsuz"
+      },
+      "dogru": "C",
+      "aciklama": "Teğet, çemberle tam olarak 1 noktada (değme noktasında) kesişen doğrudur."
+    },
+    {
+      "soru": "Merkezi O olan bir çemberde, çember üzerindeki bir noktadan geçen teğet doğrusu ile o noktadan geçen [OA] yarıçapı arasındaki açı kaç derecedir?",
+      "siklar": {
+        "A": "0°",
+        "B": "45°",
+        "C": "180°",
+        "D": "90°"
+      },
+      "dogru": "D",
+      "aciklama": "Teğet, değme noktasındaki yarıçapa diktir, yani aralarındaki açı 90°'dir."
+    },
+    {
+      "soru": "Yarıçapı 8 cm olan bir çemberin dışındaki bir P noktasından çizilen teğetin uzunluğu 6 cm ise |PO| kaç cm'dir?",
+      "siklar": {
+        "A": "10",
+        "B": "14",
+        "C": "2",
+        "D": "100"
+      },
+      "dogru": "A",
+      "aciklama": "PO² = PT² + r² = 6² + 8² = 36 + 64 = 100 → PO = 10 cm."
+    },
+    {
+      "soru": "Bir çemberin dışındaki bir P noktasından çizilen iki teğetin değme noktaları T₁ ve T₂'dir. PT₁=PT₂ olduğuna göre PT₁T₂ üçgeni nasıl bir üçgendir?",
+      "siklar": {
+        "A": "Dik üçgen",
+        "B": "İkizkenar üçgen",
+        "C": "Eşkenar üçgen",
+        "D": "Çeşitkenar üçgen"
+      },
+      "dogru": "B",
+      "aciklama": "PT₁ = PT₂ olduğundan üçgenin iki kenarı eşittir; bu nedenle ikizkenar üçgendir."
+    }
+  ],
+  "mat::Çember ve Daire::Çevrel Çember ve İç Teğet Çember": [
+    {
+      "soru": "Bir dik üçgenin hipotenüsü 10 cm ise çevrel çemberinin yarıçapı kaç cm'dir?",
+      "siklar": {
+        "A": "5",
+        "B": "10",
+        "C": "2.5",
+        "D": "20"
+      },
+      "dogru": "A",
+      "aciklama": "Dik üçgende çevrel çemberin merkezi hipotenüsün orta noktasıdır; R = hipotenüs/2 = 10/2 = 5 cm."
+    },
+    {
+      "soru": "Kenar uzunlukları 6 cm, 8 cm, 10 cm olan üçgenin çevrel çember yarıçapı kaç cm'dir?",
+      "siklar": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "10"
+      },
+      "dogru": "B",
+      "aciklama": "6-8-10 bir dik üçgendir (6²+8²=10²), hipotenüs 10 cm; R = 10/2 = 5 cm."
+    },
+    {
+      "soru": "Bir üçgenin alanı 24 cm², çevre uzunluğu 24 cm ise iç teğet çember yarıçapı kaç cm'dir?",
+      "siklar": {
+        "A": "1",
+        "B": "4",
+        "C": "2",
+        "D": "12"
+      },
+      "dogru": "C",
+      "aciklama": "Alan = r·s formülünde s (yarı çevre) = 24/2 = 12; r = Alan/s = 24/12 = 2 cm."
+    },
+    {
+      "soru": "Eşkenar üçgende çevrel çember yarıçapı R ile iç teğet çember yarıçapı r arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "R = r",
+        "B": "R = 3r",
+        "C": "R = r/2",
+        "D": "R = 2r"
+      },
+      "dogru": "D",
+      "aciklama": "Eşkenar üçgende merkez (ağırlık merkezi) çevrel ve iç teğet çemberlerin de merkezidir; R = 2r."
+    },
+    {
+      "soru": "Kenar uzunlukları 5 cm, 12 cm, 13 cm olan (dik) üçgenin iç teğet çember yarıçapı kaç cm'dir?",
+      "siklar": {
+        "A": "2",
+        "B": "5",
+        "C": "6",
+        "D": "3"
+      },
+      "dogru": "A",
+      "aciklama": "Dik üçgende r = (a+b-c)/2 = (5+12-13)/2 = 4/2 = 2 cm (c hipotenüs)."
+    },
+    {
+      "soru": "Sinüs teoremine göre bir üçgende a/sinA oranı aşağıdakilerden hangisine eşittir?",
+      "siklar": {
+        "A": "r",
+        "B": "4R",
+        "C": "2R",
+        "D": "R/2"
+      },
+      "dogru": "C",
+      "aciklama": "Sinüs teoremi: a/sinA = b/sinB = c/sinC = 2R, burada R çevrel çember yarıçapıdır."
+    },
+    {
+      "soru": "Bir üçgenin çevrel çemberinin merkezi, üçgenin hangi elemanlarının kesim noktasıdır?",
+      "siklar": {
+        "A": "Açıortaylarının",
+        "B": "Kenarortaylarının",
+        "C": "Kenar orta dikmelerinin",
+        "D": "Yüksekliklerinin"
+      },
+      "dogru": "C",
+      "aciklama": "Çevrel çemberin merkezi, üçgenin kenarlarının orta dikmelerinin kesim noktasıdır."
+    },
+    {
+      "soru": "Bir üçgenin iç teğet çemberinin merkezi, üçgenin hangi elemanlarının kesim noktasıdır?",
+      "siklar": {
+        "A": "Kenar orta dikmelerinin",
+        "B": "Yüksekliklerinin",
+        "C": "Kenarortaylarının",
+        "D": "Açıortaylarının"
+      },
+      "dogru": "D",
+      "aciklama": "İç teğet çemberin merkezi, üçgenin iç açıortaylarının kesim noktasıdır."
+    },
+    {
+      "soru": "Kenar uzunluğu 6 cm olan eşkenar üçgenin çevrel çember yarıçapı kaç cm'dir?",
+      "siklar": {
+        "A": "2√3",
+        "B": "3√3",
+        "C": "√3",
+        "D": "6√3"
+      },
+      "dogru": "A",
+      "aciklama": "Eşkenar üçgende R = a/√3 = 6/√3 = 2√3 cm."
+    },
+    {
+      "soru": "Bir üçgenin çevrel çember yarıçapı R=7 cm'dir. Bu üçgen dik üçgen ise hipotenüsü kaç cm'dir?",
+      "siklar": {
+        "A": "7",
+        "B": "14",
+        "C": "3.5",
+        "D": "21"
+      },
+      "dogru": "B",
+      "aciklama": "Dik üçgende hipotenüs, çevrel çemberin çapına eşittir; hipotenüs = 2R = 2·7 = 14 cm."
+    }
+  ],
+  "mat::Çember ve Daire::Daire Dilimi ve Yay Uzunluğu": [
+    {
+      "soru": "Yarıçapı 6 cm olan bir çemberde 60° merkez açıya karşılık gelen yay uzunluğu kaç cm'dir? (π ile)",
+      "siklar": {
+        "A": "2π",
+        "B": "π",
+        "C": "6π",
+        "D": "12π"
+      },
+      "dogru": "A",
+      "aciklama": "Yay uzunluğu = (θ/360°)·2πr = (60/360)·2π·6 = (1/6)·12π = 2π cm."
+    },
+    {
+      "soru": "Yarıçapı 9 cm olan bir çemberde merkez açısı 120° olan dairesel dilimin alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "9π",
+        "B": "27π",
+        "C": "81π",
+        "D": "54π"
+      },
+      "dogru": "B",
+      "aciklama": "Dilim alanı = (θ/360°)·πr² = (120/360)·π·81 = (1/3)·81π = 27π cm²."
+    },
+    {
+      "soru": "Bir dairesel dilimin yarıçapı 4 cm, merkez açısı π/2 radyan ise yay uzunluğu kaç cm'dir?",
+      "siklar": {
+        "A": "π",
+        "B": "4π",
+        "C": "2π",
+        "D": "8π"
+      },
+      "dogru": "C",
+      "aciklama": "Radyan cinsinden yay uzunluğu l = r·θ = 4·(π/2) = 2π cm."
+    },
+    {
+      "soru": "Yarıçapı r olan bir çemberin tam alanı, merkez açısı 90° olan dairesel dilimin alanının kaç katıdır?",
+      "siklar": {
+        "A": "2",
+        "B": "8",
+        "C": "1/4",
+        "D": "4"
+      },
+      "dogru": "D",
+      "aciklama": "90° tam çevrenin (360°) 1/4'üdür, dolayısıyla dilim alanı tam dairenin 1/4'üdür; tam alan, dilim alanının 4 katıdır."
+    },
+    {
+      "soru": "Yarıçapı 10 cm olan bir çemberde 36° merkez açıya sahip dairesel dilimin alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "10π",
+        "B": "36π",
+        "C": "100π",
+        "D": "3.6π"
+      },
+      "dogru": "A",
+      "aciklama": "Dilim alanı = (36/360)·π·10² = (1/10)·100π = 10π cm²."
+    },
+    {
+      "soru": "Bir çemberin çevresinin 1/4'ü olan bir yayın merkez açısı kaç derecedir?",
+      "siklar": {
+        "A": "45°",
+        "B": "90°",
+        "C": "180°",
+        "D": "360°"
+      },
+      "dogru": "B",
+      "aciklama": "Tam çevre 360°'ye karşılık gelir; çevrenin 1/4'ü olan yayın merkez açısı 360°/4 = 90°'dir."
+    },
+    {
+      "soru": "Yarıçapı 5 cm olan bir çemberde yay uzunluğu 5π cm olan dairesel dilimin merkez açısı kaç derecedir?",
+      "siklar": {
+        "A": "90°",
+        "B": "360°",
+        "C": "180°",
+        "D": "270°"
+      },
+      "dogru": "C",
+      "aciklama": "5π = (θ/360)·2π·5 = (θ/360)·10π → θ/360 = 1/2 → θ = 180°."
+    },
+    {
+      "soru": "Bir dairesel dilimin merkez açısı 1 radyan, yarıçapı 3 cm ise alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "3",
+        "B": "9",
+        "C": "1.5",
+        "D": "4.5"
+      },
+      "dogru": "D",
+      "aciklama": "Radyan cinsinden dilim alanı A = (1/2)·r²·θ = (1/2)·9·1 = 4.5 cm²."
+    },
+    {
+      "soru": "Yarıçapı 2 katına çıkarılan bir çemberde, aynı merkez açısına karşılık gelen yayın uzunluğu nasıl değişir?",
+      "siklar": {
+        "A": "2 katına çıkar",
+        "B": "Değişmez",
+        "C": "Yarıya iner",
+        "D": "4 katına çıkar"
+      },
+      "dogru": "A",
+      "aciklama": "Yay uzunluğu l = (θ/360°)·2πr, yarıçap r ile doğru orantılıdır; r 2 katına çıkarsa l da 2 katına çıkar."
+    },
+    {
+      "soru": "Yarıçapı 12 cm olan bir çemberde merkez açısı 30° olan dairesel dilimin alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "6π",
+        "B": "12π",
+        "C": "24π",
+        "D": "36π"
+      },
+      "dogru": "B",
+      "aciklama": "Dilim alanı = (30/360)·π·12² = (1/12)·144π = 12π cm²."
+    }
+  ],
   "mat::Uzay Geometri::Prizmalar (Yüzey Alanı ve Hacim)": [
     {
       "soru": "Taban kenarı 4 cm, yüksekliği 6 cm olan kare prizma (küp olmayan) hacmi kaçtır?",
@@ -3213,6 +3773,678 @@ const QUESTIONS = {
       "aciklama": "V=30×4=120; 2V=240 için taban alanı=60 (2 kat) veya yükseklik=8 (2 kat). A doğru."
     }
   ],
+  "mat::Uzay Geometri::Uzayda Doğru ve Düzlem İlişkileri": [
+    {
+      "soru": "Uzayda aynı düzlemde bulunmayan ve birbirini kesmeyen iki doğruya ne ad verilir?",
+      "siklar": {
+        "A": "Aykırı (ters) doğrular",
+        "B": "Paralel doğrular",
+        "C": "Kesişen doğrular",
+        "D": "Çakışık doğrular"
+      },
+      "dogru": "A",
+      "aciklama": "Aynı düzlemde olmayan ve kesişmeyen doğrulara aykırı (ters) doğrular denir."
+    },
+    {
+      "soru": "Bir doğru bir düzleme dik ise, bu doğru düzlemdeki kaç doğruya diktir?",
+      "siklar": {
+        "A": "Sadece 1",
+        "B": "Düzlemdeki tüm doğrulara",
+        "C": "Sadece 2",
+        "D": "Sadece 3"
+      },
+      "dogru": "B",
+      "aciklama": "Bir doğru bir düzleme dik ise, o düzlemde bulunan her doğruya diktir."
+    },
+    {
+      "soru": "Uzayda iki farklı düzlem için aşağıdakilerden hangisi söylenemez?",
+      "siklar": {
+        "A": "Paralel olabilirler",
+        "B": "Bir doğru boyunca kesişebilirler",
+        "C": "Tek bir noktada kesişebilirler",
+        "D": "Çakışık olabilirler"
+      },
+      "dogru": "C",
+      "aciklama": "İki farklı düzlem ya paraleldir ya da bir doğru boyunca kesişir; tek bir noktada kesişmeleri mümkün değildir."
+    },
+    {
+      "soru": "Bir noktanın bir düzleme olan uzaklığı nasıl tanımlanır?",
+      "siklar": {
+        "A": "Noktadan düzleme çizilen herhangi bir doğru parçasının uzunluğu",
+        "B": "Noktanın düzlemdeki izdüşümünün koordinatı",
+        "C": "Düzlemin alanı",
+        "D": "Noktadan düzleme inilen dikmenin uzunluğu"
+      },
+      "dogru": "D",
+      "aciklama": "Bir noktanın bir düzleme uzaklığı, o noktadan düzleme inilen dikmenin (en kısa doğru parçasının) uzunluğudur."
+    },
+    {
+      "soru": "Aynı düzleme dik olan iki doğru için ne söylenebilir?",
+      "siklar": {
+        "A": "Birbirine paraleldir",
+        "B": "Birbirine diktir",
+        "C": "Aykırıdır",
+        "D": "Kesişmek zorundadır"
+      },
+      "dogru": "A",
+      "aciklama": "Aynı düzleme dik olan iki doğru, birbirine paraleldir."
+    },
+    {
+      "soru": "Uzayda bir noktadan bir düzleme inilebilecek dikme sayısı kaçtır?",
+      "siklar": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "Sonsuz"
+      },
+      "dogru": "B",
+      "aciklama": "Bir düzlemin dışındaki bir noktadan o düzleme her zaman tek bir dikme inilebilir."
+    },
+    {
+      "soru": "İki paralel düzlemi kesen üçüncü bir düzlemin bu düzlemlerde oluşturduğu kesişim doğruları için ne söylenebilir?",
+      "siklar": {
+        "A": "Kesişirler",
+        "B": "Aykırıdır",
+        "C": "Birbirine paraleldir",
+        "D": "Çakışıktır"
+      },
+      "dogru": "C",
+      "aciklama": "Bir düzlem, birbirine paralel iki düzlemi kestiğinde oluşan iki kesişim doğrusu birbirine paraleldir."
+    },
+    {
+      "soru": "Bir doğrunun bir düzleme dik olması için, doğrunun o düzlemde bulunan ve birbirini kesen iki doğruya dik olması koşulu hakkında ne söylenebilir?",
+      "siklar": {
+        "A": "Yeterli değildir",
+        "B": "Sadece bir doğruya dik olması yeterlidir",
+        "C": "Üç doğruya dik olması gerekir",
+        "D": "Bu koşul yeterlidir"
+      },
+      "dogru": "D",
+      "aciklama": "Bir doğru, bir düzlemde birbirini kesen iki doğruya dik ise, o düzleme diktir."
+    },
+    {
+      "soru": "Bir düzlemde bulunan bir doğru ile bu düzlemin dışındaki bir nokta için aşağıdakilerden hangisi her zaman doğrudur?",
+      "siklar": {
+        "A": "Bu nokta ve doğru tek bir düzlem belirler",
+        "B": "Bu nokta doğru üzerindedir",
+        "C": "İkisi aynı düzlemde olamaz",
+        "D": "Aralarındaki uzaklık 0'dır"
+      },
+      "dogru": "A",
+      "aciklama": "Bir doğru ve bu doğru üzerinde olmayan bir nokta, uzayda tek bir düzlem belirler."
+    },
+    {
+      "soru": "Uzayda iki doğrunun aykırı (ters) doğru olabilmesi için aşağıdaki koşullardan hangisi sağlanmalıdır?",
+      "siklar": {
+        "A": "Kesişmeli ve paralel olmamalıdır",
+        "B": "Aynı düzlemde olmamalı ve kesişmemelidir",
+        "C": "Aynı düzlemde olmalı ve paralel olmalıdır",
+        "D": "Birbirine dik olmalıdır"
+      },
+      "dogru": "B",
+      "aciklama": "Aykırı (ters) doğrular, aynı düzlemde bulunmayan ve kesişmeyen doğrulardır."
+    }
+  ],
+  "mat::Uzay Geometri::Piramitler (Yüzey Alanı ve Hacim)": [
+    {
+      "soru": "Taban alanı 36 cm², yüksekliği 9 cm olan bir piramidin hacmi kaç cm³'tür?",
+      "siklar": {
+        "A": "108",
+        "B": "324",
+        "C": "36",
+        "D": "972"
+      },
+      "dogru": "A",
+      "aciklama": "Hacim = (1/3) × Taban Alanı × Yükseklik = (1/3) × 36 × 9 = 108 cm³."
+    },
+    {
+      "soru": "Tabanı kare olan, taban kenarı 6 cm, yüksekliği 10 cm olan bir piramidin hacmi kaç cm³'tür?",
+      "siklar": {
+        "A": "360",
+        "B": "120",
+        "C": "60",
+        "D": "180"
+      },
+      "dogru": "B",
+      "aciklama": "Taban alanı = 6² = 36 cm²; Hacim = (1/3) × 36 × 10 = 120 cm³."
+    },
+    {
+      "soru": "Düzgün dört yüzlü (tetrahedron) kaç yüzeye sahiptir?",
+      "siklar": {
+        "A": "3",
+        "B": "5",
+        "C": "4",
+        "D": "6"
+      },
+      "dogru": "C",
+      "aciklama": "Düzgün dört yüzlü, hepsi eşkenar üçgen olan 4 yüze sahip bir cisimdir."
+    },
+    {
+      "soru": "Bir piramidin hacmi, tabanı ve yüksekliği aynı olan bir prizmanın hacminin kaçta kaçıdır?",
+      "siklar": {
+        "A": "1/2",
+        "B": "2/3",
+        "C": "1",
+        "D": "1/3"
+      },
+      "dogru": "D",
+      "aciklama": "Aynı taban ve yüksekliğe sahip piramidin hacmi, prizmanın hacminin 1/3'üdür."
+    },
+    {
+      "soru": "Tabanı kare olan, taban kenarı 8 cm olan düzgün bir piramidin yan yüzünün eğik yüksekliği (apotem) 5 cm ise yanal yüzey alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "80",
+        "B": "160",
+        "C": "40",
+        "D": "320"
+      },
+      "dogru": "A",
+      "aciklama": "Yanal yüzey alanı = (1/2) × Taban Çevresi × Eğik Yükseklik = (1/2) × (4×8) × 5 = (1/2) × 32 × 5 = 80 cm²."
+    },
+    {
+      "soru": "Taban alanı 48 cm² olan bir piramidin hacmi 80 cm³ ise yüksekliği kaç cm'dir?",
+      "siklar": {
+        "A": "10",
+        "B": "5",
+        "C": "2.5",
+        "D": "15"
+      },
+      "dogru": "B",
+      "aciklama": "80 = (1/3) × 48 × h → h = (80×3)/48 = 5 cm."
+    },
+    {
+      "soru": "Tabanı kenar uzunluğu 4 cm olan kare, yüksekliği 6 cm olan piramidin hacmi kaç cm³'tür?",
+      "siklar": {
+        "A": "16",
+        "B": "96",
+        "C": "32",
+        "D": "64"
+      },
+      "dogru": "C",
+      "aciklama": "Taban alanı = 4² = 16 cm²; Hacim = (1/3) × 16 × 6 = 32 cm³."
+    },
+    {
+      "soru": "Bir piramidin tüm yan yüzleri eşkenar üçgen ve tabanı düzgün çokgen ise bu piramide ne ad verilir?",
+      "siklar": {
+        "A": "Eğik piramit",
+        "B": "Kesik piramit",
+        "C": "Dik prizma",
+        "D": "Düzgün piramit"
+      },
+      "dogru": "D",
+      "aciklama": "Tabanı düzgün çokgen olan ve tepe noktası taban merkezinin tam üzerinde olan piramide düzgün piramit denir."
+    },
+    {
+      "soru": "Tabanı 8 cm × 6 cm boyutlarında dikdörtgen olan bir piramidin yüksekliği 9 cm ise hacmi kaç cm³'tür?",
+      "siklar": {
+        "A": "144",
+        "B": "432",
+        "C": "48",
+        "D": "96"
+      },
+      "dogru": "A",
+      "aciklama": "Taban alanı = 8×6 = 48 cm²; Hacim = (1/3) × 48 × 9 = 144 cm³."
+    },
+    {
+      "soru": "Hacmi 90 cm³, yüksekliği 9 cm olan bir piramidin taban alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "10",
+        "B": "30",
+        "C": "270",
+        "D": "90"
+      },
+      "dogru": "B",
+      "aciklama": "90 = (1/3) × A × 9 → A = (90×3)/9 = 30 cm²."
+    }
+  ],
+  "mat::Uzay Geometri::Silindir (Yüzey Alanı ve Hacim)": [
+    {
+      "soru": "Yarıçapı 3 cm, yüksekliği 5 cm olan bir silindirin hacmi kaç cm³'tür? (π ile)",
+      "siklar": {
+        "A": "45π",
+        "B": "15π",
+        "C": "30π",
+        "D": "90π"
+      },
+      "dogru": "A",
+      "aciklama": "Hacim = πr²h = π × 3² × 5 = 45π cm³."
+    },
+    {
+      "soru": "Yarıçapı 4 cm, yüksekliği 10 cm olan bir silindirin yanal yüzey alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "40π",
+        "B": "80π",
+        "C": "160π",
+        "D": "20π"
+      },
+      "dogru": "B",
+      "aciklama": "Yanal yüzey alanı = 2πrh = 2π × 4 × 10 = 80π cm²."
+    },
+    {
+      "soru": "Yarıçapı 5 cm, yüksekliği 7 cm olan bir silindirin toplam yüzey alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "60π",
+        "B": "70π",
+        "C": "120π",
+        "D": "35π"
+      },
+      "dogru": "C",
+      "aciklama": "Toplam yüzey alanı = 2πr(r+h) = 2π × 5 × (5+7) = 2π × 5 × 12 = 120π cm²."
+    },
+    {
+      "soru": "Bir silindirin tabanının çevresi 12π cm, yüksekliği 4 cm ise hacmi kaç cm³'tür?",
+      "siklar": {
+        "A": "24π",
+        "B": "48π",
+        "C": "72π",
+        "D": "144π"
+      },
+      "dogru": "D",
+      "aciklama": "2πr = 12π → r = 6 cm; Hacim = πr²h = π × 36 × 4 = 144π cm³."
+    },
+    {
+      "soru": "Hacmi 50π cm³, yarıçapı 5 cm olan bir silindirin yüksekliği kaç cm'dir?",
+      "siklar": {
+        "A": "2",
+        "B": "10",
+        "C": "5",
+        "D": "4"
+      },
+      "dogru": "A",
+      "aciklama": "50π = π × 5² × h = 25πh → h = 2 cm."
+    },
+    {
+      "soru": "Bir silindirin yarıçapı 2 katına çıkarılır, yüksekliği değişmezse hacmi kaç katına çıkar?",
+      "siklar": {
+        "A": "2",
+        "B": "4",
+        "C": "8",
+        "D": "Değişmez"
+      },
+      "dogru": "B",
+      "aciklama": "Hacim r²'ye bağlıdır; r 2 katına çıkarsa hacim 2²=4 katına çıkar."
+    },
+    {
+      "soru": "Yarıçapı r, yüksekliği h olan bir silindirin yanal yüzeyi açıldığında hangi geometrik şekil oluşur?",
+      "siklar": {
+        "A": "Üçgen",
+        "B": "Daire",
+        "C": "Dikdörtgen",
+        "D": "Kare"
+      },
+      "dogru": "C",
+      "aciklama": "Silindirin yanal yüzeyi açıldığında, bir kenarı 2πr (taban çevresi) diğer kenarı h olan bir dikdörtgen oluşur."
+    },
+    {
+      "soru": "Yarıçapı 6 cm, yüksekliği 6 cm olan bir silindirin hacmi kaç cm³'tür?",
+      "siklar": {
+        "A": "36π",
+        "B": "72π",
+        "C": "108π",
+        "D": "216π"
+      },
+      "dogru": "D",
+      "aciklama": "Hacim = πr²h = π × 36 × 6 = 216π cm³."
+    },
+    {
+      "soru": "İçi dolu bir silindirin yarıçapı sabit kalır, yüksekliği yarıya indirilirse hacmi nasıl değişir?",
+      "siklar": {
+        "A": "Yarıya iner",
+        "B": "Değişmez",
+        "C": "2 katına çıkar",
+        "D": "4'te birine iner"
+      },
+      "dogru": "A",
+      "aciklama": "Hacim yükseklikle doğru orantılıdır (V=πr²h); h yarıya inerse V de yarıya iner."
+    },
+    {
+      "soru": "Yarıçapı 3 cm olan bir silindirin tabanının alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "6π",
+        "B": "9π",
+        "C": "3π",
+        "D": "18π"
+      },
+      "dogru": "B",
+      "aciklama": "Taban alanı = πr² = π × 3² = 9π cm²."
+    }
+  ],
+  "mat::Uzay Geometri::Koni (Yüzey Alanı ve Hacim)": [
+    {
+      "soru": "Yarıçapı 3 cm, yüksekliği 4 cm olan bir koninin ana doğrusu (eğik kenarı) kaç cm'dir?",
+      "siklar": {
+        "A": "5",
+        "B": "7",
+        "C": "12",
+        "D": "25"
+      },
+      "dogru": "A",
+      "aciklama": "Ana doğru l = √(r²+h²) = √(3²+4²) = √25 = 5 cm."
+    },
+    {
+      "soru": "Yarıçapı 3 cm, yüksekliği 4 cm olan bir koninin hacmi kaç cm³'tür? (π ile)",
+      "siklar": {
+        "A": "36π",
+        "B": "12π",
+        "C": "9π",
+        "D": "48π"
+      },
+      "dogru": "B",
+      "aciklama": "Hacim = (1/3)πr²h = (1/3)π × 9 × 4 = 12π cm³."
+    },
+    {
+      "soru": "Yarıçapı 5 cm, ana doğrusu 13 cm olan bir koninin yüksekliği kaç cm'dir?",
+      "siklar": {
+        "A": "8",
+        "B": "18",
+        "C": "12",
+        "D": "13"
+      },
+      "dogru": "C",
+      "aciklama": "h = √(l²-r²) = √(13²-5²) = √(169-25) = √144 = 12 cm."
+    },
+    {
+      "soru": "Yarıçapı 6 cm, ana doğrusu 10 cm olan bir koninin yanal yüzey alanı kaç cm²'dir? (π ile)",
+      "siklar": {
+        "A": "36π",
+        "B": "100π",
+        "C": "30π",
+        "D": "60π"
+      },
+      "dogru": "D",
+      "aciklama": "Yanal yüzey alanı = πrl = π × 6 × 10 = 60π cm²."
+    },
+    {
+      "soru": "Bir koninin hacmi, tabanı ve yüksekliği aynı olan bir silindirin hacminin kaçta kaçıdır?",
+      "siklar": {
+        "A": "1/3",
+        "B": "1/2",
+        "C": "2/3",
+        "D": "1"
+      },
+      "dogru": "A",
+      "aciklama": "Aynı taban ve yüksekliğe sahip koninin hacmi, silindirin hacminin 1/3'üdür."
+    },
+    {
+      "soru": "Yarıçapı 4 cm, yüksekliği 3 cm olan bir koninin toplam yüzey alanı kaç cm²'dir? (π ile)",
+      "siklar": {
+        "A": "20π",
+        "B": "36π",
+        "C": "16π",
+        "D": "45π"
+      },
+      "dogru": "B",
+      "aciklama": "l = √(4²+3²) = 5; Toplam yüzey alanı = πr(r+l) = π × 4 × (4+5) = 36π cm²."
+    },
+    {
+      "soru": "Hacmi 100π cm³, yarıçapı 5 cm olan bir koninin yüksekliği kaç cm'dir?",
+      "siklar": {
+        "A": "4",
+        "B": "6",
+        "C": "12",
+        "D": "20"
+      },
+      "dogru": "C",
+      "aciklama": "100π = (1/3)π × 25 × h → h = (100×3)/25 = 12 cm."
+    },
+    {
+      "soru": "Yarıçapı r, yüksekliği h olan bir koninin ana doğrusu l ile yarıçap ve yükseklik arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "l = r+h",
+        "B": "l = r·h",
+        "C": "l = 2√(r+h)",
+        "D": "l = √(r²+h²)"
+      },
+      "dogru": "D",
+      "aciklama": "Koninin yüksekliği, yarıçapı ve ana doğrusu bir dik üçgen oluşturur; Pisagor teoremine göre l = √(r²+h²)."
+    },
+    {
+      "soru": "Bir koninin tabanı hangi geometrik şekildir?",
+      "siklar": {
+        "A": "Daire",
+        "B": "Dikdörtgen",
+        "C": "Üçgen",
+        "D": "Daire dilimi"
+      },
+      "dogru": "A",
+      "aciklama": "Dik dairesel koninin tabanı bir dairedir."
+    },
+    {
+      "soru": "Yarıçapı 6 cm, yüksekliği 8 cm olan bir koninin hacmi kaç cm³'tür? (π ile)",
+      "siklar": {
+        "A": "288π",
+        "B": "96π",
+        "C": "48π",
+        "D": "192π"
+      },
+      "dogru": "B",
+      "aciklama": "Hacim = (1/3)πr²h = (1/3)π × 36 × 8 = 96π cm³."
+    }
+  ],
+  "mat::Uzay Geometri::Küre (Yüzey Alanı ve Hacim)": [
+    {
+      "soru": "Yarıçapı 3 cm olan bir kürenin hacmi kaç cm³'tür? (π ile)",
+      "siklar": {
+        "A": "36π",
+        "B": "27π",
+        "C": "12π",
+        "D": "108π"
+      },
+      "dogru": "A",
+      "aciklama": "Hacim = (4/3)πr³ = (4/3)π × 27 = 36π cm³."
+    },
+    {
+      "soru": "Yarıçapı 5 cm olan bir kürenin yüzey alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "25π",
+        "B": "100π",
+        "C": "50π",
+        "D": "20π"
+      },
+      "dogru": "B",
+      "aciklama": "Yüzey alanı = 4πr² = 4π × 25 = 100π cm²."
+    },
+    {
+      "soru": "Yarıçapı 2 katına çıkan bir kürenin hacmi kaç katına çıkar?",
+      "siklar": {
+        "A": "2",
+        "B": "4",
+        "C": "8",
+        "D": "16"
+      },
+      "dogru": "C",
+      "aciklama": "Hacim r³'e bağlıdır; r 2 katına çıkarsa hacim 2³=8 katına çıkar."
+    },
+    {
+      "soru": "Hacmi 288π cm³ olan bir kürenin yarıçapı kaç cm'dir?",
+      "siklar": {
+        "A": "3",
+        "B": "4",
+        "C": "8",
+        "D": "6"
+      },
+      "dogru": "D",
+      "aciklama": "(4/3)πr³ = 288π → r³ = 216 → r = 6 cm."
+    },
+    {
+      "soru": "Yarıçapı 6 cm olan bir yarım kürenin hacmi kaç cm³'tür? (π ile)",
+      "siklar": {
+        "A": "144π",
+        "B": "288π",
+        "C": "72π",
+        "D": "432π"
+      },
+      "dogru": "A",
+      "aciklama": "Yarım küre hacmi = (2/3)πr³ = (2/3)π × 216 = 144π cm³."
+    },
+    {
+      "soru": "Yarıçapı r olan bir kürenin yüzey alanı, yarıçapı r olan bir dairenin alanının kaç katıdır?",
+      "siklar": {
+        "A": "2",
+        "B": "4",
+        "C": "3",
+        "D": "1/4"
+      },
+      "dogru": "B",
+      "aciklama": "Küre yüzey alanı 4πr², daire alanı πr²; oran = 4πr²/πr² = 4."
+    },
+    {
+      "soru": "Yarıçapı 2 katına çıkan bir kürenin yüzey alanı kaç katına çıkar?",
+      "siklar": {
+        "A": "2",
+        "B": "8",
+        "C": "4",
+        "D": "16"
+      },
+      "dogru": "C",
+      "aciklama": "Yüzey alanı r²'ye bağlıdır; r 2 katına çıkarsa yüzey alanı 2²=4 katına çıkar."
+    },
+    {
+      "soru": "Yüzey alanı 64π cm² olan bir kürenin yarıçapı kaç cm'dir?",
+      "siklar": {
+        "A": "8",
+        "B": "16",
+        "C": "2",
+        "D": "4"
+      },
+      "dogru": "D",
+      "aciklama": "4πr² = 64π → r² = 16 → r = 4 cm."
+    },
+    {
+      "soru": "Yarıçapı 3 cm olan bir kürenin yüzey alanı kaç cm²'dir?",
+      "siklar": {
+        "A": "36π",
+        "B": "9π",
+        "C": "12π",
+        "D": "18π"
+      },
+      "dogru": "A",
+      "aciklama": "Yüzey alanı = 4πr² = 4π × 9 = 36π cm²."
+    },
+    {
+      "soru": "Bir kürenin yarıçapı 3 katına çıkarılırsa hacmi kaç katına çıkar?",
+      "siklar": {
+        "A": "9",
+        "B": "27",
+        "C": "3",
+        "D": "81"
+      },
+      "dogru": "B",
+      "aciklama": "Hacim r³'e bağlıdır; r 3 katına çıkarsa hacim 3³=27 katına çıkar."
+    }
+  ],
+  "mat::Uzay Geometri::Katı Cisimlerin Kesitleri": [
+    {
+      "soru": "Bir küp, zıt iki kenarından geçen bir düzlemle (yüzey köşegen düzlemiyle) kesilirse kesit hangi şekli verir?",
+      "siklar": {
+        "A": "Dikdörtgen",
+        "B": "Üçgen",
+        "C": "Beşgen",
+        "D": "Daire"
+      },
+      "dogru": "A",
+      "aciklama": "Bir küpün zıt iki kenarından geçen düzlemle kesiti bir dikdörtgendir."
+    },
+    {
+      "soru": "Bir küre, merkezinden geçen bir düzlemle kesilirse kesit hangi şekli verir?",
+      "siklar": {
+        "A": "Elips",
+        "B": "Büyük daire (kürenin yarıçapına eşit yarıçaplı daire)",
+        "C": "Küçük daire",
+        "D": "Nokta"
+      },
+      "dogru": "B",
+      "aciklama": "Küreyi merkezinden geçen herhangi bir düzlem, kürenin yarıçapına eşit yarıçaplı bir 'büyük daire' oluşturur."
+    },
+    {
+      "soru": "Bir küre, merkezinden geçmeyen bir düzlemle kesilirse kesit hangi şekli verir?",
+      "siklar": {
+        "A": "Elips",
+        "B": "Büyük daire",
+        "C": "Merkezden geçen kesitten daha küçük yarıçaplı daire",
+        "D": "Nokta"
+      },
+      "dogru": "C",
+      "aciklama": "Merkezden geçmeyen düzlemlerin kürede oluşturduğu kesit, büyük daireden daha küçük yarıçaplı bir dairedir."
+    },
+    {
+      "soru": "Dik dairesel bir silindir, tabanına paralel bir düzlemle kesilirse kesit hangi şekli verir?",
+      "siklar": {
+        "A": "Elips",
+        "B": "Dikdörtgen",
+        "C": "Üçgen",
+        "D": "Daire (taban ile aynı yarıçaplı)"
+      },
+      "dogru": "D",
+      "aciklama": "Silindirin tabanına paralel bir düzlemle alınan kesit, taban ile aynı yarıçapa sahip bir dairedir."
+    },
+    {
+      "soru": "Dik dairesel bir silindir, eksenini içeren bir düzlemle (taban düzlemine dik) kesilirse kesit hangi şekli verir?",
+      "siklar": {
+        "A": "Dikdörtgen",
+        "B": "Daire",
+        "C": "Üçgen",
+        "D": "Beşgen"
+      },
+      "dogru": "A",
+      "aciklama": "Silindirin eksenini içeren düzlemle kesiti, kenarları 2r ve h olan bir dikdörtgendir."
+    },
+    {
+      "soru": "Dik dairesel bir koni, tepe noktasından geçen ve tabana dik olan bir düzlemle kesilirse kesit hangi şekli verir?",
+      "siklar": {
+        "A": "Daire",
+        "B": "Üçgen",
+        "C": "Dikdörtgen",
+        "D": "Elips"
+      },
+      "dogru": "B",
+      "aciklama": "Koninin tepe noktasından geçen ve eksenini içeren düzlemle kesiti bir üçgendir (eşkenar üçgen ya da ikizkenar üçgen olabilir)."
+    },
+    {
+      "soru": "Dik dairesel bir koni, tabanına paralel bir düzlemle (tepe ile taban arasında) kesilirse kesit hangi şekli verir?",
+      "siklar": {
+        "A": "Üçgen",
+        "B": "Elips",
+        "C": "Daire (tabandan daha küçük yarıçaplı)",
+        "D": "Kare"
+      },
+      "dogru": "C",
+      "aciklama": "Koniyi tabana paralel bir düzlemle kesmek, tabandan daha küçük yarıçaplı bir daire oluşturur."
+    },
+    {
+      "soru": "Bir küp, bir yüzeyine paralel bir düzlemle kesilirse kesit hangi şekli verir?",
+      "siklar": {
+        "A": "Üçgen",
+        "B": "Altıgen",
+        "C": "Daire",
+        "D": "Kare (yüzeyle aynı boyutta)"
+      },
+      "dogru": "D",
+      "aciklama": "Bir küpü, yüzeylerinden birine paralel bir düzlemle kesmek, o yüzeyle aynı boyutlarda bir kare kesit verir."
+    },
+    {
+      "soru": "Bir küpün cisim köşegenine dik olarak tam ortasından geçen düzlemle elde edilen kesitin köşe sayısı kaçtır?",
+      "siklar": {
+        "A": "6",
+        "B": "4",
+        "C": "8",
+        "D": "3"
+      },
+      "dogru": "A",
+      "aciklama": "Küpün cisim köşegenine dik ve tam ortasından geçen düzlemle kesiti düzgün altıgendir, yani 6 köşesi vardır."
+    },
+    {
+      "soru": "Bir prizma, tabanına paralel bir düzlemle kesilirse kesit ile taban arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "Kesit, tabandan farklı bir şekildir",
+        "B": "Kesit, tabanla eş (aynı boyutta) bir şekildir",
+        "C": "Kesit her zaman bir üçgendir",
+        "D": "Kesit bir noktadır"
+      },
+      "dogru": "B",
+      "aciklama": "Bir prizmayı tabanına paralel bir düzlemle kesmek, tabanla eş (aynı şekil ve boyutta) bir kesit verir."
+    }
+  ],
   "mat::Olasılık::Koşullu Olasılık": [
     {
       "soru": "P(A) = 0.4, P(B) = 0.3, P(A∩B) = 0.12 ise P(A|B) kaçtır?",
@@ -3323,6 +4555,678 @@ const QUESTIONS = {
       },
       "dogru": "B",
       "aciklama": "P(A|B) = 1 → B bilindiğinde A kesin oluyor; B⊂A ilişkisi var."
+    }
+  ],
+  "mat::Olasılık::Permütasyon": [
+    {
+      "soru": "5 farklı kitap bir rafa kaç farklı şekilde dizilebilir?",
+      "siklar": {
+        "A": "120",
+        "B": "24",
+        "C": "60",
+        "D": "720"
+      },
+      "dogru": "A",
+      "aciklama": "5 farklı nesnenin sıralanma sayısı 5! = 5×4×3×2×1 = 120."
+    },
+    {
+      "soru": "6 kişiden 4'ünün sıralı olarak seçilmesinin (P(6,4)) sayısı kaçtır?",
+      "siklar": {
+        "A": "15",
+        "B": "360",
+        "C": "720",
+        "D": "24"
+      },
+      "dogru": "B",
+      "aciklama": "P(6,4) = 6×5×4×3 = 360."
+    },
+    {
+      "soru": "\"ANKARA\" kelimesinin harfleri (A harfi 3 kez tekrar ediyor) ile kaç farklı 6 harfli dizilim yazılabilir?",
+      "siklar": {
+        "A": "720",
+        "B": "240",
+        "C": "120",
+        "D": "60"
+      },
+      "dogru": "C",
+      "aciklama": "Toplam 6 harf, A harfi 3 kez tekrarlı: 6!/3! = 720/6 = 120."
+    },
+    {
+      "soru": "4 kişi yuvarlak bir masaya kaç farklı şekilde oturabilir? (dairesel permütasyon)",
+      "siklar": {
+        "A": "24",
+        "B": "4",
+        "C": "12",
+        "D": "6"
+      },
+      "dogru": "D",
+      "aciklama": "Dairesel permütasyonda sıralama sayısı (n-1)! = (4-1)! = 3! = 6."
+    },
+    {
+      "soru": "n farklı elemanın tamamının sıralanması (permütasyonu) kaç farklı şekilde yapılabilir?",
+      "siklar": {
+        "A": "n!",
+        "B": "n²",
+        "C": "2ⁿ",
+        "D": "n(n-1)"
+      },
+      "dogru": "A",
+      "aciklama": "n farklı elemanın tamamının sıralanma sayısı n! ile bulunur."
+    },
+    {
+      "soru": "7 farklı renkten 3'ünün sıralı olarak seçilip kullanılması (P(7,3)) kaç farklı şekilde yapılabilir?",
+      "siklar": {
+        "A": "35",
+        "B": "210",
+        "C": "343",
+        "D": "21"
+      },
+      "dogru": "B",
+      "aciklama": "P(7,3) = 7×6×5 = 210."
+    },
+    {
+      "soru": "1, 2, 3, 4, 5 rakamlarının her biri bir kez kullanılarak kaç farklı 5 basamaklı sayı yazılabilir?",
+      "siklar": {
+        "A": "20",
+        "B": "25",
+        "C": "120",
+        "D": "625"
+      },
+      "dogru": "C",
+      "aciklama": "5 farklı rakamın tamamının sıralanma sayısı 5! = 120."
+    },
+    {
+      "soru": "P(n,r) = n!/(n-r)! formülünde r=n alındığında P(n,n) ifadesi neye eşittir? (0!=1)",
+      "siklar": {
+        "A": "1",
+        "B": "0",
+        "C": "n",
+        "D": "n!"
+      },
+      "dogru": "D",
+      "aciklama": "P(n,n) = n!/(n-n)! = n!/0! = n!/1 = n!."
+    },
+    {
+      "soru": "3 erkek kendi aralarında bir grup, 2 kadın kendi aralarında başka bir grup oluşturarak yan yana dizilecektir. Grupların kendi içindeki sıralamaları ve iki grubun yer değişimi de hesaba katılırsa toplam kaç farklı dizilim olur?",
+      "siklar": {
+        "A": "24",
+        "B": "12",
+        "C": "120",
+        "D": "6"
+      },
+      "dogru": "A",
+      "aciklama": "Erkekler kendi aralarında 3!=6, kadınlar 2!=2, iki grubun sıralanması 2!=2; toplam 6×2×2=24."
+    },
+    {
+      "soru": "0!=1 olduğuna göre P(5,5) değeri kaçtır?",
+      "siklar": {
+        "A": "1",
+        "B": "120",
+        "C": "24",
+        "D": "0"
+      },
+      "dogru": "B",
+      "aciklama": "P(5,5) = 5!/0! = 120/1 = 120."
+    }
+  ],
+  "mat::Olasılık::Kombinasyon": [
+    {
+      "soru": "6 kişiden 2'sinin sırasız olarak seçilmesinin (C(6,2)) sayısı kaçtır?",
+      "siklar": {
+        "A": "15",
+        "B": "30",
+        "C": "12",
+        "D": "6"
+      },
+      "dogru": "A",
+      "aciklama": "C(6,2) = 6!/(2!·4!) = (6×5)/(2×1) = 15."
+    },
+    {
+      "soru": "C(7,3) değeri kaçtır?",
+      "siklar": {
+        "A": "21",
+        "B": "35",
+        "C": "210",
+        "D": "7"
+      },
+      "dogru": "B",
+      "aciklama": "C(7,3) = 7!/(3!·4!) = (7×6×5)/(3×2×1) = 210/6 = 35."
+    },
+    {
+      "soru": "C(n,r) = C(n,n-r) özdeşliğine göre C(10,8) = C(10,k) eşitliğini sağlayan k'nın 8'den farklı değeri kaçtır?",
+      "siklar": {
+        "A": "8",
+        "B": "10",
+        "C": "2",
+        "D": "0"
+      },
+      "dogru": "C",
+      "aciklama": "C(10,8) = C(10,10-8) = C(10,2); dolayısıyla k = 2."
+    },
+    {
+      "soru": "C(5,0) değeri kaçtır?",
+      "siklar": {
+        "A": "5",
+        "B": "0",
+        "C": "5!",
+        "D": "1"
+      },
+      "dogru": "D",
+      "aciklama": "C(n,0) = 1 her zaman geçerlidir; C(5,0) = 1."
+    },
+    {
+      "soru": "8 kişilik bir gruptan 3 kişilik bir komite (sırasız) kaç farklı şekilde seçilebilir?",
+      "siklar": {
+        "A": "56",
+        "B": "336",
+        "C": "24",
+        "D": "512"
+      },
+      "dogru": "A",
+      "aciklama": "C(8,3) = 8!/(3!·5!) = (8×7×6)/(3×2×1) = 336/6 = 56."
+    },
+    {
+      "soru": "Permütasyon P(n,r) ile kombinasyon C(n,r) arasındaki ilişki aşağıdakilerden hangisidir?",
+      "siklar": {
+        "A": "P(n,r) = C(n,r)",
+        "B": "P(n,r) = C(n,r) × r!",
+        "C": "C(n,r) = P(n,r) × r!",
+        "D": "P(n,r) = C(n,r) / r!"
+      },
+      "dogru": "B",
+      "aciklama": "Sıralı seçim (permütasyon), sırasız seçimin (kombinasyon) sıralama sayısıyla çarpılmasıyla bulunur: P(n,r) = C(n,r) × r!."
+    },
+    {
+      "soru": "5 kırmızı ve 4 mavi top bulunan bir torbadan (sırası önemsiz) toplam 3 top kaç farklı şekilde seçilebilir?",
+      "siklar": {
+        "A": "9",
+        "B": "27",
+        "C": "84",
+        "D": "504"
+      },
+      "dogru": "C",
+      "aciklama": "Toplam 9 top arasından sırasız 3 top seçimi: C(9,3) = (9×8×7)/(3×2×1) = 504/6 = 84."
+    },
+    {
+      "soru": "C(n,1) değeri her zaman neye eşittir?",
+      "siklar": {
+        "A": "1",
+        "B": "n-1",
+        "C": "n!",
+        "D": "n"
+      },
+      "dogru": "D",
+      "aciklama": "C(n,1) = n!/(1!·(n-1)!) = n."
+    },
+    {
+      "soru": "Bir altıgenin köşelerinden seçilen 2 köşeyi birleştiren toplam doğru parçası sayısı (kenarlar dahil) C(n,2) ile bulunur. n=6 için bu sayı kaçtır?",
+      "siklar": {
+        "A": "15",
+        "B": "30",
+        "C": "12",
+        "D": "6"
+      },
+      "dogru": "A",
+      "aciklama": "C(6,2) = (6×5)/(2×1) = 15."
+    },
+    {
+      "soru": "C(10,4) = C(10,k) eşitliğini sağlayan k'nın 4'ten farklı değeri kaçtır?",
+      "siklar": {
+        "A": "4",
+        "B": "6",
+        "C": "10",
+        "D": "14"
+      },
+      "dogru": "B",
+      "aciklama": "C(10,4) = C(10,10-4) = C(10,6); dolayısıyla k = 6."
+    }
+  ],
+  "mat::Olasılık::Binom Açılımı": [
+    {
+      "soru": "(x+y)⁵ açılımında toplam kaç terim vardır?",
+      "siklar": {
+        "A": "6",
+        "B": "5",
+        "C": "10",
+        "D": "25"
+      },
+      "dogru": "A",
+      "aciklama": "(x+y)ⁿ açılımında terim sayısı n+1'dir; n=5 için 5+1=6 terim vardır."
+    },
+    {
+      "soru": "(x+y)⁴ açılımındaki binom katsayılarının toplamı kaçtır?",
+      "siklar": {
+        "A": "8",
+        "B": "16",
+        "C": "4",
+        "D": "32"
+      },
+      "dogru": "B",
+      "aciklama": "x=y=1 alındığında (x+y)ⁿ = 2ⁿ olur; binom katsayıları toplamı 2⁴=16'dır."
+    },
+    {
+      "soru": "(x+y)ⁿ açılımında genel terim T(r+1) hangi formülle bulunur?",
+      "siklar": {
+        "A": "C(n,r)·xʳ·yⁿ⁻ʳ",
+        "B": "C(r,n)·xⁿ⁻ʳ·yʳ",
+        "C": "C(n,r)·xⁿ⁻ʳ·yʳ",
+        "D": "nʳ·xʳ·yⁿ⁻ʳ"
+      },
+      "dogru": "C",
+      "aciklama": "Binom açılımının genel terimi T(r+1) = C(n,r)·xⁿ⁻ʳ·yʳ formülüyle bulunur."
+    },
+    {
+      "soru": "(x+2)³ açılımında x² teriminin katsayısı kaçtır?",
+      "siklar": {
+        "A": "1",
+        "B": "3",
+        "C": "2",
+        "D": "6"
+      },
+      "dogru": "D",
+      "aciklama": "(x+2)³ = x³ + 3·x²·2 + 3·x·2² + 2³ = x³ + 6x² + 12x + 8; x² katsayısı 6'dır."
+    },
+    {
+      "soru": "(x-y)⁴ açılımında terimlerin işaretleri nasıl değişir?",
+      "siklar": {
+        "A": "Sırayla +, -, +, -, + şeklinde değişir",
+        "B": "Hepsi + işaretlidir",
+        "C": "Hepsi - işaretlidir",
+        "D": "Rastgele değişir"
+      },
+      "dogru": "A",
+      "aciklama": "(x-y)ⁿ açılımında y'nin kuvveti tek olan terimler negatif, çift olan terimler pozitiftir; bu nedenle işaretler sırayla +,-,+,-,... şeklinde değişir."
+    },
+    {
+      "soru": "(x+y)⁶ açılımında x=1 ve y=1 yazılırsa elde edilen katsayılar toplamı kaçtır?",
+      "siklar": {
+        "A": "36",
+        "B": "64",
+        "C": "12",
+        "D": "6"
+      },
+      "dogru": "B",
+      "aciklama": "x=y=1 için (1+1)⁶ = 2⁶ = 64."
+    },
+    {
+      "soru": "(1+x)⁵ açılımında x³ teriminin katsayısı kaçtır?",
+      "siklar": {
+        "A": "5",
+        "B": "15",
+        "C": "10",
+        "D": "20"
+      },
+      "dogru": "C",
+      "aciklama": "x³ teriminin katsayısı C(5,3) = 10'dur."
+    },
+    {
+      "soru": "Pascal üçgeninde bir satırdaki sayıların toplamı, o satıra karşılık gelen (x+y)ⁿ açılımı için neye eşittir?",
+      "siklar": {
+        "A": "n",
+        "B": "n²",
+        "C": "n+1",
+        "D": "2ⁿ"
+      },
+      "dogru": "D",
+      "aciklama": "Pascal üçgeninin n. satırındaki sayıların (binom katsayılarının) toplamı 2ⁿ'dir."
+    },
+    {
+      "soru": "(x+y)³ açılımı aşağıdakilerden hangisidir?",
+      "siklar": {
+        "A": "x³+3x²y+3xy²+y³",
+        "B": "x³+y³",
+        "C": "x³+2x²y+2xy²+y³",
+        "D": "x³-3x²y+3xy²-y³"
+      },
+      "dogru": "A",
+      "aciklama": "(x+y)³ = x³ + 3x²y + 3xy² + y³ olarak açılır."
+    },
+    {
+      "soru": "(2x+1)² açılımında x teriminin katsayısı kaçtır?",
+      "siklar": {
+        "A": "2",
+        "B": "4",
+        "C": "1",
+        "D": "8"
+      },
+      "dogru": "B",
+      "aciklama": "(2x+1)² = 4x² + 4x + 1; x teriminin katsayısı 4'tür."
+    }
+  ],
+  "mat::Olasılık::Olasılık Hesaplamaları": [
+    {
+      "soru": "Bir zar atıldığında 4'ten büyük bir sayı gelme olasılığı kaçtır?",
+      "siklar": {
+        "A": "1/3",
+        "B": "1/2",
+        "C": "2/3",
+        "D": "1/6"
+      },
+      "dogru": "A",
+      "aciklama": "4'ten büyük sayılar {5,6}; istenen olay sayısı 2, örnek uzay 6; P = 2/6 = 1/3."
+    },
+    {
+      "soru": "Bir torbada 4 kırmızı, 6 mavi top vardır. Rastgele çekilen bir topun mavi olma olasılığı kaçtır?",
+      "siklar": {
+        "A": "2/5",
+        "B": "3/5",
+        "C": "1/5",
+        "D": "4/5"
+      },
+      "dogru": "B",
+      "aciklama": "Toplam top sayısı 10, mavi top sayısı 6; P = 6/10 = 3/5."
+    },
+    {
+      "soru": "Bir olayın olasılığı P(A)=0.3 ise tümleyeninin (A') olasılığı kaçtır?",
+      "siklar": {
+        "A": "0.3",
+        "B": "1",
+        "C": "0.7",
+        "D": "0"
+      },
+      "dogru": "C",
+      "aciklama": "P(A') = 1 - P(A) = 1 - 0.3 = 0.7."
+    },
+    {
+      "soru": "İki zar birlikte atıldığında üzerlerine gelen sayıların toplamının 7 olma olasılığı kaçtır?",
+      "siklar": {
+        "A": "1/36",
+        "B": "1/12",
+        "C": "1/9",
+        "D": "1/6"
+      },
+      "dogru": "D",
+      "aciklama": "Toplamı 7 yapan ikililer: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) → 6 durum; örnek uzay 36; P = 6/36 = 1/6."
+    },
+    {
+      "soru": "Bir madeni para 2 kez atıldığında en az bir kez yazı gelme olasılığı kaçtır?",
+      "siklar": {
+        "A": "3/4",
+        "B": "1/2",
+        "C": "1/4",
+        "D": "1"
+      },
+      "dogru": "A",
+      "aciklama": "Hiç yazı gelmeme olasılığı (tura-tura) 1/4'tür; en az bir yazı = 1 - 1/4 = 3/4."
+    },
+    {
+      "soru": "P(A)=0.5, P(B)=0.3, P(A∩B)=0.1 ise P(A∪B) kaçtır?",
+      "siklar": {
+        "A": "0.8",
+        "B": "0.7",
+        "C": "0.9",
+        "D": "0.6"
+      },
+      "dogru": "B",
+      "aciklama": "P(A∪B) = P(A) + P(B) - P(A∩B) = 0.5 + 0.3 - 0.1 = 0.7."
+    },
+    {
+      "soru": "Bir torbada birbirinden farklı 5 renkte birer top vardır. Rastgele çekilen bir topun belirli bir renk olma olasılığı kaçtır?",
+      "siklar": {
+        "A": "1/4",
+        "B": "1",
+        "C": "1/5",
+        "D": "5"
+      },
+      "dogru": "C",
+      "aciklama": "5 farklı renkten her birinin gelme şansı eşittir; P = 1/5."
+    },
+    {
+      "soru": "1'den 20'ye kadar numaralanmış kartlardan rastgele biri çekiliyor. Çekilen sayının 5'in katı olma olasılığı kaçtır?",
+      "siklar": {
+        "A": "1/4",
+        "B": "1/2",
+        "C": "4/5",
+        "D": "1/5"
+      },
+      "dogru": "D",
+      "aciklama": "5'in katları: {5,10,15,20} → 4 sayı; örnek uzay 20; P = 4/20 = 1/5."
+    },
+    {
+      "soru": "Bir olayın olasılığı için aşağıdakilerden hangisi her zaman doğrudur?",
+      "siklar": {
+        "A": "0 ≤ P(A) ≤ 1",
+        "B": "P(A) > 1 olabilir",
+        "C": "P(A) negatif olabilir",
+        "D": "P(A) her zaman 1'dir"
+      },
+      "dogru": "A",
+      "aciklama": "Bir olayın olasılığı her zaman 0 ile 1 arasında (0 ve 1 dahil) bir değer alır."
+    },
+    {
+      "soru": "Bir zar atıldığında çift sayı veya 5 gelme olasılığı kaçtır?",
+      "siklar": {
+        "A": "1/2",
+        "B": "2/3",
+        "C": "1/3",
+        "D": "5/6"
+      },
+      "dogru": "B",
+      "aciklama": "Çift sayılar {2,4,6} ve 5 birbirinden ayrık olaylardır; P = 3/6 + 1/6 = 4/6 = 2/3."
+    }
+  ],
+  "mat::Olasılık::Bağımlı ve Bağımsız Olaylar": [
+    {
+      "soru": "Bir madeni para iki kez atılıyor. İlk atışta yazı, ikinci atışta tura gelme olasılığı kaçtır?",
+      "siklar": {
+        "A": "1/4",
+        "B": "1/2",
+        "C": "1",
+        "D": "1/8"
+      },
+      "dogru": "A",
+      "aciklama": "Madeni para atışları birbirinden bağımsızdır; P = 1/2 × 1/2 = 1/4."
+    },
+    {
+      "soru": "Bir torbada 3 kırmızı, 2 mavi top vardır. Çekilen top geri konulmadan ikinci bir top çekiliyor. İlk çekilen top kırmızı ise, ikinci çekilişte kırmızı gelme olasılığı kaçtır?",
+      "siklar": {
+        "A": "3/5",
+        "B": "1/2",
+        "C": "2/5",
+        "D": "3/4"
+      },
+      "dogru": "B",
+      "aciklama": "İlk kırmızı çekildikten sonra torbada 2 kırmızı, 2 mavi, toplam 4 top kalır; P = 2/4 = 1/2."
+    },
+    {
+      "soru": "İki olay A ve B bağımsız ise P(A∩B) aşağıdakilerden hangisiyle hesaplanır?",
+      "siklar": {
+        "A": "P(A)+P(B)",
+        "B": "P(A)-P(B)",
+        "C": "P(A)×P(B)",
+        "D": "P(A)/P(B)"
+      },
+      "dogru": "C",
+      "aciklama": "Bağımsız olaylarda iki olayın birlikte gerçekleşme olasılığı P(A∩B) = P(A)×P(B) ile bulunur."
+    },
+    {
+      "soru": "Bir zar iki kez atılıyor. Her iki atışta da 6 gelme olasılığı kaçtır?",
+      "siklar": {
+        "A": "1/6",
+        "B": "1/3",
+        "C": "2/6",
+        "D": "1/36"
+      },
+      "dogru": "D",
+      "aciklama": "Atışlar bağımsızdır; P = 1/6 × 1/6 = 1/36."
+    },
+    {
+      "soru": "Bir torbada 4 kırmızı, 4 mavi top vardır. İadeli olarak 2 top çekiliyor. Her iki topun da kırmızı olma olasılığı kaçtır?",
+      "siklar": {
+        "A": "1/4",
+        "B": "1/2",
+        "C": "3/8",
+        "D": "1/16"
+      },
+      "dogru": "A",
+      "aciklama": "İadeli çekilişte her seferinde P(kırmızı)=4/8=1/2; P = 1/2 × 1/2 = 1/4."
+    },
+    {
+      "soru": "İki olayın bağımsız olması için gerekli koşul aşağıdakilerden hangisidir?",
+      "siklar": {
+        "A": "P(A∩B)=0",
+        "B": "P(A|B)=P(A)",
+        "C": "P(A∪B)=1",
+        "D": "P(A)=P(B)"
+      },
+      "dogru": "B",
+      "aciklama": "A ve B bağımsız ise, B'nin gerçekleşmesi A'nın olasılığını değiştirmez: P(A|B)=P(A)."
+    },
+    {
+      "soru": "Bir torbada 5 kırmızı, 3 mavi top vardır. İadesiz olarak çekilen ilk top mavi ise, ikinci çekilişte mavi gelme olasılığı kaçtır?",
+      "siklar": {
+        "A": "3/8",
+        "B": "2/8",
+        "C": "2/7",
+        "D": "3/7"
+      },
+      "dogru": "C",
+      "aciklama": "İlk mavi top çekildikten sonra torbada 5 kırmızı, 2 mavi, toplam 7 top kalır; P = 2/7."
+    },
+    {
+      "soru": "A ve B bağımlı olaylar ise P(A∩B) aşağıdakilerden hangisiyle hesaplanır?",
+      "siklar": {
+        "A": "P(A)+P(B|A)",
+        "B": "P(A)×P(B)",
+        "C": "P(A)-P(B|A)",
+        "D": "P(A)×P(B|A)"
+      },
+      "dogru": "D",
+      "aciklama": "Bağımlı olaylarda P(A∩B) = P(A)×P(B|A) ile hesaplanır (B'nin A'ya bağlı koşullu olasılığı kullanılır)."
+    },
+    {
+      "soru": "Bir torbada 2 kırmızı, 4 sarı top vardır. İadeli olarak 2 top çekiliyor. İlk topun kırmızı, ikinci topun sarı gelme olasılığı kaçtır?",
+      "siklar": {
+        "A": "2/9",
+        "B": "1/3",
+        "C": "4/9",
+        "D": "1/9"
+      },
+      "dogru": "A",
+      "aciklama": "İadeli çekilişte P(kırmızı)=2/6=1/3, P(sarı)=4/6=2/3; P = 1/3 × 2/3 = 2/9."
+    },
+    {
+      "soru": "A ve B bağımsız olaylar, P(A)=0.4, P(B)=0.5 ise P(A∩B) kaçtır?",
+      "siklar": {
+        "A": "0.9",
+        "B": "0.2",
+        "C": "0.45",
+        "D": "0.1"
+      },
+      "dogru": "B",
+      "aciklama": "Bağımsız olaylarda P(A∩B) = P(A)×P(B) = 0.4×0.5 = 0.2."
+    }
+  ],
+  "mat::Olasılık::Beklenen Değer": [
+    {
+      "soru": "Bir zar atıldığında gelen sayının beklenen değeri kaçtır?",
+      "siklar": {
+        "A": "3.5",
+        "B": "3",
+        "C": "4",
+        "D": "6"
+      },
+      "dogru": "A",
+      "aciklama": "E(X) = (1+2+3+4+5+6)/6 = 21/6 = 3.5."
+    },
+    {
+      "soru": "Bir madeni para atılıyor; yazı gelirse 10 TL kazanılıyor, tura gelirse 4 TL kaybediliyor. Beklenen değer kaç TL'dir?",
+      "siklar": {
+        "A": "6",
+        "B": "3",
+        "C": "14",
+        "D": "-3"
+      },
+      "dogru": "B",
+      "aciklama": "E(X) = (1/2)×10 + (1/2)×(-4) = 5 - 2 = 3."
+    },
+    {
+      "soru": "Bir torbada 2 kırmızı, 3 mavi top vardır. Kırmızı top çekilirse 5 puan, mavi top çekilirse 2 puan kazanılıyor. Beklenen puan kaçtır?",
+      "siklar": {
+        "A": "5",
+        "B": "2",
+        "C": "3.2",
+        "D": "7"
+      },
+      "dogru": "C",
+      "aciklama": "E(X) = (2/5)×5 + (3/5)×2 = 2 + 1.2 = 3.2."
+    },
+    {
+      "soru": "X rastgele değişkeninin alabileceği değerler ve olasılıkları şöyledir: X=1, P=0.2; X=2, P=0.5; X=3, P=0.3. E(X) kaçtır?",
+      "siklar": {
+        "A": "2",
+        "B": "1.5",
+        "C": "3",
+        "D": "2.1"
+      },
+      "dogru": "D",
+      "aciklama": "E(X) = 1×0.2 + 2×0.5 + 3×0.3 = 0.2 + 1 + 0.9 = 2.1."
+    },
+    {
+      "soru": "Beklenen değer (E(X)) bir rastgele değişken için neyi ifade eder?",
+      "siklar": {
+        "A": "Uzun vadeli ortalama değeri",
+        "B": "En sık görülen değeri",
+        "C": "En büyük değeri",
+        "D": "Olasılıkların toplamını"
+      },
+      "dogru": "A",
+      "aciklama": "Beklenen değer, deney çok kez tekrarlandığında sonuçların alacağı uzun vadeli ortalama değeri ifade eder."
+    },
+    {
+      "soru": "Bir piyango bileti %1 olasılıkla 5000 TL ödül kazandırıyor, %99 olasılıkla hiçbir şey kazandırmıyor. Bu biletin beklenen kazancı kaç TL'dir?",
+      "siklar": {
+        "A": "5000",
+        "B": "50",
+        "C": "100",
+        "D": "0"
+      },
+      "dogru": "B",
+      "aciklama": "E(X) = 0.01×5000 + 0.99×0 = 50 TL."
+    },
+    {
+      "soru": "Adil bir zar atıldığında gelen sayı çift ise 0 TL, tek ise 6 TL kazanılıyor. Beklenen kazanç kaç TL'dir?",
+      "siklar": {
+        "A": "6",
+        "B": "0",
+        "C": "3",
+        "D": "1.5"
+      },
+      "dogru": "C",
+      "aciklama": "Çift veya tek gelme olasılığı eşit (1/2); E(X) = (1/2)×0 + (1/2)×6 = 3."
+    },
+    {
+      "soru": "İki adil madeni para atıldığında gelen yazı sayısının beklenen değeri kaçtır?",
+      "siklar": {
+        "A": "2",
+        "B": "1.5",
+        "C": "0.5",
+        "D": "1"
+      },
+      "dogru": "D",
+      "aciklama": "0 yazı olasılığı 1/4, 1 yazı olasılığı 2/4, 2 yazı olasılığı 1/4; E(X) = 0×1/4 + 1×2/4 + 2×1/4 = 1."
+    },
+    {
+      "soru": "E(X)=Σxᵢ·P(xᵢ) formülünde tüm P(xᵢ) değerlerinin toplamı her zaman kaçtır?",
+      "siklar": {
+        "A": "1",
+        "B": "0",
+        "C": "xᵢ",
+        "D": "n"
+      },
+      "dogru": "A",
+      "aciklama": "Bir rastgele değişkenin alabileceği tüm değerlerin olasılıkları toplamı her zaman 1'dir."
+    },
+    {
+      "soru": "Bir oyuna 3 TL ödenerek katılınıyor; %20 olasılıkla 10 TL, %80 olasılıkla 0 TL kazandırıyor. Oyunun beklenen net kazancı kaç TL'dir?",
+      "siklar": {
+        "A": "2",
+        "B": "-1",
+        "C": "1",
+        "D": "-3"
+      },
+      "dogru": "B",
+      "aciklama": "Beklenen ödül = 0.2×10 + 0.8×0 = 2 TL; net kazanç = 2 - 3 = -1 TL."
     }
   ],
   "fiz::Kuvvet ve Hareket::Vektörler": [
