@@ -3543,6 +3543,144 @@ const QUESTIONS = {
       "aciklama": "Hava direnci yokken hareket simetriktir; çıkış süresi ile düşüş süresi birbirine eşittir."
     }
   ],
+  "fiz::Kuvvet ve Hareket::İki Boyutta Hareket (Eğik Atış)": [
+    {
+      "soru": "Eğik atışta yatay yöndeki hız bileşeni hareket boyunca nasıl değişir? (Hava direnci ihmal)",
+      "siklar": {
+        "A": "Sürekli artar",
+        "B": "Sürekli azalır",
+        "C": "Sabit kalır",
+        "D": "Önce artar sonra azalır"
+      },
+      "dogru": "C",
+      "aciklama": "Yatay yönde herhangi bir kuvvet (ivme) bulunmadığından hız bileşeni sabit kalır."
+    },
+    {
+      "soru": "Eğik atışta düşey yöndeki ivme neye eşittir?",
+      "siklar": {
+        "A": "Sıfır",
+        "B": "Yerçekimi ivmesi g (aşağı yönlü)",
+        "C": "İlk hızla (v₀) orantılı",
+        "D": "Zamanla sürekli değişir"
+      },
+      "dogru": "B",
+      "aciklama": "Düşey yönde sadece yerçekimi etkilidir; ivme her zaman g kadar ve aşağı yönlüdür."
+    },
+    {
+      "soru": "v₀ ilk hızıyla ve θ açısıyla fırlatılan bir cismin menzili (R), hangi formülle hesaplanır? (Hava direnci ihmal)",
+      "siklar": {
+        "A": "R = v₀²sin(2θ)/g",
+        "B": "R = v₀²sinθ/g",
+        "C": "R = v₀·g/sinθ",
+        "D": "R = v₀²cos(2θ)/g"
+      },
+      "dogru": "A",
+      "aciklama": "Eğik atışta menzil formülü R = v₀²sin(2θ)/g'dir."
+    },
+    {
+      "soru": "Eğik atış hareketinde cismin izlediği yörünge (yol) hangi şekildedir?",
+      "siklar": {
+        "A": "Doğru çizgi",
+        "B": "Çevresel (daire)",
+        "C": "Parabol",
+        "D": "Eliptik"
+      },
+      "dogru": "C",
+      "aciklama": "Sabit yatay hız ile düşey yönde sabit ivmeli hareketin bileşkesi parabolik bir yörünge oluşturur."
+    }
+  ],
+  "fiz::Kuvvet ve Hareket::Tork (Kuvvet Momenti)": [
+    {
+      "soru": "Tork (kuvvet momenti) hangi formülle hesaplanır?",
+      "siklar": {
+        "A": "τ = F·r·sinθ",
+        "B": "τ = F + r",
+        "C": "τ = F/r",
+        "D": "τ = F·r·cosθ"
+      },
+      "dogru": "A",
+      "aciklama": "Tork, kuvvet (F), kuvvetin uygulandığı noktanın eksene uzaklığı (r) ve aralarındaki açının sinüsünün çarpımıdır: τ=F·r·sinθ."
+    },
+    {
+      "soru": "Torkun SI birimi nedir?",
+      "siklar": {
+        "A": "N (Newton)",
+        "B": "N·m (Newton-metre)",
+        "C": "J (Joule)",
+        "D": "W (Watt)"
+      },
+      "dogru": "B",
+      "aciklama": "Tork, N·m biriminde ifade edilir (Joule ile aynı boyuta sahip olsa da farklı bir kavramı temsil eder)."
+    },
+    {
+      "soru": "Bir kuvvetin oluşturduğu tork, kuvvetin uygulama noktasının dönme eksenine olan dik uzaklığı (moment kolu) ile nasıl ilişkilidir?",
+      "siklar": {
+        "A": "Ters orantılıdır",
+        "B": "Doğru orantılıdır",
+        "C": "İlişkisizdir",
+        "D": "Karekökle orantılıdır"
+      },
+      "dogru": "B",
+      "aciklama": "τ=F·r·sinθ ifadesine göre tork, moment kolu (r) ile doğru orantılıdır."
+    },
+    {
+      "soru": "Bir kapı koluna menteşeye yakın bir noktadan kuvvet uygulamak, uzak bir noktadan uygulamaya göre kapıyı açmayı neden zorlaştırır?",
+      "siklar": {
+        "A": "Moment kolu (r) küçüldüğü için aynı kuvvetle daha az tork üretilir",
+        "B": "Kuvvetin büyüklüğü otomatik olarak artar",
+        "C": "Moment kolu büyür",
+        "D": "Tork her durumda aynıdır, fark etmez"
+      },
+      "dogru": "A",
+      "aciklama": "Tork=F·r olduğundan, r (moment kolu) küçüldüğünde aynı F ile daha az tork üretilir; kapıyı açmak için daha fazla kuvvet gerekir."
+    }
+  ],
+  "fiz::Kuvvet ve Hareket::Statik Denge": [
+    {
+      "soru": "Bir cismin statik dengede olması için hangi koşullar sağlanmalıdır?",
+      "siklar": {
+        "A": "Sadece net kuvvetin sıfır olması (ΣF=0) yeterlidir",
+        "B": "Net kuvvetin ve net torkun sıfır olması gerekir (ΣF=0 ve Στ=0)",
+        "C": "Sadece net torkun sıfır olması yeterlidir",
+        "D": "Cismin hareketsiz olması yeterlidir, kuvvet/tork koşulu gerekmez"
+      },
+      "dogru": "B",
+      "aciklama": "Statik denge için hem öteleme (ΣF=0) hem de dönme (Στ=0) dengesi sağlanmalıdır."
+    },
+    {
+      "soru": "İki çocuğun bir tahterevallide dengede kalması için hangi koşul sağlanmalıdır?",
+      "siklar": {
+        "A": "İki çocuğun ağırlıkları birbirine eşit olmalıdır",
+        "B": "Her çocuğun ağırlığı ile pivot noktasına olan uzaklığının çarpımları (torkları) birbirine eşit ve karşıt olmalıdır",
+        "C": "İki çocuğun da pivot noktasına eşit uzaklıkta olması yeterlidir",
+        "D": "Çocukların ağırlıkları dengeyi etkilemez"
+      },
+      "dogru": "B",
+      "aciklama": "Denge için iki taraftaki torklar (ağırlık × kol uzunluğu) birbirine eşit ve zıt yönlü olmalıdır."
+    },
+    {
+      "soru": "Bir cismin kütle merkezi, destek (taban) alanının dışına çıkarsa cisim için ne olur?",
+      "siklar": {
+        "A": "Cisim daha kararlı hale gelir",
+        "B": "Cisim devrilir (dengesini kaybeder)",
+        "C": "Cisim havalanır",
+        "D": "Hiçbir şey değişmez"
+      },
+      "dogru": "B",
+      "aciklama": "Kütle merkezi taban alanının dışına çıktığında ağırlığın oluşturduğu tork dengelenemez ve cisim devrilir."
+    },
+    {
+      "soru": "Statik dengedeki bir cisme etki eden net kuvvet ve net tork sırasıyla kaçtır?",
+      "siklar": {
+        "A": "Net kuvvet sıfır, net tork sıfırdan farklı",
+        "B": "Net kuvvet sıfırdan farklı, net tork sıfır",
+        "C": "Her ikisi de sıfırdır",
+        "D": "Her ikisi de maksimumdur"
+      },
+      "dogru": "C",
+      "aciklama": "Statik denge tanımı gereği hem net kuvvet hem net tork sıfırdır."
+    }
+  ],
   "fiz::Kuvvet ve Hareket::İş-Enerji Teoremi": [
     {
       "soru": "10 N kuvvet 5 m yol boyunca uygulanıyor. Yapılan iş kaçtır?",
@@ -3655,6 +3793,144 @@ const QUESTIONS = {
       "aciklama": "W = P·t = 1000×10 = 10000 J."
     }
   ],
+  "fiz::Kuvvet ve Hareket::Mekanik Enerjinin Korunumu": [
+    {
+      "soru": "Sürtünmesiz bir ortamda hareket eden bir cismin mekanik enerjisi (kinetik+potansiyel) zamanla nasıl değişir?",
+      "siklar": {
+        "A": "Sürekli artar",
+        "B": "Sürekli azalır",
+        "C": "Sabit kalır",
+        "D": "Sıfıra düşer"
+      },
+      "dogru": "C",
+      "aciklama": "Sadece korunumlu kuvvetlerin (yerçekimi gibi) etkili olduğu bir sistemde toplam mekanik enerji korunur."
+    },
+    {
+      "soru": "Yükseklikten serbest düşen bir cisim aşağı inerken potansiyel enerjisi ve kinetik enerjisi için ne söylenebilir? (sürtünme yok)",
+      "siklar": {
+        "A": "Potansiyel enerji artar, kinetik enerji azalır",
+        "B": "Potansiyel enerji azalır, kinetik enerji artar; toplamları sabit kalır",
+        "C": "Her ikisi de azalır",
+        "D": "Her ikisi de sabit kalır"
+      },
+      "dogru": "B",
+      "aciklama": "Düşme sırasında yükseklik (potansiyel enerji) azalırken hız (kinetik enerji) artar; toplam mekanik enerji korunur."
+    },
+    {
+      "soru": "Bir sarkaç, salınımının en yüksek (uç) noktasındayken kinetik enerjisi ve potansiyel enerjisi için ne söylenebilir?",
+      "siklar": {
+        "A": "Kinetik enerji maksimum, potansiyel enerji minimumdur",
+        "B": "Kinetik enerji minimum (sıfır), potansiyel enerji maksimumdur",
+        "C": "İkisi de sıfırdır",
+        "D": "İkisi de maksimumdur"
+      },
+      "dogru": "B",
+      "aciklama": "En yüksek noktada sarkaç anlık olarak durur (hız=0, KE=0); tüm enerji potansiyel enerji olarak depolanır."
+    },
+    {
+      "soru": "Mekanik enerjinin korunumu ilkesi hangi koşulda geçerlidir?",
+      "siklar": {
+        "A": "Sadece sürtünme ve hava direnci gibi korunumsuz kuvvetlerin etkisiz olduğu sistemlerde",
+        "B": "Her zaman, sürtünme olsa da olmasa da",
+        "C": "Sadece gaz sistemlerinde",
+        "D": "Sadece elektriksel sistemlerde"
+      },
+      "dogru": "A",
+      "aciklama": "Mekanik enerji ancak korunumsuz kuvvetler (sürtünme, hava direnci vb.) iş yapmadığında korunur."
+    }
+  ],
+  "fiz::Kuvvet ve Hareket::Sürtünmeli Yüzeylerde Enerji": [
+    {
+      "soru": "Sürtünmeli bir yüzeyde hareket eden bir cismin mekanik enerjisi zamanla nasıl değişir?",
+      "siklar": {
+        "A": "Sabit kalır",
+        "B": "Sürtünme nedeniyle azalır (ısı enerjisine dönüşür)",
+        "C": "Artar",
+        "D": "Önce azalır sonra artar"
+      },
+      "dogru": "B",
+      "aciklama": "Sürtünme kuvveti korunumsuz olduğundan, yaptığı negatif iş mekanik enerjinin ısıya dönüşerek azalmasına yol açar."
+    },
+    {
+      "soru": "Sürtünme kuvvetinin yaptığı iş genellikle hangi işarete sahiptir? (Hareket yönüne karşı olduğundan)",
+      "siklar": {
+        "A": "Pozitif",
+        "B": "Negatif",
+        "C": "Sıfır",
+        "D": "Duruma göre belirsiz"
+      },
+      "dogru": "B",
+      "aciklama": "Sürtünme kuvveti her zaman hareket yönüne ters olduğundan yaptığı iş negatiftir."
+    },
+    {
+      "soru": "Sürtünmeli bir yüzeyde kayan bir cismin kaybettiği mekanik enerji nereye dönüşür?",
+      "siklar": {
+        "A": "Elektrik enerjisine",
+        "B": "Isı (sürtünme ısısı) enerjisine",
+        "C": "Kimyasal enerjiye",
+        "D": "Kaybolur, hiçbir enerjiye dönüşmez"
+      },
+      "dogru": "B",
+      "aciklama": "Sürtünme nedeniyle kaybedilen mekanik enerji, enerjinin korunumu ilkesine göre ısı enerjisine dönüşür."
+    },
+    {
+      "soru": "Sürtünmeli bir yüzeyde bir cismin son kinetik enerjisi hangi ifadeyle bulunur?",
+      "siklar": {
+        "A": "KE_son = KE_ilk + Sürtünme işi",
+        "B": "KE_son = KE_ilk - Sürtünme kuvvetinin büyüklüğü × alınan yol",
+        "C": "KE_son = KE_ilk (değişmez)",
+        "D": "KE_son her zaman 0'dır"
+      },
+      "dogru": "B",
+      "aciklama": "İş-enerji teoremine göre, sürtünme kuvvetinin yaptığı negatif iş kinetik enerjiden düşülür."
+    }
+  ],
+  "fiz::Kuvvet ve Hareket::İtme ve Çizgisel Momentum": [
+    {
+      "soru": "Çizgisel momentum (p) hangi formülle hesaplanır?",
+      "siklar": {
+        "A": "p = m/v",
+        "B": "p = m·v",
+        "C": "p = m+v",
+        "D": "p = v/m"
+      },
+      "dogru": "B",
+      "aciklama": "Momentum, kütle (m) ile hızın (v) çarpımına eşittir: p=m·v."
+    },
+    {
+      "soru": "İtme (impuls, J), bir kuvvetin etki süresiyle çarpımına eşittir ve hangi büyüklüğe eşittir?",
+      "siklar": {
+        "A": "Cismin kinetik enerji değişimine",
+        "B": "Cismin momentum değişimine (Δp)",
+        "C": "Cismin ağırlığına",
+        "D": "Cismin hızına"
+      },
+      "dogru": "B",
+      "aciklama": "İtme-momentum teoremine göre J=F·Δt=Δp; itme, momentum değişimine eşittir."
+    },
+    {
+      "soru": "J = F·Δt formülünde Δt (kuvvetin etki süresi) büyürse, aynı momentum değişimi (J) için F nasıl olmalıdır?",
+      "siklar": {
+        "A": "F büyümelidir",
+        "B": "F küçülmelidir",
+        "C": "F değişmez",
+        "D": "F sıfır olmalıdır"
+      },
+      "dogru": "B",
+      "aciklama": "J sabit kaldığında, Δt arttıkça F=J/Δt küçülür (örneğin hava yastığı çarpışma süresini uzatarak kuvveti azaltır)."
+    },
+    {
+      "soru": "Momentumun birimi olan kg·m/s, hangi diğer birime eşittir?",
+      "siklar": {
+        "A": "N·s",
+        "B": "J·s",
+        "C": "W·s",
+        "D": "Pa·s"
+      },
+      "dogru": "A",
+      "aciklama": "F=ma=m(Δv/Δt) olduğundan N=kg·m/s²; N·s=kg·m/s, momentumun birimiyle aynıdır."
+    }
+  ],
   "fiz::Kuvvet ve Hareket::Momentumun Korunumu": [
     {
       "soru": "5 kg cisim 4 m/s, 3 kg cisim -2 m/s. Toplam momentum kaçtır?",
@@ -3765,6 +4041,374 @@ const QUESTIONS = {
       },
       "dogru": "B",
       "aciklama": "Atalet momenti I = Σmr² dönme hareketindeki eylemsizliktir."
+    }
+  ],
+  "fiz::Kuvvet ve Hareket::Çarpışmalar (Elastik ve İnelastik)": [
+    {
+      "soru": "Elastik bir çarpışmada hangi büyüklükler korunur?",
+      "siklar": {
+        "A": "Sadece momentum",
+        "B": "Sadece kinetik enerji",
+        "C": "Hem momentum hem kinetik enerji",
+        "D": "Hiçbiri korunmaz"
+      },
+      "dogru": "C",
+      "aciklama": "Elastik çarpışmalarda toplam momentum ve toplam kinetik enerji çarpışma öncesi ve sonrası korunur."
+    },
+    {
+      "soru": "İnelastik (esnek olmayan) bir çarpışmada hangi büyüklük korunmaz?",
+      "siklar": {
+        "A": "Momentum",
+        "B": "Kinetik enerji",
+        "C": "Her ikisi de korunmaz",
+        "D": "Her ikisi de korunur"
+      },
+      "dogru": "B",
+      "aciklama": "İnelastik çarpışmalarda momentum korunur ancak bir kısım kinetik enerji ısı/ses/deformasyon olarak kaybolur."
+    },
+    {
+      "soru": "Tamamen inelastik bir çarpışmada cisimler için ne olur?",
+      "siklar": {
+        "A": "Birbirinden ayrılarak zıt yönlerde hareket ederler",
+        "B": "Çarpışmadan sonra birbirine yapışarak birlikte hareket ederler",
+        "C": "Hareketsiz kalırlar",
+        "D": "Aynı hızla devam ederler, hiç etkileşmezler"
+      },
+      "dogru": "B",
+      "aciklama": "Tamamen inelastik çarpışmada cisimler birbirine yapışır ve ortak bir hızla birlikte hareket ederler."
+    },
+    {
+      "soru": "Bir çarpışmada toplam momentum her zaman korunur, ancak kinetik enerji kaybolabilir. Kaybolan kinetik enerji nereye gider?",
+      "siklar": {
+        "A": "Yok olur, hiçbir şeye dönüşmez",
+        "B": "Isı, ses ve deformasyon enerjisi gibi formlara dönüşür",
+        "C": "Potansiyel enerjiye dönüşür ve daha sonra geri gelir",
+        "D": "Doğrudan momentuma eklenir"
+      },
+      "dogru": "B",
+      "aciklama": "Enerjinin korunumu ilkesine göre kaybolan kinetik enerji, ısı, ses ve deformasyon gibi diğer enerji formlarına dönüşür."
+    }
+  ],
+  "fiz::Kuvvet ve Hareket::Basit Makineler": [
+    {
+      "soru": "Basit makinelerin temel amacı nedir?",
+      "siklar": {
+        "A": "Enerji üretmek",
+        "B": "Bir işi daha az kuvvetle veya daha kolay yapmamızı sağlamak, ancak yapılan işi azaltmaz",
+        "C": "Sürtünmeyi tamamen ortadan kaldırmak",
+        "D": "Cismin kütlesini azaltmak"
+      },
+      "dogru": "B",
+      "aciklama": "Basit makineler kuvveti veya hareketin yönünü/mesafesini değiştirir, ancak ideal durumda toplam işi azaltmaz."
+    },
+    {
+      "soru": "İdeal (sürtünmesiz) bir basit makinede giriş işi (Wgiriş) ile çıkış işi (Wçıkış) arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "Wgiriş = Wçıkış",
+        "B": "Wgiriş her zaman Wçıkış'tan büyüktür",
+        "C": "Wgiriş her zaman Wçıkış'tan küçüktür",
+        "D": "Aralarında bir ilişki yoktur"
+      },
+      "dogru": "A",
+      "aciklama": "İdeal (sürtünmesiz) bir makinede enerji korunur; giriş işi çıkış işine eşittir."
+    },
+    {
+      "soru": "Bir eğik düzlem (rampa), bir cismi belirli bir yüksekliğe çıkarmak için gereken kuvveti nasıl etkiler?",
+      "siklar": {
+        "A": "Gereken kuvveti artırır ama kat edilen mesafeyi azaltır",
+        "B": "Gereken kuvveti azaltır ama cismin kat ettiği mesafeyi artırır",
+        "C": "Hem kuvveti hem mesafeyi azaltır",
+        "D": "Hiçbir etkisi yoktur"
+      },
+      "dogru": "B",
+      "aciklama": "Eğik düzlem, daha uzun bir mesafe boyunca daha az kuvvetle aynı işi yapmamızı sağlar."
+    },
+    {
+      "soru": "Sabit bir makara, bir kuvvetin yönünü değiştirebilir; ideal durumda kuvvetin büyüklüğüne etkisi nedir?",
+      "siklar": {
+        "A": "Kuvveti azaltır",
+        "B": "Kuvveti artırır",
+        "C": "Kuvvetin büyüklüğünü değiştirmez",
+        "D": "Kuvveti sıfırlar"
+      },
+      "dogru": "C",
+      "aciklama": "Sabit makara sadece kuvvetin uygulama yönünü değiştirir; ideal durumda büyüklüğünü değiştirmez."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Elektriksel Kuvvet ve Coulomb Yasası": [
+    {
+      "soru": "Coulomb yasasına göre iki nokta yük arasındaki elektriksel kuvvet, yükler arasındaki uzaklığın karesiyle nasıl ilişkilidir?",
+      "siklar": {
+        "A": "Doğru orantılıdır",
+        "B": "Ters orantılıdır",
+        "C": "İlişkisizdir",
+        "D": "Doğrusal (uzaklığın kendisiyle) orantılıdır"
+      },
+      "dogru": "B",
+      "aciklama": "Coulomb yasası F=k·q₁q₂/r² şeklindedir; kuvvet, uzaklığın karesiyle ters orantılıdır."
+    },
+    {
+      "soru": "F = k·q₁q₂/r² formülünde, q₁ ve q₂ aynı işaretli (örn. ikisi de pozitif) yükler ise kuvvetin yönü nasıldır?",
+      "siklar": {
+        "A": "İtme (yükler birbirini iter)",
+        "B": "Çekme (yükler birbirini çeker)",
+        "C": "Kuvvet sıfırdır",
+        "D": "Yönü belirsizdir"
+      },
+      "dogru": "A",
+      "aciklama": "Aynı işaretli yükler birbirini iter; zıt işaretli yükler birbirini çeker."
+    },
+    {
+      "soru": "İki nokta yük arasındaki uzaklık 2 katına çıkarılırsa Coulomb kuvveti nasıl değişir?",
+      "siklar": {
+        "A": "2 katına çıkar",
+        "B": "Yarıya iner",
+        "C": "4'te birine iner",
+        "D": "4 katına çıkar"
+      },
+      "dogru": "C",
+      "aciklama": "F ∝ 1/r² olduğundan r 2 katına çıkınca F, (1/2)²=1/4 katına iner."
+    },
+    {
+      "soru": "Coulomb yasası hangi tür yükler arasındaki kuvveti tanımlar?",
+      "siklar": {
+        "A": "Sadece hareketli yükler arasındaki manyetik kuvveti",
+        "B": "Durgun (statik) nokta yükler arasındaki elektriksel kuvveti",
+        "C": "Sadece nötr cisimler arasındaki kuvveti",
+        "D": "Sadece akım taşıyan iletkenler arasındaki kuvveti"
+      },
+      "dogru": "B",
+      "aciklama": "Coulomb yasası, durgun nokta yükler arasındaki elektrostatik kuvveti tanımlar."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Noktasal Yük Elektrik Alanı": [
+    {
+      "soru": "Bir noktasal yükün oluşturduğu elektrik alan şiddeti (E), yükten olan uzaklık (r) ile nasıl ilişkilidir?",
+      "siklar": {
+        "A": "E ∝ r",
+        "B": "E ∝ 1/r",
+        "C": "E ∝ 1/r²",
+        "D": "E ∝ r²"
+      },
+      "dogru": "C",
+      "aciklama": "E=k·q/r² olduğundan elektrik alan, uzaklığın karesiyle ters orantılıdır."
+    },
+    {
+      "soru": "Elektrik alan şiddeti E, test yükü q üzerine etkiyen kuvvet F ile hangi formülle ilişkilidir?",
+      "siklar": {
+        "A": "E = F·q",
+        "B": "E = F/q",
+        "C": "E = q/F",
+        "D": "E = F+q"
+      },
+      "dogru": "B",
+      "aciklama": "Elektrik alan, birim yük başına etkiyen kuvvet olarak tanımlanır: E=F/q."
+    },
+    {
+      "soru": "Pozitif bir noktasal yükün etrafındaki elektrik alan çizgilerinin yönü nasıldır?",
+      "siklar": {
+        "A": "Yüke doğru (içe yönelik)",
+        "B": "Yükten dışa doğru",
+        "C": "Yükün etrafında dairesel",
+        "D": "Elektrik alan oluşmaz"
+      },
+      "dogru": "B",
+      "aciklama": "Pozitif yüklerden elektrik alan çizgileri dışa doğru, negatif yüklere içe doğru yönelir."
+    },
+    {
+      "soru": "Elektrik alan şiddetinin SI birimi nedir?",
+      "siklar": {
+        "A": "N/C (Newton/Coulomb)",
+        "B": "C/N",
+        "C": "J/C",
+        "D": "N·C"
+      },
+      "dogru": "A",
+      "aciklama": "E=F/q olduğundan elektrik alan birimi N/C'dir (V/m'ye de eşittir)."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Elektrik Alan Çizgileri": [
+    {
+      "soru": "Elektrik alan çizgileri pozitif bir yükten mi başlar, negatif bir yükte mi sona erer?",
+      "siklar": {
+        "A": "Pozitif yükten başlar, negatif yükte sona erer",
+        "B": "Negatif yükten başlar, pozitif yükte sona erer",
+        "C": "Her zaman sonsuzda başlar ve biter",
+        "D": "Yönleri rastgeledir"
+      },
+      "dogru": "A",
+      "aciklama": "Elektrik alan çizgileri pozitif yüklerden çıkar, negatif yüklere girer."
+    },
+    {
+      "soru": "Elektrik alan çizgilerinin sık (yoğun) olduğu bölgelerde elektrik alan şiddeti nasıldır?",
+      "siklar": {
+        "A": "Zayıftır",
+        "B": "Kuvvetlidir",
+        "C": "Sıfırdır",
+        "D": "Alan çizgisi yoğunluğu elektrik alanla ilgisizdir"
+      },
+      "dogru": "B",
+      "aciklama": "Alan çizgilerinin yoğunluğu, o bölgedeki elektrik alanın şiddetiyle doğru orantılıdır."
+    },
+    {
+      "soru": "İki elektrik alan çizgisi birbirini kesebilir mi?",
+      "siklar": {
+        "A": "Evet, her zaman kesişirler",
+        "B": "Hayır, alan çizgileri birbirini kesmez",
+        "C": "Sadece zıt yüklerde kesişir",
+        "D": "Sadece aynı işaretli yüklerde kesişir"
+      },
+      "dogru": "B",
+      "aciklama": "Bir noktada alanın tek bir yönü olabileceğinden, alan çizgileri birbirini kesmez."
+    },
+    {
+      "soru": "Birbirine paralel iki yüklü levha (kondansatör plakaları) arasındaki elektrik alanı temsil eden çizgiler nasıl görünür?",
+      "siklar": {
+        "A": "Birbirine paralel ve eşit aralıklı düz çizgiler",
+        "B": "Dairesel çizgiler",
+        "C": "Rastgele dağılmış noktalar",
+        "D": "Sadece kenarlardan çizgiler"
+      },
+      "dogru": "A",
+      "aciklama": "Paralel levhalar arasında oluşan düzgün (homojen) elektrik alan, paralel ve eşit aralıklı çizgilerle gösterilir."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Elektriksel Potansiyel Enerji": [
+    {
+      "soru": "İki nokta yük arasındaki elektriksel potansiyel enerji (U), yükler arasındaki uzaklık (r) ile nasıl ilişkilidir?",
+      "siklar": {
+        "A": "U ∝ r",
+        "B": "U ∝ 1/r",
+        "C": "U ∝ r²",
+        "D": "U ∝ 1/r²"
+      },
+      "dogru": "B",
+      "aciklama": "U=k·q₁q₂/r olduğundan potansiyel enerji, uzaklıkla ters orantılıdır."
+    },
+    {
+      "soru": "Aynı işaretli (örn. ikisi de pozitif) iki yükün birbirine yaklaştırılması için dışarıdan iş yapılması gerekir. Bu durumda sistemin potansiyel enerjisi nasıl değişir?",
+      "siklar": {
+        "A": "Azalır",
+        "B": "Artar",
+        "C": "Değişmez",
+        "D": "Sıfır olur"
+      },
+      "dogru": "B",
+      "aciklama": "Aynı işaretli yükler birbirini ittiğinden, onları yaklaştırmak için yapılan iş sistemin potansiyel enerjisini artırır."
+    },
+    {
+      "soru": "Zıt işaretli iki yük (biri + biri -) birbirine yaklaştırıldığında sistemin elektriksel potansiyel enerjisi nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır (daha negatif olur)",
+        "C": "Değişmez",
+        "D": "Sıfırdan başlayıp pozitif olur"
+      },
+      "dogru": "B",
+      "aciklama": "Zıt yükler birbirini çektiğinden yaklaşma kendiliğinden gerçekleşir ve potansiyel enerji azalır (negatif değere gider)."
+    },
+    {
+      "soru": "Elektriksel potansiyel enerji, bir yükü sonsuzdan belirli bir noktaya getirmek için yapılan işle ilişkilidir. Bu enerji hangi birimle ölçülür?",
+      "siklar": {
+        "A": "Newton (N)",
+        "B": "Joule (J)",
+        "C": "Coulomb (C)",
+        "D": "Volt (V)"
+      },
+      "dogru": "B",
+      "aciklama": "Enerji birimi olarak Joule (J) kullanılır."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Elektriksel Potansiyel Fark": [
+    {
+      "soru": "Elektriksel potansiyel fark (gerilim, V), birim yük başına potansiyel enerji olarak tanımlanır. Hangi formülle ifade edilir?",
+      "siklar": {
+        "A": "V = U·q",
+        "B": "V = U/q",
+        "C": "V = q/U",
+        "D": "V = U+q"
+      },
+      "dogru": "B",
+      "aciklama": "Potansiyel fark, potansiyel enerjinin (U) yüke (q) bölünmesiyle bulunur: V=U/q."
+    },
+    {
+      "soru": "Elektriksel potansiyel farkın (gerilimin) birimi olan Volt (V), hangi birimlerin oranına eşittir?",
+      "siklar": {
+        "A": "Joule/Coulomb (J/C)",
+        "B": "Coulomb/Joule (C/J)",
+        "C": "Newton/Coulomb (N/C)",
+        "D": "Amper×Saniye"
+      },
+      "dogru": "A",
+      "aciklama": "V=U/q olduğundan 1 Volt = 1 Joule/Coulomb'dur."
+    },
+    {
+      "soru": "Bir devrede elektrik akımının akması için gerekli olan temel etken nedir?",
+      "siklar": {
+        "A": "Direnç farkı",
+        "B": "Potansiyel fark (gerilim farkı)",
+        "C": "Kapasite farkı",
+        "D": "Sıcaklık farkı"
+      },
+      "dogru": "B",
+      "aciklama": "Akımın akması için bir potansiyel fark (gerilim kaynağı) gereklidir; akım yüksek potansiyelden düşük potansiyele doğru akar (geleneksel akım yönü)."
+    },
+    {
+      "soru": "Pozitif bir yük, elektrik alan içinde yüksek potansiyelden düşük potansiyele hareket ederse bu hareket sırasında ne olur?",
+      "siklar": {
+        "A": "Yükün potansiyel enerjisi azalır, kinetik enerjisi artar",
+        "B": "Yükün potansiyel enerjisi artar",
+        "C": "Hiçbir enerji değişimi olmaz",
+        "D": "Yük hareket edemez"
+      },
+      "dogru": "A",
+      "aciklama": "Pozitif yük, kuvvet uygulanan yönde (yüksekten düşük potansiyele) hareket ederken potansiyel enerji kaybeder, bu enerji kinetik enerjiye dönüşür."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Sığa ve Kondansatörler": [
+    {
+      "soru": "Bir kondansatörün sığası (kapasitansı), depoladığı yük (Q) ile uçları arasındaki potansiyel fark (V) arasındaki hangi oranla tanımlanır?",
+      "siklar": {
+        "A": "C = Q·V",
+        "B": "C = Q/V",
+        "C": "C = V/Q",
+        "D": "C = Q+V"
+      },
+      "dogru": "B",
+      "aciklama": "Kapasitans, depolanan yükün (Q) potansiyel farka (V) bölünmesiyle tanımlanır: C=Q/V."
+    },
+    {
+      "soru": "Sığanın (kapasitansın) SI birimi nedir?",
+      "siklar": {
+        "A": "Coulomb (C)",
+        "B": "Volt (V)",
+        "C": "Farad (F)",
+        "D": "Henry (H)"
+      },
+      "dogru": "C",
+      "aciklama": "Kapasitansın SI birimi Farad'dır (1 F = 1 C/V)."
+    },
+    {
+      "soru": "Paralel plakalı bir kondansatörün sığası, plakalar arası mesafe (d) arttıkça nasıl değişir? (alan sabit)",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Sıfır olur"
+      },
+      "dogru": "B",
+      "aciklama": "C=ε₀A/d formülüne göre, d arttıkça kapasitans (C) azalır."
+    },
+    {
+      "soru": "Bir kondansatörde depolanan enerji (E) hangi formülle hesaplanır?",
+      "siklar": {
+        "A": "E = C·V",
+        "B": "E = ½CV²",
+        "C": "E = C/V",
+        "D": "E = C+V"
+      },
+      "dogru": "B",
+      "aciklama": "Bir kondansatörde depolanan enerji E=½CV² formülüyle hesaplanır."
     }
   ],
   "fiz::Elektrik ve Manyetizma::Ohm Yasası": [
@@ -3991,6 +4635,98 @@ const QUESTIONS = {
       "aciklama": "Düğüm analizi her düğüme KCL uygular."
     }
   ],
+  "fiz::Elektrik ve Manyetizma::Manyetik Alan": [
+    {
+      "soru": "Bir mıknatısın dışında manyetik alan çizgileri hangi yönde ilerler?",
+      "siklar": {
+        "A": "Güney kutuptan kuzey kutba",
+        "B": "Kuzey kutuptan güney kutba",
+        "C": "Rastgele yönlerde",
+        "D": "Sadece kutuplardan dışarı doğru, kapalı eğri oluşturmaz"
+      },
+      "dogru": "B",
+      "aciklama": "Mıknatısın dışında alan çizgileri kuzeyden güneye gider, mıknatısın içinde ise güneyden kuzeye tamamlanarak kapalı eğriler oluşturur."
+    },
+    {
+      "soru": "Manyetik alan şiddetinin SI birimi nedir?",
+      "siklar": {
+        "A": "Tesla (T)",
+        "B": "Weber (Wb)",
+        "C": "Henry (H)",
+        "D": "Farad (F)"
+      },
+      "dogru": "A",
+      "aciklama": "Manyetik alan şiddeti Tesla (T) birimiyle ölçülür."
+    },
+    {
+      "soru": "Düz bir akım taşıyan iletkenin etrafında oluşan manyetik alanın yönü hangi kural ile bulunur?",
+      "siklar": {
+        "A": "Sağ el kuralı",
+        "B": "Sol el kuralı",
+        "C": "Lenz kuralı",
+        "D": "Ohm kuralı"
+      },
+      "dogru": "A",
+      "aciklama": "Akım yönünü gösteren başparmak ile diğer parmakların kıvrılma yönü, manyetik alanın yönünü verir (sağ el kuralı)."
+    },
+    {
+      "soru": "Manyetik alan çizgileri için aşağıdakilerden hangisi doğrudur?",
+      "siklar": {
+        "A": "Açık uçları vardır, bir noktada başlar bir noktada biter",
+        "B": "Daima kapalı eğriler oluştururlar",
+        "C": "Birbirini sürekli keserler",
+        "D": "Sadece elektrik yükleri etrafında oluşurlar"
+      },
+      "dogru": "B",
+      "aciklama": "Elektrik alan çizgilerinden farklı olarak manyetik alan çizgileri her zaman kapalı eğriler (döngüler) oluşturur."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Manyetik Kuvvet (Lorentz)": [
+    {
+      "soru": "Hareketli bir yüklü parçacığa manyetik alan tarafından uygulanan kuvvet (Lorentz kuvveti) hangi formülle hesaplanır?",
+      "siklar": {
+        "A": "F = qvB sinθ",
+        "B": "F = qv + B",
+        "C": "F = qv/B",
+        "D": "F = q + vB"
+      },
+      "dogru": "A",
+      "aciklama": "Lorentz kuvveti F=qvBsinθ ile hesaplanır (θ: hız ile alan arasındaki açı)."
+    },
+    {
+      "soru": "Lorentz kuvvetinin yönü, parçacığın hızına (v) ve manyetik alana (B) göre nasıldır?",
+      "siklar": {
+        "A": "Hem v'ye hem B'ye paraleldir",
+        "B": "Hem v'ye hem B'ye diktir",
+        "C": "Sadece v'ye paraleldir",
+        "D": "Sadece B'ye paraleldir"
+      },
+      "dogru": "B",
+      "aciklama": "Manyetik kuvvet, hız ve manyetik alanın oluşturduğu düzleme dik yöndedir (sağ el kuralıyla bulunur)."
+    },
+    {
+      "soru": "Yüklü bir parçacık, manyetik alan doğrultusuna paralel hareket ediyorsa (v ∥ B), üzerine etkiyen manyetik kuvvet ne olur?",
+      "siklar": {
+        "A": "Maksimumdur",
+        "B": "Sıfırdır",
+        "C": "qvB'ye eşittir",
+        "D": "Yönü belirsizdir"
+      },
+      "dogru": "B",
+      "aciklama": "F=qvBsinθ; v ile B arasındaki açı 0° olduğunda sinθ=0 olur ve kuvvet sıfırdır."
+    },
+    {
+      "soru": "Manyetik kuvvet her zaman hıza dik olduğu için bu kuvvet, parçacığın kinetik enerjisi üzerinde nasıl bir etki yapar?",
+      "siklar": {
+        "A": "Kinetik enerjiyi artırır",
+        "B": "Kinetik enerjiyi azaltır",
+        "C": "Kinetik enerjiyi değiştirmez (sadece yönünü değiştirir)",
+        "D": "Kinetik enerjiyi sıfırlar"
+      },
+      "dogru": "C",
+      "aciklama": "Kuvvet hıza dik olduğundan iş yapmaz (W=F·d·cos90°=0); kinetik enerji değişmez, sadece hareketin yönü değişir."
+    }
+  ],
   "fiz::Elektrik ve Manyetizma::Elektromanyetik İndüksiyon": [
     {
       "soru": "Faraday yasasına göre endüksiyon EMK neye bağlıdır?",
@@ -4101,6 +4837,144 @@ const QUESTIONS = {
       },
       "dogru": "C",
       "aciklama": "Girdap akımları enerji kaybına neden olur; tasarruf için değil, tersine kaçınılır."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Faraday Yasası": [
+    {
+      "soru": "Faraday'ın elektromanyetik indüksiyon yasasına göre bir devrede indüklenen elektromotor kuvvet (EMK) neyle ilişkilidir?",
+      "siklar": {
+        "A": "Manyetik akının zamanla değişim hızıyla",
+        "B": "Manyetik akının sabit değeriyle",
+        "C": "Devrenin direnciyle",
+        "D": "Devredeki gerilim kaynağının değeriyle"
+      },
+      "dogru": "A",
+      "aciklama": "Faraday yasasına göre indüklenen EMK, manyetik akının zamana göre değişim hızına (dΦ/dt) eşittir."
+    },
+    {
+      "soru": "Bir bobinden geçen manyetik akı zamanla değişmiyorsa (sabitse), bobinde indüklenen EMK kaç olur?",
+      "siklar": {
+        "A": "Maksimum",
+        "B": "Sıfır",
+        "C": "Akıyla doğru orantılı, sabit bir değer",
+        "D": "Sonsuz"
+      },
+      "dogru": "B",
+      "aciklama": "EMK = -dΦ/dt; akı değişmiyorsa (dΦ/dt=0) indüklenen EMK sıfırdır."
+    },
+    {
+      "soru": "Lenz yasasına göre indüklenen akımın yönü neyi ifade eder?",
+      "siklar": {
+        "A": "İndüklenen akım, onu oluşturan manyetik akı değişimini güçlendirecek yöndedir",
+        "B": "İndüklenen akım, onu oluşturan manyetik akı değişimine karşı koyacak (engelleyecek) yöndedir",
+        "C": "İndüklenen akımın yönü rastgeledir",
+        "D": "Lenz yasası akımın yönüyle ilgili değildir"
+      },
+      "dogru": "B",
+      "aciklama": "Lenz yasası, enerjinin korunumu ilkesinin bir sonucu olarak indüklenen akımın akı değişimine karşı koyduğunu belirtir."
+    },
+    {
+      "soru": "Bir mıknatısın bir bobine doğru hareket ettirilmesiyle bobinde akım oluşması (elektromanyetik indüksiyon), hangi cihazların çalışma prensibinin temelini oluşturur?",
+      "siklar": {
+        "A": "Dirençlerin",
+        "B": "Jeneratörlerin (elektrik üreteçlerinin)",
+        "C": "Kondansatörlerin",
+        "D": "Sigortaların"
+      },
+      "dogru": "B",
+      "aciklama": "Jeneratörler, mekanik enerjiyi elektromanyetik indüksiyon yoluyla elektrik enerjisine dönüştürür."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Alternatif Akım Temel Kavramlar": [
+    {
+      "soru": "Alternatif akım (AC) ile doğru akım (DC) arasındaki temel fark nedir?",
+      "siklar": {
+        "A": "AC'nin yönü ve şiddeti zamanla periyodik olarak değişir, DC'de yön ve şiddet sabittir",
+        "B": "AC sadece pillerde bulunur",
+        "C": "DC sadece evlerde kullanılır",
+        "D": "Aralarında fark yoktur"
+      },
+      "dogru": "A",
+      "aciklama": "AC'de akımın yönü ve büyüklüğü periyodik olarak (genellikle sinüzoidal) değişirken DC'de sabittir."
+    },
+    {
+      "soru": "Alternatif akımın frekansı neyi ifade eder?",
+      "siklar": {
+        "A": "Akımın maksimum değerini",
+        "B": "Birim zamanda gerçekleşen periyodik döngü (salınım) sayısını",
+        "C": "Akımın toplam enerjisini",
+        "D": "Devrenin direncini"
+      },
+      "dogru": "B",
+      "aciklama": "Frekans, akımın birim zamandaki (1 saniyedeki) tam döngü sayısıdır ve Hz birimiyle ölçülür."
+    },
+    {
+      "soru": "Türkiye'de şebeke elektriğinin frekansı kaç Hz'dir?",
+      "siklar": {
+        "A": "50",
+        "B": "60",
+        "C": "100",
+        "D": "220"
+      },
+      "dogru": "A",
+      "aciklama": "Türkiye'de şebeke frekansı 50 Hz'dir (ABD'de 60 Hz kullanılır)."
+    },
+    {
+      "soru": "Bir alternatif akımın etkin (rms) değeri, tepe (maksimum) değeri ile hangi ilişkidedir? (sinüzoidal dalga için)",
+      "siklar": {
+        "A": "Vrms = Vmax",
+        "B": "Vrms = Vmax/√2",
+        "C": "Vrms = 2·Vmax",
+        "D": "Vrms = Vmax²"
+      },
+      "dogru": "B",
+      "aciklama": "Sinüzoidal AC için etkin (rms) değer, tepe değerin √2'ye bölünmesiyle bulunur."
+    }
+  ],
+  "fiz::Elektrik ve Manyetizma::Transformatörler": [
+    {
+      "soru": "Bir transformatörün primer ve sekonder sargılarındaki gerilimler (Vp, Vs) ile sarım sayıları (Np, Ns) arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "Vp/Vs = Np/Ns",
+        "B": "Vp/Vs = Ns/Np",
+        "C": "Vp·Vs = Np·Ns",
+        "D": "Vp+Vs = Np+Ns"
+      },
+      "dogru": "A",
+      "aciklama": "Transformatör denklemi Vp/Vs = Np/Ns şeklindedir; gerilimler oranı, sarım sayıları oranına eşittir."
+    },
+    {
+      "soru": "Sekonder sargı sayısı primer sargı sayısından fazla olan bir transformatör hangi tür transformatördür?",
+      "siklar": {
+        "A": "Düşürücü (step-down) transformatör",
+        "B": "Yükseltici (step-up) transformatör",
+        "C": "İzolasyon transformatörü",
+        "D": "Otomatik transformatör"
+      },
+      "dogru": "B",
+      "aciklama": "Ns>Np ise Vs>Vp olur; bu, gerilimi yükselten bir step-up transformatördür."
+    },
+    {
+      "soru": "İdeal bir transformatörde primer ve sekonder devrelerdeki güçler (P=V·I) arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "Primer güç, sekonder güçten her zaman büyüktür",
+        "B": "Primer ve sekonder güçler birbirine eşittir (enerji korunur)",
+        "C": "Sekonder güç her zaman daha büyüktür",
+        "D": "Aralarında bir ilişki yoktur"
+      },
+      "dogru": "B",
+      "aciklama": "İdeal transformatörde enerji kaybı yoktur; Pp=Ps, yani VpIp=VsIs."
+    },
+    {
+      "soru": "Transformatörler neden doğru akımla (DC) çalışmaz, alternatif akımla (AC) çalışır?",
+      "siklar": {
+        "A": "DC'de manyetik akı değişmediği için Faraday yasasına göre indüksiyon (EMK) oluşmaz",
+        "B": "DC akımlar transformatör sargılarına zarar verir",
+        "C": "Transformatörler her ikisiyle de aynı şekilde çalışır",
+        "D": "DC akımlar her zaman çok zayıftır"
+      },
+      "dogru": "A",
+      "aciklama": "Transformatörler, primer sargıdaki değişen akımın oluşturduğu değişen manyetik akı sayesinde sekonder sargıda EMK indükler; sabit DC akımda akı değişmediğinden indüksiyon olmaz."
     }
   ],
   "kim::Modern Atom Teorisi::Kuantum Sayıları": [
@@ -4821,6 +5695,190 @@ const QUESTIONS = {
       "aciklama": "Kapalı kaplardaki gaz basıncı manometre ile ölçülür."
     }
   ],
+  "kim::Gazlar::Boyle Yasası": [
+    {
+      "soru": "Sabit sıcaklıkta bir gazın basıncı 2 atm'den 4 atm'ye çıkarılırsa hacmi nasıl değişir?",
+      "siklar": {
+        "A": "2 kat artar",
+        "B": "Yarıya iner (2 kat azalır)",
+        "C": "4 kat artar",
+        "D": "Değişmez"
+      },
+      "dogru": "B",
+      "aciklama": "Boyle yasasına göre sabit sıcaklıkta P·V sabittir; basınç 2 katına çıkarsa hacim yarıya iner."
+    },
+    {
+      "soru": "P₁V₁ = P₂V₂ ifadesi hangi gaz yasasını temsil eder?",
+      "siklar": {
+        "A": "Charles Yasası",
+        "B": "Boyle Yasası",
+        "C": "Gay-Lussac Yasası",
+        "D": "Avogadro İlkesi"
+      },
+      "dogru": "B",
+      "aciklama": "P₁V₁=P₂V₂, sabit sıcaklık ve mol sayısında basınç ile hacmin ters orantılı olduğunu ifade eden Boyle yasasıdır."
+    },
+    {
+      "soru": "10 L hacimde, 2 atm basınçlı bir gaz sabit sıcaklıkta 5 L'ye sıkıştırılırsa yeni basıncı kaç atm olur?",
+      "siklar": {
+        "A": "4",
+        "B": "0,5",
+        "C": "20",
+        "D": "1"
+      },
+      "dogru": "A",
+      "aciklama": "P₁V₁=P₂V₂ → 2·10 = P₂·5 → P₂ = 4 atm."
+    },
+    {
+      "soru": "Boyle yasası hangi koşullar sabit tutulduğunda geçerlidir?",
+      "siklar": {
+        "A": "Sabit hacim",
+        "B": "Sabit basınç",
+        "C": "Sabit sıcaklık ve sabit mol sayısı",
+        "D": "Sabit yoğunluk"
+      },
+      "dogru": "C",
+      "aciklama": "Boyle yasası, sabit sıcaklık ve sabit mol sayısında basınç-hacim ilişkisini tanımlar."
+    }
+  ],
+  "kim::Gazlar::Charles Yasası": [
+    {
+      "soru": "Charles yasasına göre sabit basınçta bir gazın hacmi, sıcaklığıyla (Kelvin) nasıl ilişkilidir?",
+      "siklar": {
+        "A": "Ters orantılıdır",
+        "B": "Doğru orantılıdır",
+        "C": "İlişkisizdir",
+        "D": "Karekökle orantılıdır"
+      },
+      "dogru": "B",
+      "aciklama": "Charles yasası V/T=sabit ilişkisini verir; sabit basınçta hacim, mutlak sıcaklıkla doğru orantılıdır."
+    },
+    {
+      "soru": "27°C'de 2 L hacme sahip bir gaz, sabit basınçta 127°C'ye ısıtılırsa yeni hacmi kaç L olur? (V₁/T₁=V₂/T₂, sıcaklıklar: 300K ve 400K)",
+      "siklar": {
+        "A": "8/3",
+        "B": "4",
+        "C": "6",
+        "D": "2"
+      },
+      "dogru": "A",
+      "aciklama": "V₂ = V₁·T₂/T₁ = 2·400/300 = 8/3 L."
+    },
+    {
+      "soru": "V/T = sabit (sabit basınçta) ifadesi hangi gaz yasasını temsil eder?",
+      "siklar": {
+        "A": "Boyle Yasası",
+        "B": "Charles Yasası",
+        "C": "Gay-Lussac Yasası",
+        "D": "Avogadro İlkesi"
+      },
+      "dogru": "B",
+      "aciklama": "V/T=sabit, sabit basınçta hacim-sıcaklık ilişkisini tanımlayan Charles yasasıdır."
+    },
+    {
+      "soru": "Charles yasası hesaplamalarında sıcaklığın Kelvin biriminde kullanılmasının nedeni nedir?",
+      "siklar": {
+        "A": "Kelvin daha küçük bir birim olduğu için hesap kolaylaşır",
+        "B": "Celsius negatif değer alabileceğinden oranı bozar; Kelvin'de mutlak sıfır referans alınır",
+        "C": "Kelvin, Fahrenheit ile aynı değerdedir",
+        "D": "Formülde sıcaklık birimi önemli değildir"
+      },
+      "dogru": "B",
+      "aciklama": "V/T oranının fiziksel olarak anlamlı olması için sıcaklığın mutlak (Kelvin) skalada olması gerekir."
+    }
+  ],
+  "kim::Gazlar::Gay-Lussac Yasası": [
+    {
+      "soru": "Gay-Lussac yasasına göre sabit hacimde bir gazın basıncı, sıcaklığıyla (Kelvin) nasıl ilişkilidir?",
+      "siklar": {
+        "A": "Ters orantılıdır",
+        "B": "Doğru orantılıdır",
+        "C": "İlişkisizdir",
+        "D": "Logaritmik ilişkilidir"
+      },
+      "dogru": "B",
+      "aciklama": "Gay-Lussac yasası P/T=sabit ilişkisini verir; sabit hacimde basınç, mutlak sıcaklıkla doğru orantılıdır."
+    },
+    {
+      "soru": "300 K'de 2 atm basınca sahip bir gaz, sabit hacimde 600 K'ye ısıtılırsa basıncı kaç atm olur?",
+      "siklar": {
+        "A": "4",
+        "B": "1",
+        "C": "8",
+        "D": "2"
+      },
+      "dogru": "A",
+      "aciklama": "P₂ = P₁·T₂/T₁ = 2·600/300 = 4 atm."
+    },
+    {
+      "soru": "P/T = sabit (sabit hacimde) ifadesi hangi gaz yasasını temsil eder?",
+      "siklar": {
+        "A": "Boyle Yasası",
+        "B": "Charles Yasası",
+        "C": "Gay-Lussac Yasası",
+        "D": "Avogadro İlkesi"
+      },
+      "dogru": "C",
+      "aciklama": "P/T=sabit, sabit hacimde basınç-sıcaklık ilişkisini tanımlayan Gay-Lussac yasasıdır."
+    },
+    {
+      "soru": "Kapalı bir aerosol kutusunun ateşe yakın bırakıldığında patlama riski taşıması hangi gaz yasasıyla en iyi açıklanır?",
+      "siklar": {
+        "A": "Boyle Yasası",
+        "B": "Charles Yasası",
+        "C": "Gay-Lussac Yasası",
+        "D": "Graham Yasası"
+      },
+      "dogru": "C",
+      "aciklama": "Sabit (kapalı) hacimde sıcaklık artışı, Gay-Lussac yasasına göre basıncın hızla artmasına ve patlamaya yol açabilir."
+    }
+  ],
+  "kim::Gazlar::Avogadro İlkesi": [
+    {
+      "soru": "Avogadro ilkesine göre sabit sıcaklık ve basınçta bir gazın hacmi neyle doğru orantılıdır?",
+      "siklar": {
+        "A": "Sıcaklıkla",
+        "B": "Mol sayısıyla",
+        "C": "Basınçla",
+        "D": "Yoğunlukla"
+      },
+      "dogru": "B",
+      "aciklama": "Avogadro ilkesine göre V/n=sabit; sabit T ve P'de hacim, mol sayısıyla doğru orantılıdır."
+    },
+    {
+      "soru": "Aynı sıcaklık ve basınçta, eşit hacimdeki iki farklı gaz için ne söylenebilir?",
+      "siklar": {
+        "A": "Eşit sayıda molekül içerirler",
+        "B": "Eşit kütlede olurlar",
+        "C": "Aynı yoğunluğa sahiptirler",
+        "D": "Aynı renkte olurlar"
+      },
+      "dogru": "A",
+      "aciklama": "Avogadro ilkesine göre aynı T ve P'de eşit hacimdeki gazlar eşit sayıda molekül (eşit mol) içerir."
+    },
+    {
+      "soru": "STP (0°C, 1 atm) koşullarında 1 mol ideal gazın hacmi yaklaşık kaç litredir?",
+      "siklar": {
+        "A": "22,4",
+        "B": "24",
+        "C": "1",
+        "D": "11,2"
+      },
+      "dogru": "A",
+      "aciklama": "STP koşullarında 1 mol ideal gaz yaklaşık 22,4 L hacim kaplar."
+    },
+    {
+      "soru": "2 mol O₂ gazı ile 2 mol N₂ gazı aynı sıcaklık ve basınçta bulunduruluyorsa hacimleri için ne söylenebilir?",
+      "siklar": {
+        "A": "O₂'nin hacmi daha büyüktür",
+        "B": "N₂'nin hacmi daha büyüktür",
+        "C": "Hacimleri birbirine eşittir",
+        "D": "Hacim, mol sayısından bağımsızdır"
+      },
+      "dogru": "C",
+      "aciklama": "Avogadro ilkesine göre aynı T,P'de hacim sadece mol sayısına bağlıdır; mol sayıları eşit olduğundan hacimleri eşittir."
+    }
+  ],
   "kim::Gazlar::İdeal Gaz Yasası (PV=nRT)": [
     {
       "soru": "0°C ve 1 atm'de 1 mol ideal gazın hacmi yaklaşık kaçtır?",
@@ -4931,6 +5989,558 @@ const QUESTIONS = {
       },
       "dogru": "B",
       "aciklama": "Düşük basınç ve yüksek sıcaklıkta moleküller arası etkileşim ve öz hacim ihmal edilebilir."
+    }
+  ],
+  "kim::Gazlar::Dalton'ın Kısmi Basınçlar Yasası": [
+    {
+      "soru": "Dalton'ın kısmi basınçlar yasasına göre bir gaz karışımının toplam basıncı neye eşittir?",
+      "siklar": {
+        "A": "En büyük kısmi basınca",
+        "B": "Bileşenlerin kısmi basınçlarının toplamına",
+        "C": "Bileşenlerin kısmi basınçlarının ortalamasına",
+        "D": "Sadece en yüksek mol oranına sahip gazın basıncına"
+      },
+      "dogru": "B",
+      "aciklama": "Dalton yasasına göre Ptoplam = P₁+P₂+P₃+... şeklinde kısmi basınçların toplamına eşittir."
+    },
+    {
+      "soru": "Bir kapta 2 atm N₂ ve 3 atm O₂ bulunuyorsa toplam basınç kaç atm'dir?",
+      "siklar": {
+        "A": "5",
+        "B": "1",
+        "C": "6",
+        "D": "1,5"
+      },
+      "dogru": "A",
+      "aciklama": "Ptoplam = P(N₂) + P(O₂) = 2 + 3 = 5 atm."
+    },
+    {
+      "soru": "Bir gaz karışımında bir bileşenin kısmi basıncı, o bileşenin mol kesri ile hangi büyüklüğün çarpımına eşittir?",
+      "siklar": {
+        "A": "Sıcaklık",
+        "B": "Toplam basınç",
+        "C": "Hacim",
+        "D": "Yoğunluk"
+      },
+      "dogru": "B",
+      "aciklama": "Pᵢ = Xᵢ · Ptoplam, burada Xᵢ bileşenin mol kesridir."
+    },
+    {
+      "soru": "Toplam basıncı 10 atm olan bir karışımda bir gazın mol kesri 0,4 ise bu gazın kısmi basıncı kaç atm'dir?",
+      "siklar": {
+        "A": "4",
+        "B": "0,4",
+        "C": "2,5",
+        "D": "6"
+      },
+      "dogru": "A",
+      "aciklama": "Pᵢ = Xᵢ·Ptoplam = 0,4·10 = 4 atm."
+    }
+  ],
+  "kim::Gazlar::Graham'ın Yayılma Yasası": [
+    {
+      "soru": "Graham yayılma yasasına göre bir gazın yayılma (efüzyon) hızı neyle ters orantılıdır?",
+      "siklar": {
+        "A": "Molar kütlenin karekökü ile",
+        "B": "Sıcaklıkla",
+        "C": "Basınçla",
+        "D": "Hacimle"
+      },
+      "dogru": "A",
+      "aciklama": "Graham yasasına göre yayılma hızı ∝ 1/√M; molar kütle büyüdükçe yayılma hızı azalır."
+    },
+    {
+      "soru": "İki gazdan molar kütlesi küçük olan, molar kütlesi büyük olana göre nasıl yayılır?",
+      "siklar": {
+        "A": "Daha hızlı",
+        "B": "Daha yavaş",
+        "C": "Aynı hızda",
+        "D": "Yayılmaz"
+      },
+      "dogru": "A",
+      "aciklama": "Molar kütlesi küçük olan gaz molekülleri daha hızlı hareket eder ve daha hızlı yayılır."
+    },
+    {
+      "soru": "H₂ (M=2) gazının yayılma hızı, O₂ (M=32) gazına göre kaç kat daha hızlıdır? (√(32/2)=√16=4)",
+      "siklar": {
+        "A": "4",
+        "B": "16",
+        "C": "2",
+        "D": "8"
+      },
+      "dogru": "A",
+      "aciklama": "Hız oranı = √(M_O₂/M_H₂) = √(32/2) = √16 = 4."
+    },
+    {
+      "soru": "Graham yasası hangi süreçlerle ilgilidir?",
+      "siklar": {
+        "A": "Sadece sıvıların kaynamasıyla",
+        "B": "Gazların efüzyon ve difüzyonuyla",
+        "C": "Katıların erimesiyle",
+        "D": "Çözeltilerin yoğunlaşmasıyla"
+      },
+      "dogru": "B",
+      "aciklama": "Graham yasası, gazların bir delikten kaçışı (efüzyon) ve karışması (difüzyon) hızlarını açıklar."
+    }
+  ],
+  "kim::Gazlar::Gaz Stokiyometrisi": [
+    {
+      "soru": "STP koşullarında 2 mol CO₂ gazının hacmi kaç litredir? (1 mol = 22,4 L)",
+      "siklar": {
+        "A": "44,8",
+        "B": "22,4",
+        "C": "11,2",
+        "D": "2"
+      },
+      "dogru": "A",
+      "aciklama": "2 mol × 22,4 L/mol = 44,8 L."
+    },
+    {
+      "soru": "N₂ + 3H₂ → 2NH₃ tepkimesinde 1 mol N₂ tamamen tepkimeye girerse kaç mol NH₃ oluşur?",
+      "siklar": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "dogru": "B",
+      "aciklama": "Denklem katsayılarına göre 1 mol N₂'den 2 mol NH₃ oluşur."
+    },
+    {
+      "soru": "Sabit sıcaklık ve basınçta, bir tepkimedeki gazların hacim oranları hangi büyüklüğe eşittir?",
+      "siklar": {
+        "A": "Kütle oranına",
+        "B": "Denklemdeki mol katsayıları oranına",
+        "C": "Yoğunluk oranına",
+        "D": "Sıcaklık oranına"
+      },
+      "dogru": "B",
+      "aciklama": "Avogadro ilkesi sonucu, sabit T ve P'de gaz hacim oranları mol katsayıları oranına eşittir."
+    },
+    {
+      "soru": "STP'de 5,6 L CO₂ gazı kaç moldür? (1 mol = 22,4 L)",
+      "siklar": {
+        "A": "0,25",
+        "B": "0,5",
+        "C": "1",
+        "D": "2"
+      },
+      "dogru": "A",
+      "aciklama": "n = V/22,4 = 5,6/22,4 = 0,25 mol."
+    }
+  ],
+  "kim::Gazlar::Gerçek Gazlar": [
+    {
+      "soru": "Gerçek gazlar hangi koşullarda ideal gaz davranışından en çok sapar?",
+      "siklar": {
+        "A": "Yüksek sıcaklık ve düşük basınçta",
+        "B": "Düşük sıcaklık ve yüksek basınçta",
+        "C": "Sadece STP koşullarında",
+        "D": "Hiçbir koşulda sapma göstermez"
+      },
+      "dogru": "B",
+      "aciklama": "Düşük sıcaklık ve yüksek basınçta moleküller arası etkileşimler ve moleküllerin öz hacmi önem kazanır, ideal davranıştan sapma artar."
+    },
+    {
+      "soru": "İdeal gaz yasasının varsayımlarından farklı olarak gerçek gaz moleküllerinde hangi özellikler ihmal edilemez?",
+      "siklar": {
+        "A": "Moleküllerin hacmi ve aralarındaki çekim kuvvetleri",
+        "B": "Moleküllerin rengi",
+        "C": "Moleküllerin elektrik yükü",
+        "D": "Moleküllerin şekli"
+      },
+      "dogru": "A",
+      "aciklama": "Gerçek gazlarda molekül hacmi ve moleküller arası çekim kuvvetleri ihmal edilemez; ideal gaz modeli bunları sıfır kabul eder."
+    },
+    {
+      "soru": "Gerçek gazların davranışını ideal gaz yasasına göre düzeltmek için kullanılan denklem hangisidir?",
+      "siklar": {
+        "A": "Nernst denklemi",
+        "B": "Van der Waals denklemi",
+        "C": "Arrhenius denklemi",
+        "D": "Henderson-Hasselbalch denklemi"
+      },
+      "dogru": "B",
+      "aciklama": "Van der Waals denklemi, molekül hacmi ve moleküller arası çekim kuvvetlerini hesaba katarak ideal gaz yasasını düzeltir."
+    },
+    {
+      "soru": "Gerçek gazların ideal gaza en çok yaklaştığı koşullar hangisidir?",
+      "siklar": {
+        "A": "Yüksek sıcaklık, düşük basınç",
+        "B": "Düşük sıcaklık, yüksek basınç",
+        "C": "Düşük sıcaklık, düşük basınç",
+        "D": "Yüksek sıcaklık, yüksek basınç"
+      },
+      "dogru": "A",
+      "aciklama": "Yüksek sıcaklık ve düşük basınçta moleküller arası mesafe büyük, etkileşimler ihmal edilebilir; gerçek gaz ideal gaza en çok yaklaşır."
+    }
+  ],
+  "kim::Sıvı Çözeltiler ve Çözünürlük::Çözünme Süreci ve Entalpisi": [
+    {
+      "soru": "'Benzer benzeri çözer' ilkesine göre polar bir çözücü hangi tür çözüneni daha iyi çözer?",
+      "siklar": {
+        "A": "Apolar maddeleri",
+        "B": "Polar veya iyonik maddeleri",
+        "C": "Sadece gazları",
+        "D": "Hiçbir maddeyi"
+      },
+      "dogru": "B",
+      "aciklama": "Polar çözücüler (örn. su), polar veya iyonik maddeleri benzer molekül etkileşimleri nedeniyle daha iyi çözer."
+    },
+    {
+      "soru": "Bir madde suda çözünürken ısı açığa çıkıyorsa (çözelti ısınıyorsa) bu çözünme süreci nasıl adlandırılır?",
+      "siklar": {
+        "A": "Endotermik",
+        "B": "Ekzotermik",
+        "C": "İzotermik",
+        "D": "Adyabatik"
+      },
+      "dogru": "B",
+      "aciklama": "Çözünme sırasında ısı açığa çıkması (sıcaklık artışı), çözünme sürecinin ekzotermik olduğunu gösterir."
+    },
+    {
+      "soru": "İyonik bir bileşiğin suda çözünmesi sırasında su moleküllerinin iyonları çevrelemesi sürecine ne ad verilir?",
+      "siklar": {
+        "A": "İyonlaşma",
+        "B": "Hidratasyon",
+        "C": "Polimerizasyon",
+        "D": "Süblimleşme"
+      },
+      "dogru": "B",
+      "aciklama": "Su moleküllerinin iyonları sarması (çevrelemesi) sürecine hidratasyon denir."
+    },
+    {
+      "soru": "NH₄NO₃'ün suda çözünmesi ortamın sıcaklığını düşürür. Bu çözünme süreci için ne söylenebilir?",
+      "siklar": {
+        "A": "Ekzotermiktir, ısı verir",
+        "B": "Endotermiktir, ortamdan ısı alır",
+        "C": "Isı değişimi olmaz",
+        "D": "Kimyasal bir tepkime değildir, ısıyla ilgisi yoktur"
+      },
+      "dogru": "B",
+      "aciklama": "Çözünme sırasında ortamın sıcaklığının düşmesi, sürecin ortamdan ısı aldığını (endotermik olduğunu) gösterir."
+    }
+  ],
+  "kim::Sıvı Çözeltiler ve Çözünürlük::Çözünürlük ve Bunu Etkileyen Faktörler": [
+    {
+      "soru": "Katı maddelerin sıvılardaki çözünürlüğü, genel olarak sıcaklıkla nasıl değişir?",
+      "siklar": {
+        "A": "Genellikle artar",
+        "B": "Genellikle azalır",
+        "C": "Hiç değişmez",
+        "D": "Her zaman önce artar sonra azalır"
+      },
+      "dogru": "A",
+      "aciklama": "Çoğu katı maddenin çözünürlüğü sıcaklık arttıkça artar."
+    },
+    {
+      "soru": "Gazların sıvılardaki çözünürlüğü sıcaklık arttıkça nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Önce azalır sonra artar"
+      },
+      "dogru": "B",
+      "aciklama": "Sıcaklık arttıkça gaz moleküllerinin kinetik enerjisi artar ve sıvıdan kaçma eğilimleri artar; çözünürlük azalır."
+    },
+    {
+      "soru": "Bir gazın sıvı içindeki çözünürlüğü, gazın sıvı üzerindeki kısmi basıncı arttıkça nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Sıfıra iner"
+      },
+      "dogru": "A",
+      "aciklama": "Henry yasasına göre bir gazın çözünürlüğü, o gazın kısmi basıncıyla doğru orantılıdır."
+    },
+    {
+      "soru": "Karbonatlı içeceklerin soğuk tutulmasının CO₂ kaybını azaltması hangi ilkeyle açıklanır?",
+      "siklar": {
+        "A": "Soğukta CO₂'nin çözünürlüğü artar, gaz kaçışı azalır",
+        "B": "Soğukta CO₂'nin çözünürlüğü azalır",
+        "C": "Sıcaklık çözünürlüğü etkilemez",
+        "D": "Soğuk ortamda basınç otomatik olarak artar"
+      },
+      "dogru": "A",
+      "aciklama": "Gazların çözünürlüğü düşük sıcaklıkta arttığından, soğuk içecekte CO₂ daha iyi çözünür ve daha az kaçar."
+    }
+  ],
+  "kim::Sıvı Çözeltiler ve Çözünürlük::Derişim Birimleri": [
+    {
+      "soru": "1 litre çözeltide 2 mol çözünen madde varsa, bu çözeltinin molaritesi (M) kaçtır?",
+      "siklar": {
+        "A": "2",
+        "B": "0,5",
+        "C": "1",
+        "D": "4"
+      },
+      "dogru": "A",
+      "aciklama": "Molarite = çözünenin mol sayısı / çözeltinin hacmi (L) = 2/1 = 2 M."
+    },
+    {
+      "soru": "Molalite (molal derişim) hangi oranı ifade eder?",
+      "siklar": {
+        "A": "Çözünenin mol sayısı / çözeltinin hacmi (L)",
+        "B": "Çözünenin mol sayısı / çözücünün kütlesi (kg)",
+        "C": "Çözünenin kütlesi / çözeltinin kütlesi",
+        "D": "Çözünenin mol sayısı / toplam mol sayısı"
+      },
+      "dogru": "B",
+      "aciklama": "Molalite, çözünenin mol sayısının çözücünün kütlesine (kg) bölünmesiyle bulunur."
+    },
+    {
+      "soru": "Bir çözeltide toplam 5 mol madde varken bunun 1 molü çözünen ise çözünenin mol kesri kaçtır?",
+      "siklar": {
+        "A": "0,2",
+        "B": "0,5",
+        "C": "5",
+        "D": "1"
+      },
+      "dogru": "A",
+      "aciklama": "Mol kesri = çözünenin mol sayısı / toplam mol sayısı = 1/5 = 0,2."
+    },
+    {
+      "soru": "100 g çözeltide 20 g çözünen madde varsa, çözeltinin kütlece yüzde derişimi (%) kaçtır?",
+      "siklar": {
+        "A": "20",
+        "B": "0,2",
+        "C": "80",
+        "D": "2"
+      },
+      "dogru": "A",
+      "aciklama": "Kütlece % = (çözünen kütlesi/çözelti kütlesi)·100 = (20/100)·100 = %20."
+    }
+  ],
+  "kim::Sıvı Çözeltiler ve Çözünürlük::Donma Noktası Düşmesi": [
+    {
+      "soru": "Donma noktası düşmesi (ΔTf) hangi büyüklükle doğru orantılıdır?",
+      "siklar": {
+        "A": "Çözücünün hacmiyle",
+        "B": "Çözeltinin molalitesiyle",
+        "C": "Çözeltinin rengiyle",
+        "D": "Çözücünün molar kütlesiyle"
+      },
+      "dogru": "B",
+      "aciklama": "ΔTf = Kf·m formülüne göre donma noktası düşmesi molalite (m) ile doğru orantılıdır."
+    },
+    {
+      "soru": "Karlı havalarda yollara tuz dökülmesi hangi koligatif özellikle ilgilidir?",
+      "siklar": {
+        "A": "Kaynama noktasını yükseltmekle",
+        "B": "Donma noktasını düşürmekle",
+        "C": "Osmotik basıncı artırmakla",
+        "D": "Buhar basıncını artırmakla"
+      },
+      "dogru": "B",
+      "aciklama": "Tuz, suyun donma noktasını düşürerek buzlanmayı önler veya geciktirir."
+    },
+    {
+      "soru": "Aynı molal derişimde hazırlanan iyonik (örn. NaCl) bir çözeltinin donma noktası düşmesi, moleküler (örn. şeker) bir çözeltiye göre nasıldır?",
+      "siklar": {
+        "A": "Daha küçüktür",
+        "B": "Daha büyüktür (iyonlaşma nedeniyle parçacık sayısı artar)",
+        "C": "Aynıdır",
+        "D": "Karşılaştırılamaz"
+      },
+      "dogru": "B",
+      "aciklama": "NaCl suda Na⁺ ve Cl⁻ iyonlarına ayrışarak parçacık sayısını ikiye katlar, bu da donma noktası düşmesini artırır."
+    },
+    {
+      "soru": "Donma noktası düşmesi bir koligatif özellik olarak temel olarak neye bağlıdır?",
+      "siklar": {
+        "A": "Çözünenin cinsine",
+        "B": "Çözeltideki çözünmüş parçacık sayısına (derişime)",
+        "C": "Çözeltinin rengine",
+        "D": "Çözücünün kaynama noktasına"
+      },
+      "dogru": "B",
+      "aciklama": "Koligatif özellikler, çözünenin türünden bağımsız olarak çözeltideki toplam parçacık sayısına (derişime) bağlıdır."
+    }
+  ],
+  "kim::Sıvı Çözeltiler ve Çözünürlük::Kaynama Noktası Yükselmesi": [
+    {
+      "soru": "Bir çözeltinin kaynama noktası, saf çözücünün kaynama noktasına göre nasıldır?",
+      "siklar": {
+        "A": "Daha düşüktür",
+        "B": "Daha yüksektir",
+        "C": "Aynıdır",
+        "D": "Belirsizdir"
+      },
+      "dogru": "B",
+      "aciklama": "Çözünen madde eklenmesi buhar basıncını düşürür, bu da kaynama noktasının saf çözücüye göre yükselmesine yol açar."
+    },
+    {
+      "soru": "Kaynama noktası yükselmesi (ΔTb) hangi formülle hesaplanır?",
+      "siklar": {
+        "A": "ΔTb = Kb·m",
+        "B": "ΔTb = Kb/m",
+        "C": "ΔTb = Kb + m",
+        "D": "ΔTb = Kb·V"
+      },
+      "dogru": "A",
+      "aciklama": "Kaynama noktası yükselmesi, kaynama noktası sabiti (Kb) ile molalitenin (m) çarpımına eşittir."
+    },
+    {
+      "soru": "Çözeltinin buhar basıncının saf çözücüye göre düşük olması, kaynama noktasının yükselmesini nasıl açıklar?",
+      "siklar": {
+        "A": "Kaynamak için buhar basıncının atmosfer basıncına eşitlenmesi gerekir; bu daha yüksek sıcaklıkta gerçekleşir",
+        "B": "Buhar basıncı kaynamayı hiç etkilemez",
+        "C": "Düşük buhar basıncı kaynamayı hızlandırır ve sıcaklığı düşürür",
+        "D": "Buhar basıncı arttıkça kaynama noktası da artar"
+      },
+      "dogru": "A",
+      "aciklama": "Sıvı, buhar basıncı dış basınca eşit olduğunda kaynar; düşük buhar basıncı bu eşitliğin daha yüksek sıcaklıkta gerçekleşmesine yol açar."
+    },
+    {
+      "soru": "Aynı molal derişimdeki iki çözeltiden iyonlaşan (örn. NaCl) olanının kaynama noktası yükselmesi, iyonlaşmayan (örn. glikoz) olana göre nasıldır?",
+      "siklar": {
+        "A": "Daha küçüktür",
+        "B": "Daha büyüktür",
+        "C": "Aynıdır",
+        "D": "Sıfırdır"
+      },
+      "dogru": "B",
+      "aciklama": "İyonlaşma, çözeltideki toplam parçacık sayısını artırarak kaynama noktası yükselmesini büyütür."
+    }
+  ],
+  "kim::Sıvı Çözeltiler ve Çözünürlük::Osmotik Basınç": [
+    {
+      "soru": "Osmotik basınç formülü π=MRT'de 'M' neyi temsil eder?",
+      "siklar": {
+        "A": "Çözeltinin molaritesini",
+        "B": "Çözücünün molar kütlesini",
+        "C": "Çözeltinin kütlesini",
+        "D": "Mol kesrini"
+      },
+      "dogru": "A",
+      "aciklama": "π=MRT formülünde M, çözeltinin molaritesidir (mol/L)."
+    },
+    {
+      "soru": "Yarı geçirgen bir zar ile ayrılmış, derişimleri farklı iki çözelti arasında çözücü moleküllerinin net hareketi hangi yöne olur?",
+      "siklar": {
+        "A": "Derişik çözeltiden seyreltik çözeltiye",
+        "B": "Seyreltik çözeltiden derişik çözeltiye",
+        "C": "Her iki yönde eşit miktarda, net hareket olmaz",
+        "D": "Sadece sıcaklıklar eşitlenene kadar"
+      },
+      "dogru": "B",
+      "aciklama": "Osmoz, çözücü moleküllerinin seyreltik (derişimi düşük) taraftan derişik tarafa net hareketidir."
+    },
+    {
+      "soru": "Kırmızı kan hücreleri hipertonik bir çözeltiye konulduğunda ne olur?",
+      "siklar": {
+        "A": "Hücre su alır ve şişer/patlar",
+        "B": "Hücre su kaybeder ve büzüşür",
+        "C": "Hücrede hiçbir değişiklik olmaz",
+        "D": "Hücre bölünmeye başlar"
+      },
+      "dogru": "B",
+      "aciklama": "Hipertonik ortamda hücre dışı derişim daha yüksek olduğundan hücre su kaybeder ve büzüşür."
+    },
+    {
+      "soru": "Aynı sıcaklıkta, derişimi daha yüksek olan bir çözeltinin osmotik basıncı, derişimi düşük olana göre nasıldır?",
+      "siklar": {
+        "A": "Daha düşüktür",
+        "B": "Daha yüksektir",
+        "C": "Aynıdır",
+        "D": "Sıfırdır"
+      },
+      "dogru": "B",
+      "aciklama": "π=MRT formülüne göre osmotik basınç, molarite (derişim) ile doğru orantılıdır."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Enerji::İç Enerji ve Entalpi": [
+    {
+      "soru": "Entalpi (H), termodinamikte hangi büyüklüklerin kombinasyonu olarak tanımlanır?",
+      "siklar": {
+        "A": "H = U + PV",
+        "B": "H = U - PV",
+        "C": "H = U × PV",
+        "D": "H = U / PV"
+      },
+      "dogru": "A",
+      "aciklama": "Entalpi, iç enerji (U) ile basınç-hacim çarpımının (PV) toplamı olarak tanımlanır: H = U + PV."
+    },
+    {
+      "soru": "Sabit basınçta gerçekleşen bir tepkimede sistemin alışverişte bulunduğu ısı (q), hangi termodinamik büyüklüğe eşittir?",
+      "siklar": {
+        "A": "İç enerji değişimine (ΔU)",
+        "B": "Entalpi değişimine (ΔH)",
+        "C": "Entropi değişimine (ΔS)",
+        "D": "Serbest enerji değişimine (ΔG)"
+      },
+      "dogru": "B",
+      "aciklama": "Sabit basınçta q = ΔH'dir; bu nedenle tepkime ısıları genellikle entalpi değişimi olarak verilir."
+    },
+    {
+      "soru": "İç enerji (U) ve entalpi (H) gibi büyüklüklerin 'hal fonksiyonu' olması ne anlama gelir?",
+      "siklar": {
+        "A": "Değerleri yalnızca başlangıç ve son hale bağlıdır, izlenen yola bağlı değildir",
+        "B": "Değerleri sürekli sabittir, hiç değişmez",
+        "C": "Sadece gazlar için tanımlıdır",
+        "D": "Negatif değer alamazlar"
+      },
+      "dogru": "A",
+      "aciklama": "Hal fonksiyonları, sistemin sadece bulunduğu hale bağlıdır; değişim değerleri izlenen yoldan bağımsızdır."
+    },
+    {
+      "soru": "Bir tepkimede ΔH < 0 ise bu tepkime için ne söylenebilir?",
+      "siklar": {
+        "A": "Tepkime endotermiktir, ısı alır",
+        "B": "Tepkime ekzotermiktir, ısı verir",
+        "C": "Tepkime gerçekleşmez",
+        "D": "Tepkime denge halindedir"
+      },
+      "dogru": "B",
+      "aciklama": "ΔH negatifse sistem çevresine ısı verir; tepkime ekzotermiktir."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Enerji::Ekzotermik ve Endotermik Tepkimeler": [
+    {
+      "soru": "Ekzotermik bir tepkimede ürünlerin enerjisi, girenlerin (reaktiflerin) enerjisine göre nasıldır?",
+      "siklar": {
+        "A": "Daha yüksektir",
+        "B": "Daha düşüktür",
+        "C": "Eşittir",
+        "D": "Karşılaştırılamaz"
+      },
+      "dogru": "B",
+      "aciklama": "Ekzotermik tepkimede sistem enerji kaybeder; ürünlerin enerjisi girenlerden daha düşüktür."
+    },
+    {
+      "soru": "Yanma (combustion) tepkimeleri genel olarak hangi tür tepkimedir?",
+      "siklar": {
+        "A": "Endotermik",
+        "B": "Ekzotermik",
+        "C": "Nötr",
+        "D": "Denge tepkimesi"
+      },
+      "dogru": "B",
+      "aciklama": "Yanma tepkimeleri ısı ve genellikle ışık açığa çıkaran ekzotermik tepkimelerdir."
+    },
+    {
+      "soru": "Endotermik bir tepkime gerçekleşirken ortamın (çevrenin) sıcaklığında ne gözlenir?",
+      "siklar": {
+        "A": "Sıcaklık artar",
+        "B": "Sıcaklık düşer",
+        "C": "Sıcaklık değişmez",
+        "D": "Önce artar sonra düşer"
+      },
+      "dogru": "B",
+      "aciklama": "Endotermik tepkime çevresinden ısı aldığı için çevrenin sıcaklığı düşer."
+    },
+    {
+      "soru": "Fotosentez tepkimesi (ışık enerjisinin soğurulduğu tepkime) enerji açısından hangi sınıfa girer?",
+      "siklar": {
+        "A": "Ekzotermik",
+        "B": "Endotermik",
+        "C": "Adyabatik",
+        "D": "İzotermik"
+      },
+      "dogru": "B",
+      "aciklama": "Fotosentezde sistem dışarıdan (güneşten) enerji soğurur; bu nedenle endotermik bir süreçtir."
     }
   ],
   "kim::Kimyasal Tepkimelerde Enerji::Hess Yasası": [
@@ -5045,6 +6655,328 @@ const QUESTIONS = {
       "aciklama": "ΔH = Σ(kırılan bağ enerjileri) - Σ(oluşan bağ enerjileri)."
     }
   ],
+  "kim::Kimyasal Tepkimelerde Enerji::Standart Oluşum Entalpileri": [
+    {
+      "soru": "Standart oluşum entalpisi (ΔHf°) neyi tanımlar?",
+      "siklar": {
+        "A": "Bir bileşiğin standart koşullarda elementlerinden oluşurken meydana gelen entalpi değişimini",
+        "B": "Bir bileşiğin yanma entalpisini",
+        "C": "Bir bileşiğin kaynama noktasını",
+        "D": "Bir tepkimenin hız sabitini"
+      },
+      "dogru": "A",
+      "aciklama": "ΔHf°, standart hallerindeki elementlerden 1 mol bileşik oluşurken gerçekleşen entalpi değişimidir."
+    },
+    {
+      "soru": "Standart hallerindeki elementlerin (örneğin O₂(g), C(grafit)) standart oluşum entalpisi (ΔHf°) kaç kabul edilir?",
+      "siklar": {
+        "A": "1",
+        "B": "100",
+        "C": "0",
+        "D": "Negatif sonsuz"
+      },
+      "dogru": "C",
+      "aciklama": "Standart hallerindeki elementlerin oluşum entalpisi referans olarak 0 kabul edilir."
+    },
+    {
+      "soru": "Bir tepkimenin standart entalpi değişimi (ΔH°rxn), ürünlerin ve girenlerin oluşum entalpileri ile nasıl hesaplanır?",
+      "siklar": {
+        "A": "ΔH°rxn = Σ ΔHf°(girenler) - Σ ΔHf°(ürünler)",
+        "B": "ΔH°rxn = Σ ΔHf°(ürünler) - Σ ΔHf°(girenler)",
+        "C": "ΔH°rxn = Σ ΔHf°(ürünler) + Σ ΔHf°(girenler)",
+        "D": "ΔH°rxn = ΔHf°(girenler) / ΔHf°(ürünler)"
+      },
+      "dogru": "B",
+      "aciklama": "ΔH°rxn = Σ ΔHf°(ürünler) - Σ ΔHf°(girenler)."
+    },
+    {
+      "soru": "Bir bileşiğin standart oluşum entalpisi negatifse, bu bileşiğin elementlerinden oluşumu hakkında ne söylenebilir?",
+      "siklar": {
+        "A": "Endotermiktir",
+        "B": "Ekzotermiktir",
+        "C": "Gerçekleşmez",
+        "D": "Denge halindedir"
+      },
+      "dogru": "B",
+      "aciklama": "ΔHf°<0 olması, bileşiğin oluşumu sırasında ısı açığa çıktığını, yani sürecin ekzotermik olduğunu gösterir."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Enerji::Bağ Enerjileri": [
+    {
+      "soru": "Bir kimyasal bağı koparmak için gereken enerjiye 'bağ enerjisi' denir. Bu enerjinin işareti nasıldır?",
+      "siklar": {
+        "A": "Her zaman negatiftir",
+        "B": "Her zaman pozitiftir (enerji alınır/soğurulur)",
+        "C": "Sıfırdır",
+        "D": "Sıcaklığa bağlı olarak işaret değiştirir"
+      },
+      "dogru": "B",
+      "aciklama": "Bağ koparmak enerji gerektiren (endotermik) bir süreçtir; bağ enerjisi her zaman pozitif kabul edilir."
+    },
+    {
+      "soru": "Bağ enerjileri kullanılarak bir tepkimenin entalpi değişimi (ΔH) nasıl hesaplanır?",
+      "siklar": {
+        "A": "ΔH = Σ(kırılan bağ enerjileri) - Σ(oluşan bağ enerjileri)",
+        "B": "ΔH = Σ(oluşan bağ enerjileri) - Σ(kırılan bağ enerjileri)",
+        "C": "ΔH = Σ(kırılan) + Σ(oluşan)",
+        "D": "ΔH = Σ(kırılan) × Σ(oluşan)"
+      },
+      "dogru": "A",
+      "aciklama": "ΔH = Σ(kırılan bağların enerjisi) - Σ(oluşan bağların enerjisi)."
+    },
+    {
+      "soru": "Bir kimyasal bağın bağ enerjisi ne kadar büyükse, bu bağ hakkında ne söylenebilir?",
+      "siklar": {
+        "A": "Daha kolay kırılır",
+        "B": "Daha kararlıdır (kırılması daha güçtür)",
+        "C": "Daha uzundur",
+        "D": "Polar değildir"
+      },
+      "dogru": "B",
+      "aciklama": "Bağ enerjisi büyük olan bağlar daha kararlıdır ve kırılmaları daha fazla enerji gerektirir."
+    },
+    {
+      "soru": "Bir tepkimede toplam kırılan bağ enerjisi, toplam oluşan bağ enerjisinden büyükse tepkime hangi türdedir?",
+      "siklar": {
+        "A": "Ekzotermik",
+        "B": "Endotermik",
+        "C": "Denge tepkimesi",
+        "D": "Kataliz gerektirir"
+      },
+      "dogru": "B",
+      "aciklama": "ΔH = Σ(kırılan)-Σ(oluşan) > 0 olur; pozitif ΔH endotermik tepkimeyi gösterir."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Enerji::Kalorimetri": [
+    {
+      "soru": "Kalorimetride bir tepkimenin açığa çıkardığı veya soğurduğu ısı (q) hangi formülle hesaplanır?",
+      "siklar": {
+        "A": "q = m·c·ΔT",
+        "B": "q = m/(c·ΔT)",
+        "C": "q = m+c+ΔT",
+        "D": "q = c/(m·ΔT)"
+      },
+      "dogru": "A",
+      "aciklama": "q = m·c·ΔT formülünde m kütle, c özgül ısı, ΔT sıcaklık değişimidir."
+    },
+    {
+      "soru": "q = m·c·ΔT formülünde 'c' neyi temsil eder?",
+      "siklar": {
+        "A": "Kütleyi",
+        "B": "Özgül ısıyı",
+        "C": "Sıcaklık değişimini",
+        "D": "Hacmi"
+      },
+      "dogru": "B",
+      "aciklama": "c, maddenin özgül ısı kapasitesidir (1 g maddenin sıcaklığını 1°C artırmak için gereken ısı)."
+    },
+    {
+      "soru": "Bir kalorimetrede ekzotermik bir tepkime gerçekleştiğinde, kalorimetredeki suyun sıcaklığında genellikle ne gözlenir?",
+      "siklar": {
+        "A": "Sıcaklık artar",
+        "B": "Sıcaklık düşer",
+        "C": "Sıcaklık değişmez",
+        "D": "Su donar"
+      },
+      "dogru": "A",
+      "aciklama": "Ekzotermik tepkime ısı açığa çıkardığından kalorimetredeki suyun sıcaklığı artar."
+    },
+    {
+      "soru": "İzole bir kalorimetrik sistemde, tepkimenin açığa çıkardığı ısı ile su/çevre tarafından soğurulan ısı arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "Birbirine eşittir (enerjinin korunumu)",
+        "B": "Açığa çıkan ısı her zaman daha büyüktür",
+        "C": "Soğurulan ısı her zaman daha büyüktür",
+        "D": "Aralarında bir ilişki yoktur"
+      },
+      "dogru": "A",
+      "aciklama": "İzole sistemde enerji korunur; tepkimenin verdiği ısı, çevre tarafından soğurulan ısıya eşittir."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Hız::Reaksiyon Hızı ve Ölçümü": [
+    {
+      "soru": "Bir kimyasal tepkimenin hızı temel olarak nasıl tanımlanır?",
+      "siklar": {
+        "A": "Belirli bir sürede oluşan toplam ürün miktarı",
+        "B": "Birim zamanda reaktif veya ürün derişimindeki değişim",
+        "C": "Tepkimenin tamamlanması için gereken toplam süre",
+        "D": "Tepkimenin denge sabiti"
+      },
+      "dogru": "B",
+      "aciklama": "Reaksiyon hızı, derişimin zamana göre değişim oranı olarak tanımlanır."
+    },
+    {
+      "soru": "Reaksiyon hızının birimi genellikle hangisidir?",
+      "siklar": {
+        "A": "mol",
+        "B": "mol/L",
+        "C": "mol/(L·s)",
+        "D": "L/s"
+      },
+      "dogru": "C",
+      "aciklama": "Hız, derişim değişiminin zamana bölünmesiyle bulunur; birimi mol/(L·s) gibidir."
+    },
+    {
+      "soru": "Bir tepkimenin hızı laboratuvarda hangi yöntemle ölçülebilir?",
+      "siklar": {
+        "A": "Sadece sıcaklık ölçümüyle",
+        "B": "Zamanla derişim, hacim veya renk değişimini takip ederek",
+        "C": "Sadece kütle ölçümüyle",
+        "D": "Sadece pH ölçümüyle"
+      },
+      "dogru": "B",
+      "aciklama": "Reaksiyon hızı, zamanla gözlenebilen derişim, hacim, basınç veya renk değişimleri izlenerek ölçülür."
+    },
+    {
+      "soru": "Bir tepkimenin 'anlık hızı' ile 'ortalama hızı' arasındaki fark nedir?",
+      "siklar": {
+        "A": "Anlık hız belirli bir zaman noktasındaki hızdır; ortalama hız bir zaman aralığındaki toplam değişimin o aralığa bölünmesidir",
+        "B": "İkisi her zaman birbirine eşittir",
+        "C": "Anlık hız sadece gazlar için tanımlıdır",
+        "D": "Ortalama hız her zaman anlık hızdan küçüktür"
+      },
+      "dogru": "A",
+      "aciklama": "Anlık hız bir t anındaki türev (eğim), ortalama hız ise bir aralıktaki toplam değişim/zaman aralığıdır."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Hız::Hız Sabiti ve Hız Denklemi": [
+    {
+      "soru": "Bir tepkime için hız = k[A]ᵃ[B]ᵇ şeklinde yazılan ifadeye ne ad verilir?",
+      "siklar": {
+        "A": "Denge ifadesi",
+        "B": "Hız denklemi (hız yasası)",
+        "C": "Entalpi denklemi",
+        "D": "Stokiyometri denklemi"
+      },
+      "dogru": "B",
+      "aciklama": "hız=k[A]ᵃ[B]ᵇ ifadesi, tepkimenin hız denklemini (hız yasasını) verir."
+    },
+    {
+      "soru": "Hız denklemindeki 'k' (hız sabiti) hangi faktöre bağlı DEĞİLDİR?",
+      "siklar": {
+        "A": "Sıcaklığa",
+        "B": "Katalizöre",
+        "C": "Reaktif derişimlerine",
+        "D": "Aktifleşme enerjisine"
+      },
+      "dogru": "C",
+      "aciklama": "k, sıcaklık, katalizör ve aktifleşme enerjisine bağlıdır; reaktif derişimlerinden bağımsızdır."
+    },
+    {
+      "soru": "Hız = k[A]²[B] şeklindeki bir hız denklemine sahip tepkimenin toplam (genel) derecesi kaçtır?",
+      "siklar": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "dogru": "C",
+      "aciklama": "Toplam derece, üslerin toplamına eşittir: 2+1=3."
+    },
+    {
+      "soru": "Bir tepkimenin hız denklemindeki üsler (mertebeler) nasıl belirlenir?",
+      "siklar": {
+        "A": "Denklemdeki stokiyometrik katsayılardan doğrudan okunur",
+        "B": "Deneysel verilerle (derişim-hız ölçümleriyle) belirlenir",
+        "C": "Her zaman 1'dir",
+        "D": "Sıcaklıkla doğrudan hesaplanır"
+      },
+      "dogru": "B",
+      "aciklama": "Hız denklemindeki üsler, stokiyometrik katsayılardan farklı olabilir ve deneysel olarak belirlenmelidir."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Denge::Kimyasal Denge Kavramı": [
+    {
+      "soru": "Kimyasal denge durumunda ileri ve geri tepkime hızları için ne söylenebilir?",
+      "siklar": {
+        "A": "İleri tepkime hızı geri tepkimeden büyüktür",
+        "B": "Geri tepkime hızı ileri tepkimeden büyüktür",
+        "C": "İleri ve geri tepkime hızları birbirine eşittir",
+        "D": "Her iki hız da sıfırdır"
+      },
+      "dogru": "C",
+      "aciklama": "Dengede, ileri ve geri tepkime hızları birbirine eşittir; bu nedenle net derişim değişimi gözlenmez."
+    },
+    {
+      "soru": "Dengedeki bir sistemde reaktif ve ürün derişimleri zamanla nasıl değişir?",
+      "siklar": {
+        "A": "Sürekli artar",
+        "B": "Sürekli azalır",
+        "C": "Sabit kalır (değişmez)",
+        "D": "Periyodik olarak salınım yapar"
+      },
+      "dogru": "C",
+      "aciklama": "Dengede derişimler zamanla sabit kalır, ancak ileri ve geri tepkimeler devam eder."
+    },
+    {
+      "soru": "Kimyasal denge, hangi tür tepkimeler için söz konusudur?",
+      "siklar": {
+        "A": "Sadece tek yönlü (tersinmez) tepkimeler için",
+        "B": "Tersinir (geri dönüşümlü) tepkimeler için",
+        "C": "Sadece gaz tepkimeleri için",
+        "D": "Sadece asit-baz tepkimeleri için"
+      },
+      "dogru": "B",
+      "aciklama": "Denge kavramı, hem ileri hem geri yönde gerçekleşebilen tersinir tepkimeler için tanımlıdır."
+    },
+    {
+      "soru": "Dengedeki bir sistem 'dinamik denge' olarak tanımlanır. Bu ne anlama gelir?",
+      "siklar": {
+        "A": "Sistemde hiçbir tepkime gerçekleşmez",
+        "B": "İleri ve geri tepkimeler sürekli gerçekleşir ancak net derişim değişimi gözlenmez",
+        "C": "Sistem fiziksel olarak sürekli hareket halindedir",
+        "D": "Denge sadece katı maddelerde görülür"
+      },
+      "dogru": "B",
+      "aciklama": "Dinamik denge, moleküler düzeyde tepkimelerin durmadan sürmesine karşın makroskopik derişimlerin sabit kalması anlamına gelir."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Denge::Denge Sabiti (Kc ve Kp)": [
+    {
+      "soru": "aA + bB ⇌ cC + dD tepkimesi için denge sabiti (Kc) ifadesi nasıl yazılır?",
+      "siklar": {
+        "A": "Kc = [A]ᵃ[B]ᵇ / [C]ᶜ[D]ᵃ",
+        "B": "Kc = [C]ᶜ[D]ᵃ / [A]ᵃ[B]ᵇ",
+        "C": "Kc = [A][B] / [C][D]",
+        "D": "Kc = [C][D] - [A][B]"
+      },
+      "dogru": "B",
+      "aciklama": "Kc, ürünlerin derişimlerinin (stokiyometrik üslerle) çarpımının, girenlerin derişimlerinin çarpımına bölünmesiyle bulunur."
+    },
+    {
+      "soru": "Denge sabiti (K) değeri çok büyükse (K≫1) bu, denge konumu hakkında ne ifade eder?",
+      "siklar": {
+        "A": "Denge büyük ölçüde ürünler tarafındadır",
+        "B": "Denge büyük ölçüde girenler tarafındadır",
+        "C": "Tepkime gerçekleşmemiştir",
+        "D": "Sistem dengede değildir"
+      },
+      "dogru": "A",
+      "aciklama": "K≫1 olması, dengede ürün derişimlerinin giren derişimlerinden çok daha büyük olduğunu gösterir."
+    },
+    {
+      "soru": "Denge sabiti (K), aşağıdaki faktörlerden hangisi değiştiğinde değişir?",
+      "siklar": {
+        "A": "Derişimler değiştiğinde",
+        "B": "Basınç değiştiğinde",
+        "C": "Sıcaklık değiştiğinde",
+        "D": "Katalizör eklendiğinde"
+      },
+      "dogru": "C",
+      "aciklama": "Denge sabiti yalnızca sıcaklığın bir fonksiyonudur; derişim, basınç veya katalizör K'yı değiştirmez."
+    },
+    {
+      "soru": "Gaz fazındaki tepkimeler için kullanılan Kp, hangi büyüklükler cinsinden ifade edilir?",
+      "siklar": {
+        "A": "Derişimler cinsinden",
+        "B": "Kısmi basınçlar cinsinden",
+        "C": "Kütleler cinsinden",
+        "D": "Hacimler cinsinden"
+      },
+      "dogru": "B",
+      "aciklama": "Kp, gaz bileşenlerinin denge anındaki kısmi basınçları kullanılarak hesaplanır."
+    }
+  ],
   "kim::Kimyasal Tepkimelerde Denge::Le Chatelier İlkesi": [
     {
       "soru": "N₂ + 3H₂ ⇌ 2NH₃ (ekzotermik). Sıcaklık artırılırsa denge hangi yöne kayar?",
@@ -5155,6 +7087,98 @@ const QUESTIONS = {
       },
       "dogru": "B",
       "aciklama": "Endotermik reaksiyonda sıcaklık düşürülünce sistem daha az ısı gerektiren tarafa (reaktifler) kayar."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Denge::Dengeyi Etkileyen Faktörler": [
+    {
+      "soru": "Dengedeki bir sisteme katalizör eklendiğinde denge konumu (derişimler ve K değeri) nasıl değişir?",
+      "siklar": {
+        "A": "Ürünler yönüne kayar",
+        "B": "Girenler yönüne kayar",
+        "C": "Denge konumu değişmez, sadece dengeye ulaşma süresi kısalır",
+        "D": "K değeri artar"
+      },
+      "dogru": "C",
+      "aciklama": "Katalizör, ileri ve geri tepkime hızlarını eşit oranda artırır; denge konumunu ve K'yı değiştirmez, sadece dengeye daha hızlı ulaşılmasını sağlar."
+    },
+    {
+      "soru": "Sabit sıcaklıkta, dengedeki bir gaz tepkimesinin hacmi azaltılırsa (basınç artırılırsa) denge, mol sayısı az olan tarafa doğru kayar. Bu durum hangi ilkeyle açıklanır?",
+      "siklar": {
+        "A": "Avogadro İlkesi",
+        "B": "Le Chatelier İlkesi",
+        "C": "Graham Yasası",
+        "D": "Hess Yasası"
+      },
+      "dogru": "B",
+      "aciklama": "Le Chatelier ilkesine göre sisteme yapılan bir değişiklik (burada basınç artışı), bu değişikliği azaltacak yöne dengeyi kaydırır."
+    },
+    {
+      "soru": "Ekzotermik bir denge tepkimesinde sıcaklık artırılırsa denge hangi yöne kayar?",
+      "siklar": {
+        "A": "Ürünler yönüne (ileri)",
+        "B": "Girenler yönüne (geri, endotermik yöne)",
+        "C": "Denge değişmez",
+        "D": "Tepkime durur"
+      },
+      "dogru": "B",
+      "aciklama": "Sıcaklık artışı, Le Chatelier'e göre ısıyı soğuran (endotermik) yöne, yani geri tepkime yönüne dengeyi kaydırır."
+    },
+    {
+      "soru": "Dengedeki bir sisteme reaktiflerden biri eklenirse denge hangi yöne kayar?",
+      "siklar": {
+        "A": "Eklenen maddeyi tüketecek yöne (ürünler yönüne)",
+        "B": "Eklenen maddenin derişimini daha da artıracak yöne",
+        "C": "Denge hiç değişmez",
+        "D": "Tepkime tamamen durur"
+      },
+      "dogru": "A",
+      "aciklama": "Le Chatelier ilkesine göre sistem, eklenen reaktifin derişim artışını azaltacak yöne (ürünler yönüne) kayar."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Denge::Asit-Baz Dengesi": [
+    {
+      "soru": "Bronsted-Lowry tanımına göre bir asit, bir tepkimede hangi rolü oynar?",
+      "siklar": {
+        "A": "Proton (H⁺) alıcısıdır",
+        "B": "Proton (H⁺) vericisidir",
+        "C": "Elektron çiftini verir",
+        "D": "OH⁻ iyonu vericisidir"
+      },
+      "dogru": "B",
+      "aciklama": "Bronsted-Lowry tanımına göre asit, bir başka maddeye proton (H⁺) veren maddedir."
+    },
+    {
+      "soru": "Suyun kendi kendine iyonlaşma denge sabiti Kw, 25°C'de yaklaşık kaçtır?",
+      "siklar": {
+        "A": "10⁻⁷",
+        "B": "10⁻¹⁴",
+        "C": "1",
+        "D": "10⁷"
+      },
+      "dogru": "B",
+      "aciklama": "25°C'de Kw = [H⁺][OH⁻] ≈ 10⁻¹⁴'tür."
+    },
+    {
+      "soru": "Kuvvetli bir asit suda çözündüğünde nasıl davranır?",
+      "siklar": {
+        "A": "Kısmen iyonlaşır, dengeye ulaşır",
+        "B": "Tamamen (yaklaşık %100) iyonlaşır",
+        "C": "Hiç iyonlaşmaz",
+        "D": "Sadece gaz fazında iyonlaşır"
+      },
+      "dogru": "B",
+      "aciklama": "Kuvvetli asitler suda tamamen iyonlaştığı için iyonlaşma dengesi pratikte tamamen ürünler tarafındadır."
+    },
+    {
+      "soru": "Bir asidin konjuge bazı, asidin yapısından nasıl elde edilir?",
+      "siklar": {
+        "A": "Aside bir proton (H⁺) eklenerek",
+        "B": "Asitten bir proton (H⁺) çıkarılarak",
+        "C": "Aside bir elektron eklenerek",
+        "D": "Asidin yükü tersine çevrilerek"
+      },
+      "dogru": "B",
+      "aciklama": "Bir asit bir proton kaybettiğinde, geriye kalan tür o asidin konjuge bazıdır."
     }
   ],
   "kim::Kimyasal Tepkimelerde Denge::pH ve pOH Hesaplamaları": [
@@ -5379,6 +7403,282 @@ const QUESTIONS = {
       },
       "dogru": "A",
       "aciklama": "Yavaş basamak (hız belirleyici basamak) genel reaksiyon hızını belirler."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Hız::Aktifleşme Enerjisi": [
+    {
+      "soru": "Aktifleşme enerjisi (Ea) neyi ifade eder?",
+      "siklar": {
+        "A": "Tepkimenin toplam enerji değişimini",
+        "B": "Reaktiflerin ürünlere dönüşebilmesi için aşılması gereken minimum enerji eşiğini",
+        "C": "Ürünlerin toplam enerjisini",
+        "D": "Tepkimenin denge sabitini"
+      },
+      "dogru": "B",
+      "aciklama": "Aktifleşme enerjisi, reaktif moleküllerin ürüne dönüşebilmesi için sahip olması gereken minimum enerjidir."
+    },
+    {
+      "soru": "Bir katalizör, bir tepkimenin aktifleşme enerjisini (Ea) nasıl etkiler?",
+      "siklar": {
+        "A": "Artırır",
+        "B": "Azaltır",
+        "C": "Değiştirmez, sadece ürün miktarını artırır",
+        "D": "Sadece tersinir tepkimelerde etkilidir"
+      },
+      "dogru": "B",
+      "aciklama": "Katalizör, alternatif bir mekanizma sunarak aktifleşme enerjisini düşürür ve tepkimeyi hızlandırır."
+    },
+    {
+      "soru": "Sıcaklık arttıkça, moleküllerin aktifleşme enerjisine eşit veya daha büyük enerjiye sahip olma oranı nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Sıfıra iner"
+      },
+      "dogru": "A",
+      "aciklama": "Sıcaklık arttıkça moleküllerin enerji dağılımı yüksek enerjilere kayar; Ea'yı aşan molekül oranı artar."
+    },
+    {
+      "soru": "Aktifleşme enerjisi yüksek olan bir tepkimenin oda sıcaklığındaki hızı genellikle nasıldır?",
+      "siklar": {
+        "A": "Çok yüksektir",
+        "B": "Düşüktür (yavaş gerçekleşir)",
+        "C": "Sonsuzdur",
+        "D": "Sıfırdır, hiç gerçekleşmez"
+      },
+      "dogru": "B",
+      "aciklama": "Yüksek Ea, oda sıcaklığında çok az molekülün bu eşiği aşabildiği anlamına gelir; tepkime yavaş ilerler."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Hız::Reaksiyon Mekanizması": [
+    {
+      "soru": "Bir tepkimenin gerçekleştiği basamak basamak adımlar dizisine ne ad verilir?",
+      "siklar": {
+        "A": "Hız denklemi",
+        "B": "Reaksiyon mekanizması",
+        "C": "Denge sabiti",
+        "D": "Entalpi diyagramı"
+      },
+      "dogru": "B",
+      "aciklama": "Bir tepkimenin moleküler düzeyde gerçekleştiği basamaklar dizisine reaksiyon mekanizması denir."
+    },
+    {
+      "soru": "Çok basamaklı bir mekanizmada tepkimenin genel hızını belirleyen basamak hangisidir?",
+      "siklar": {
+        "A": "En hızlı basamak",
+        "B": "En yavaş basamak (hız belirleyici basamak)",
+        "C": "İlk basamak her zaman",
+        "D": "Son basamak her zaman"
+      },
+      "dogru": "B",
+      "aciklama": "Genel reaksiyon hızı, mekanizmadaki en yavaş (hız belirleyici) basamak tarafından belirlenir."
+    },
+    {
+      "soru": "Reaksiyon mekanizmasında oluşan, ancak net tepkime denkleminde görünmeyen geçici türlere ne ad verilir?",
+      "siklar": {
+        "A": "Katalizör",
+        "B": "Ara ürün (intermediate)",
+        "C": "Çözücü",
+        "D": "İndikatör"
+      },
+      "dogru": "B",
+      "aciklama": "Ara ürünler, mekanizmanın bir basamağında oluşup sonraki basamakta tüketilen, net denklemde görünmeyen türlerdir."
+    },
+    {
+      "soru": "Bir tepkimenin tüm mekanizma basamaklarının toplamı hangisine eşit olmalıdır?",
+      "siklar": {
+        "A": "Hız denklemine",
+        "B": "Net (genel) tepkime denklemine",
+        "C": "Aktifleşme enerjisine",
+        "D": "Denge sabitine"
+      },
+      "dogru": "B",
+      "aciklama": "Tüm mekanizma basamakları toplandığında ara ürünler birbirini götürür ve net tepkime denklemi elde edilir."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Denge::Tampon Çözeltiler": [
+    {
+      "soru": "Bir tampon çözelti tipik olarak hangi bileşenlerden oluşur?",
+      "siklar": {
+        "A": "Kuvvetli bir asit ve kuvvetli bir baz",
+        "B": "Zayıf bir asit ve onun konjuge bazı (veya zayıf bir baz ve onun konjuge asidi)",
+        "C": "Sadece su ve nötr bir tuz",
+        "D": "Sadece nötr bir tuz"
+      },
+      "dogru": "B",
+      "aciklama": "Tampon çözeltiler, zayıf bir asit-konjuge baz veya zayıf baz-konjuge asit çiftinden oluşur."
+    },
+    {
+      "soru": "Tampon çözeltilerin temel görevi nedir?",
+      "siklar": {
+        "A": "Çözeltinin rengini değiştirmek",
+        "B": "Çözeltiye az miktarda asit veya baz eklendiğinde pH'ın büyük ölçüde değişmesini önlemek",
+        "C": "Çözeltiyi tamamen nötralize etmek",
+        "D": "Çözeltinin kaynama noktasını yükseltmek"
+      },
+      "dogru": "B",
+      "aciklama": "Tampon çözeltiler, eklenen az miktardaki asit/bazı tüketerek pH değişimini sınırlı tutar."
+    },
+    {
+      "soru": "Henderson-Hasselbalch eşitliği (pH = pKa + log([A⁻]/[HA])) hangi tür çözeltiler için kullanılır?",
+      "siklar": {
+        "A": "Tampon çözeltiler için",
+        "B": "Sadece kuvvetli asitler için",
+        "C": "Sadece kuvvetli bazlar için",
+        "D": "Saf su için"
+      },
+      "dogru": "A",
+      "aciklama": "Henderson-Hasselbalch eşitliği, zayıf asit-konjuge baz tampon sistemlerinin pH'ını hesaplamak için kullanılır."
+    },
+    {
+      "soru": "İnsan kanının pH'ının yaklaşık 7,4 gibi dar bir aralıkta tutulması hangi sistemin varlığıyla açıklanır?",
+      "siklar": {
+        "A": "Osmotik basınç sistemi",
+        "B": "Tampon sistemleri (örneğin bikarbonat tamponu)",
+        "C": "Difüzyon sistemi",
+        "D": "Katalizör sistemleri"
+      },
+      "dogru": "B",
+      "aciklama": "Kandaki bikarbonat tamponu gibi tampon sistemleri, pH'ı dar bir aralıkta sabit tutar."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Denge::Hidroliz": [
+    {
+      "soru": "Hidroliz tepkimesi temel olarak neyi ifade eder?",
+      "siklar": {
+        "A": "Sadece metallerin su ile tepkimesini",
+        "B": "Bir tuzun iyonlarının su ile tepkimeye girerek ortamın pH'ını değiştirmesini",
+        "C": "Sadece gazların suda çözünmesini",
+        "D": "Suyun elektrolizini"
+      },
+      "dogru": "B",
+      "aciklama": "Tuz hidrolizinde, tuzun iyonları su ile etkileşerek H⁺ veya OH⁻ açığa çıkarabilir ve ortam pH'ını değiştirebilir."
+    },
+    {
+      "soru": "Kuvvetli bir asit ile kuvvetli bir bazın tepkimesinden oluşan tuzun (örn. NaCl) sulu çözeltisinin pH'ı nasıldır?",
+      "siklar": {
+        "A": "Asidiktir (pH<7)",
+        "B": "Bazıktır (pH>7)",
+        "C": "Nötrdür (pH≈7)",
+        "D": "Belirsizdir"
+      },
+      "dogru": "C",
+      "aciklama": "Kuvvetli asit-kuvvetli baz tuzlarının iyonları hidroliz olmaz; çözelti nötrdür."
+    },
+    {
+      "soru": "Zayıf bir asit ile kuvvetli bir bazın tepkimesinden oluşan tuzun (örn. CH₃COONa) sulu çözeltisi genellikle nasıl bir özellik gösterir?",
+      "siklar": {
+        "A": "Asidik",
+        "B": "Bazik",
+        "C": "Nötr",
+        "D": "Renksiz ve tepkisiz"
+      },
+      "dogru": "B",
+      "aciklama": "Zayıf asidin konjuge bazı (örn. asetat iyonu) suda hidroliz olarak OH⁻ üretir; çözelti bazik olur."
+    },
+    {
+      "soru": "Kuvvetli bir asit ile zayıf bir bazın tepkimesinden oluşan tuzun (örn. NH₄Cl) sulu çözeltisi genellikle nasıl bir özellik gösterir?",
+      "siklar": {
+        "A": "Asidik",
+        "B": "Bazik",
+        "C": "Nötr",
+        "D": "Tampon özellik gösterir"
+      },
+      "dogru": "A",
+      "aciklama": "Zayıf bazın konjuge asidi (örn. NH₄⁺) suda hidroliz olarak H⁺ üretir; çözelti asidik olur."
+    }
+  ],
+  "kim::Kimyasal Tepkimelerde Denge::Çözünürlük Dengesi": [
+    {
+      "soru": "Az çözünen bir iyonik bileşiğin (örn. AgCl) suya atılmasıyla oluşan çözünme dengesi nasıl ifade edilir?",
+      "siklar": {
+        "A": "AgCl(k) → Ag⁺(suda) + Cl⁻(suda)  (tek yönlü)",
+        "B": "AgCl(k) ⇌ Ag⁺(suda) + Cl⁻(suda)  (dinamik denge)",
+        "C": "AgCl hiç çözünmez, denge oluşmaz",
+        "D": "Ag⁺ ve Cl⁻ birleşip gaz oluşturur"
+      },
+      "dogru": "B",
+      "aciklama": "Az çözünen tuzlar suda çözünme-çökelme arasında dinamik bir denge kurar."
+    },
+    {
+      "soru": "Doymuş bir çözeltide, çözünmeyen katı tuz ile çözünmüş iyonlar arasındaki denge için ne söylenebilir?",
+      "siklar": {
+        "A": "Çökme hızı, çözünme hızından büyüktür",
+        "B": "Çözünme hızı, çökme hızından büyüktür",
+        "C": "Çözünme ve çökme hızları birbirine eşittir",
+        "D": "Hiçbir iyon hareketi yoktur"
+      },
+      "dogru": "C",
+      "aciklama": "Dengede çözünme ve çökme hızları eşittir; bu nedenle çözünmüş iyon derişimi sabit kalır."
+    },
+    {
+      "soru": "Çoğu iyonik katının suda çözünürlüğü sıcaklık arttıkça genellikle nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Sıfıra düşer"
+      },
+      "dogru": "A",
+      "aciklama": "Çoğu iyonik katı için çözünme endotermiktir, sıcaklık arttıkça çözünürlük (ve dolayısıyla Kçç) artar."
+    },
+    {
+      "soru": "Çözünürlük dengesi kurulmuş bir sistemde sıcaklık değiştirilirse, Kçç (Ksp) değeri için ne söylenebilir?",
+      "siklar": {
+        "A": "Değişmez, sabittir",
+        "B": "Değişebilir, çünkü K sıcaklığa bağlıdır",
+        "C": "Her zaman sıfır olur",
+        "D": "Her zaman 1 olur"
+      },
+      "dogru": "B",
+      "aciklama": "Tüm denge sabitleri gibi Kçç de sıcaklığa bağlıdır; sıcaklık değişince Kçç değeri de değişir."
+    }
+  ],
+  "kim::Sıvı Çözeltiler ve Çözünürlük::Çözünürlük Çarpımı (Kçç)": [
+    {
+      "soru": "Çözünürlük çarpımı (Kçç/Ksp), hangi tür bileşikler için tanımlanır?",
+      "siklar": {
+        "A": "Suda iyi çözünen tüm bileşikler için",
+        "B": "Suda az çözünen (zor çözünen) iyonik bileşikler için",
+        "C": "Sadece organik bileşikler için",
+        "D": "Sadece gazlar için"
+      },
+      "dogru": "B",
+      "aciklama": "Kçç, az çözünen iyonik bileşiklerin doygun çözeltilerindeki iyon derişimlerinin çarpımı olarak tanımlanır."
+    },
+    {
+      "soru": "AB tipi (1:1) az çözünen bir tuz için Kçç ifadesi, çözünürlük (s) cinsinden nasıl yazılır?",
+      "siklar": {
+        "A": "Kçç = s",
+        "B": "Kçç = s²",
+        "C": "Kçç = 2s",
+        "D": "Kçç = s/2"
+      },
+      "dogru": "B",
+      "aciklama": "AB ⇌ A⁺+B⁻ için [A⁺]=[B⁻]=s, dolayısıyla Kçç=[A⁺][B⁻]=s²."
+    },
+    {
+      "soru": "Bir çözeltiye, az çözünen tuzun iyonlarından birini içeren başka bir tuz eklenirse (ortak iyon etkisi), tuzun çözünürlüğü nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Önce artar sonra azalır"
+      },
+      "dogru": "B",
+      "aciklama": "Ortak iyon etkisiyle Kçç ifadesindeki bir iyonun derişimi arttığından, dengeyi korumak için diğer iyonun (ve dolayısıyla çözünürlüğün) azalması gerekir."
+    },
+    {
+      "soru": "Bir çözeltide iyonların çarpımı (Q), o tuzun Kçç değerinden büyükse ne olur?",
+      "siklar": {
+        "A": "Çözelti doymamıştır, daha fazla tuz çözünebilir",
+        "B": "Çökelme (presipitasyon) gerçekleşir",
+        "C": "Hiçbir şey olmaz",
+        "D": "Tuz tamamen iyonlarına ayrışır"
+      },
+      "dogru": "B",
+      "aciklama": "Q>Kçç olması, çözeltinin aşırı doymuş olduğunu ve fazla iyonların çökeleceğini gösterir."
     }
   ],
   "bio::Denetleyici ve Düzenleyici Sistem::Sinir Sisteminin Yapısı ve İşlevi": [
