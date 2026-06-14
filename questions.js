@@ -671,6 +671,118 @@ const QUESTIONS = {
       "aciklama": "sin(2x)=√3/2 → 2x = 60°, 120°, 420°, 480° → x = 30°, 60°, 210°, 240°; 4 çözüm."
     }
   ],
+  "mat::Trigonometri::Kosinüs Teoremi ve Üçgende Trigonometri": [
+    {
+      "soru": "Bir üçgende a=5, b=7 ve bu kenarlar arasındaki açı C=60° ise c² kaçtır?",
+      "siklar": {
+        "A": "39",
+        "B": "74",
+        "C": "109",
+        "D": "9"
+      },
+      "dogru": "A",
+      "aciklama": "Kosinüs teoremi: c² = a²+b²-2ab·cosC = 25+49-2·5·7·(1/2) = 74-35 = 39."
+    },
+    {
+      "soru": "Kosinüs teoremi c² = a²+b²-2ab·cosC ifadesinde C=90° alınırsa bu formül hangi teoreme dönüşür?",
+      "siklar": {
+        "A": "Sinüs teoremi",
+        "B": "Pisagor teoremi",
+        "C": "Heron formülü",
+        "D": "Tales teoremi"
+      },
+      "dogru": "B",
+      "aciklama": "C=90° için cosC=0 olur ve c²=a²+b² elde edilir; bu Pisagor teoremidir."
+    },
+    {
+      "soru": "Bir üçgende kenarlar a=6, b=8, c=12'dir. Kosinüs teoremine göre bu üçgen hangi türdedir?",
+      "siklar": {
+        "A": "Dar açılı üçgen",
+        "B": "Dik üçgen",
+        "C": "Geniş açılı üçgen",
+        "D": "Eşkenar üçgen"
+      },
+      "dogru": "C",
+      "aciklama": "c²=144 ve a²+b²=36+64=100. c² > a²+b² olduğundan cosC negatiftir, yani C açısı geniştir (geniş açılı üçgen)."
+    },
+    {
+      "soru": "Sinüs teoremine göre bir üçgende a/sinA = b/sinB = c/sinC = 2R bağıntısındaki R neyi ifade eder?",
+      "siklar": {
+        "A": "Üçgenin alanını",
+        "B": "Üçgenin çevrel çemberinin yarıçapını",
+        "C": "Üçgenin iç teğet çemberinin yarıçapını",
+        "D": "Üçgenin çevresini"
+      },
+      "dogru": "B",
+      "aciklama": "Sinüs teoremindeki R, üçgenin çevrel çemberinin (üçgenin tüm köşelerinden geçen çemberin) yarıçapıdır."
+    },
+    {
+      "soru": "Bir üçgende a=10, A=30°, B=45° veriliyor. Sinüs teoremine göre b kenarı kaç birimdir? (sin30°=1/2, sin45°=√2/2)",
+      "siklar": {
+        "A": "10√2",
+        "B": "5√2",
+        "C": "10",
+        "D": "5"
+      },
+      "dogru": "A",
+      "aciklama": "a/sinA = b/sinB → b = a·sinB/sinA = 10·(√2/2)/(1/2) = 10√2."
+    },
+    {
+      "soru": "Bir üçgende a ve b kenarları ile aralarındaki açı C biliniyorsa üçgenin alanı hangi formülle hesaplanır?",
+      "siklar": {
+        "A": "Alan = (1/2)·a·b·sinC",
+        "B": "Alan = (1/2)·a·b·cosC",
+        "C": "Alan = a·b·tanC",
+        "D": "Alan = (1/2)·a·b·cotC"
+      },
+      "dogru": "A",
+      "aciklama": "İki kenarı ve aralarındaki açıyı bilinen bir üçgenin alanı Alan = (1/2)·a·b·sinC formülüyle bulunur."
+    },
+    {
+      "soru": "Bir üçgende a=4, b=4 ve C=120° ise c² kaçtır?",
+      "siklar": {
+        "A": "48",
+        "B": "32",
+        "C": "16",
+        "D": "0"
+      },
+      "dogru": "A",
+      "aciklama": "c² = a²+b²-2ab·cosC = 16+16-2·4·4·cos120° = 32-32·(-1/2) = 32+16 = 48."
+    },
+    {
+      "soru": "Kosinüs teoreminde bir açının kosinüsü (cosC) negatif çıkıyorsa, bu açı için ne söylenebilir?",
+      "siklar": {
+        "A": "C dar açıdır (0°-90° arası)",
+        "B": "C dik açıdır (90°)",
+        "C": "C geniş açıdır (90°-180° arası)",
+        "D": "C = 0°'dir"
+      },
+      "dogru": "C",
+      "aciklama": "Kosinüs değeri 90°-180° aralığında negatiftir; cosC<0 ise C açısı geniş açıdır."
+    },
+    {
+      "soru": "Bir üçgende a=6, b=7 ve aralarındaki açı C=30°'dir. Bu üçgenin alanı kaç birim karedir? (sin30°=1/2)",
+      "siklar": {
+        "A": "10,5",
+        "B": "21",
+        "C": "42",
+        "D": "5,25"
+      },
+      "dogru": "A",
+      "aciklama": "Alan = (1/2)·a·b·sinC = (1/2)·6·7·(1/2) = 21/2 = 10,5 birim kare."
+    },
+    {
+      "soru": "Bir üçgende a² = b² + c² - bc eşitliği veriliyorsa, kosinüs teoremine göre A açısı kaç derecedir?",
+      "siklar": {
+        "A": "30°",
+        "B": "45°",
+        "C": "60°",
+        "D": "90°"
+      },
+      "dogru": "C",
+      "aciklama": "Kosinüs teoremi a²=b²+c²-2bc·cosA ile karşılaştırılırsa 2bc·cosA = bc → cosA = 1/2 → A = 60°."
+    }
+  ],
   "mat::Trigonometri::Trigonometrik Denklemler": [
     {
       "soru": "sinx = 1/2 denkleminin [0°, 360°) aralığındaki çözümleri hangileridir?",
@@ -781,6 +893,52 @@ const QUESTIONS = {
       },
       "dogru": "A",
       "aciklama": "cosx+cos3x=0, toplam-çarpım formülüyle 2cos(2x)cos(x)=0 elde edilir."
+    }
+  ],
+  "mat::Trigonometri::Ters Trigonometrik Fonksiyonlar": [
+    {
+      "soru": "arcsin(1/2) ifadesinin değeri kaç derecedir?",
+      "siklar": {
+        "A": "30°",
+        "B": "45°",
+        "C": "60°",
+        "D": "90°"
+      },
+      "dogru": "A",
+      "aciklama": "sin30° = 1/2 ve 30°, arcsin'in esas değer aralığında [-90°,90°] olduğundan arcsin(1/2)=30°."
+    },
+    {
+      "soru": "arccos fonksiyonunun esas değer (görüntü) kümesi hangi aralıktır?",
+      "siklar": {
+        "A": "[-90°, 90°]",
+        "B": "[0°, 180°]",
+        "C": "(-90°, 90°)",
+        "D": "[0°, 360°]"
+      },
+      "dogru": "B",
+      "aciklama": "arccos fonksiyonunun esas değer aralığı [0°,180°]'dir."
+    },
+    {
+      "soru": "arctan(1) ifadesinin değeri kaç derecedir?",
+      "siklar": {
+        "A": "30°",
+        "B": "45°",
+        "C": "60°",
+        "D": "90°"
+      },
+      "dogru": "B",
+      "aciklama": "tan45°=1 ve 45°, arctan'ın esas değer aralığında (-90°,90°) olduğundan arctan(1)=45°."
+    },
+    {
+      "soru": "sin(arcsin(x)) = x eşitliği hangi x değerleri için geçerlidir?",
+      "siklar": {
+        "A": "Tüm reel sayılar için",
+        "B": "Sadece x = 0 için",
+        "C": "[-1, 1] aralığındaki x değerleri için",
+        "D": "Sadece pozitif x değerleri için"
+      },
+      "dogru": "C",
+      "aciklama": "arcsin fonksiyonunun tanım kümesi [-1,1] olduğundan eşitlik bu aralıkta geçerlidir."
     }
   ],
   "mat::Trigonometri::Trigonometrik Fonksiyonların Grafikleri": [
@@ -2911,6 +3069,118 @@ const QUESTIONS = {
       "aciklama": "Birim vektör: (cos45°)î + (sin45°)ĵ = (1/√2)î + (1/√2)ĵ."
     }
   ],
+  "fiz::Kuvvet ve Hareket::Bağıl Hareket": [
+    {
+      "soru": "Durgun suda 8 m/s hızla gidebilen bir tekne, akış hızı 6 m/s olan bir nehirde akıntı ile aynı yönde giderse, kıyıdaki gözlemciye göre hızı kaç m/s olur?",
+      "siklar": {
+        "A": "2",
+        "B": "6",
+        "C": "8",
+        "D": "14"
+      },
+      "dogru": "D",
+      "aciklama": "Aynı yönlü hızlar toplanır: 8 + 6 = 14 m/s."
+    },
+    {
+      "soru": "Yukarıdaki tekne aynı suda akıntıya ters yönde giderse kıyıdaki gözlemciye göre hızı kaç m/s olur?",
+      "siklar": {
+        "A": "2",
+        "B": "6",
+        "C": "8",
+        "D": "14"
+      },
+      "dogru": "A",
+      "aciklama": "Zıt yönlü hızlar çıkarılır: 8 - 6 = 2 m/s."
+    },
+    {
+      "soru": "Aynı yönde hareket eden A aracı yere göre 20 m/s, B aracı yere göre 15 m/s hızla gidiyor. A'nın B'ye göre bağıl hızı kaç m/s'dir?",
+      "siklar": {
+        "A": "35",
+        "B": "5",
+        "C": "-5",
+        "D": "15"
+      },
+      "dogru": "B",
+      "aciklama": "V(A/B) = V_A - V_B = 20 - 15 = 5 m/s (A, B'ye göre 5 m/s ile uzaklaşır/yaklaşır)."
+    },
+    {
+      "soru": "Birbirine doğru zıt yönlerde 30 m/s ve 20 m/s hızlarla yaklaşan iki araç var. Bu araçların birbirine göre bağıl hızının (yaklaşma hızının) büyüklüğü kaç m/s'dir?",
+      "siklar": {
+        "A": "10",
+        "B": "25",
+        "C": "50",
+        "D": "600"
+      },
+      "dogru": "C",
+      "aciklama": "Zıt yönlü hareket eden cisimlerin birbirine göre bağıl hızı toplanır: 30 + 20 = 50 m/s."
+    },
+    {
+      "soru": "Yürüyen bir merdivende, merdivene göre 1 m/s hızla yukarı yürüyen bir kişi varken merdivenin kendisi yere göre 0,5 m/s hızla yukarı hareket ediyor. Kişinin yere göre hızı kaç m/s'dir?",
+      "siklar": {
+        "A": "0,5",
+        "B": "1",
+        "C": "1,5",
+        "D": "2"
+      },
+      "dogru": "C",
+      "aciklama": "Aynı yöndeki hızlar toplanır: 1 + 0,5 = 1,5 m/s."
+    },
+    {
+      "soru": "Bağıl hareket kavramı temel olarak neyi ifade eder?",
+      "siklar": {
+        "A": "Bir cismin sadece kendi öz hızını",
+        "B": "Bir cismin başka bir gözlemciye/referans noktasına göre konum veya hızını",
+        "C": "Bir cismin ivmesinin sabit olduğunu",
+        "D": "Bir cismin kütlesinin değişmediğini"
+      },
+      "dogru": "B",
+      "aciklama": "Bağıl hareket, bir cismin hareketinin seçilen bir referans noktasına/gözlemciye göre tanımlanmasıdır."
+    },
+    {
+      "soru": "Durgun suda 5 m/s hızla yüzebilen bir yüzücü, akış hızı 3 m/s olan bir nehri, suya göre akıntıya tam dik yönde yüzerek geçmeye çalışıyor. Yüzücünün kıyıdaki gözlemciye göre bileşke hızının büyüklüğü kaç m/s'dir?",
+      "siklar": {
+        "A": "2",
+        "B": "4",
+        "C": "√34",
+        "D": "8"
+      },
+      "dogru": "C",
+      "aciklama": "Birbirine dik iki hız bileşeninin bileşkesi Pisagor ile bulunur: √(5² + 3²) = √34 m/s."
+    },
+    {
+      "soru": "Aynı yönde hareket eden iki cisimden hızlısı, yavaş olana göre nasıl hareket ediyormuş gibi görünür?",
+      "siklar": {
+        "A": "Durgunmuş gibi görünür",
+        "B": "Geriye doğru gidiyormuş gibi görünür",
+        "C": "Aralarındaki hız farkı kadar bir hızla aynı yönde ilerliyormuş gibi görünür",
+        "D": "Aniden duruyormuş gibi görünür"
+      },
+      "dogru": "C",
+      "aciklama": "Bağıl hız, iki cismin hızları arasındaki vektörel farktır; hızlı olan, yavaş olana göre hız farkı kadar ileri gidiyormuş gibi görünür."
+    },
+    {
+      "soru": "Hareket eden bir trende oturan yolcunun, dışarıdaki ağaçların kendisine göre geriye doğru hareket ettiğini görmesi hangi kavramla açıklanır?",
+      "siklar": {
+        "A": "Mutlak hareket",
+        "B": "Bağıl hareket",
+        "C": "Eylemsizlik",
+        "D": "Açısal momentum"
+      },
+      "dogru": "B",
+      "aciklama": "Yolcunun referans çerçevesine göre dışarıdaki cisimlerin hızı, bağıl hareket ile açıklanır."
+    },
+    {
+      "soru": "Yere göre 10 m/s hızla doğuya giden A aracı ile yere göre 4 m/s hızla doğuya giden B aracı vardır. A'nın B'ye göre bağıl hızı ve yönü nedir?",
+      "siklar": {
+        "A": "14 m/s, doğu",
+        "B": "6 m/s, doğu",
+        "C": "6 m/s, batı",
+        "D": "14 m/s, batı"
+      },
+      "dogru": "B",
+      "aciklama": "Aynı yöndeki hızlar çıkarılır: 10 - 4 = 6 m/s; A, B'ye göre hâlâ doğu yönünde uzaklaşır."
+    }
+  ],
   "fiz::Kuvvet ve Hareket::Newton'ın Hareket Yasaları": [
     {
       "soru": "10 kg'lık cisme 30 N net kuvvet uygulanırsa ivmesi kaçtır?",
@@ -3023,6 +3293,52 @@ const QUESTIONS = {
       "aciklama": "T - mg = ma → T = m(g+a) = 2(10+5) = 30 N."
     }
   ],
+  "fiz::Kuvvet ve Hareket::Bir Boyutta Sabit İvmeli Hareket": [
+    {
+      "soru": "Durgun halden harekete başlayan bir cisim 2 m/s² sabit ivmeyle hızlanıyor. 5 saniye sonra hızı kaç m/s olur? (v=v₀+at)",
+      "siklar": {
+        "A": "10",
+        "B": "5",
+        "C": "2,5",
+        "D": "25"
+      },
+      "dogru": "A",
+      "aciklama": "v = v₀+at = 0 + 2·5 = 10 m/s."
+    },
+    {
+      "soru": "İlk hızı 4 m/s olan bir cisim 3 m/s² sabit ivmeyle hızlanırken 2 saniyede aldığı yol kaç metredir? (x=v₀t+½at²)",
+      "siklar": {
+        "A": "14",
+        "B": "8",
+        "C": "6",
+        "D": "20"
+      },
+      "dogru": "A",
+      "aciklama": "x = v₀t + ½at² = 4·2 + ½·3·2² = 8 + 6 = 14 m."
+    },
+    {
+      "soru": "Hız-zaman grafiğinde çizilen doğrunun eğimi neyi temsil eder?",
+      "siklar": {
+        "A": "Yer değiştirmeyi",
+        "B": "Hızı",
+        "C": "İvmeyi",
+        "D": "Süratı"
+      },
+      "dogru": "C",
+      "aciklama": "v-t grafiğinde eğim = Δv/Δt = ivmedir."
+    },
+    {
+      "soru": "v² = v₀² + 2ax formülünde v₀=0, a=4 m/s², x=8 m ise son hız v kaç m/s olur?",
+      "siklar": {
+        "A": "8",
+        "B": "16",
+        "C": "4",
+        "D": "64"
+      },
+      "dogru": "A",
+      "aciklama": "v² = 0 + 2·4·8 = 64 → v = 8 m/s."
+    }
+  ],
   "fiz::Kuvvet ve Hareket::Serbest Düşme": [
     {
       "soru": "Serbest düşen cisim 3 saniyede kaç metre düşer? (g=10 m/s²)",
@@ -3133,6 +3449,98 @@ const QUESTIONS = {
       },
       "dogru": "B",
       "aciklama": "Eşit zaman aralıklarında alınan yollar 1:3:5:7:... oranındadır."
+    }
+  ],
+  "fiz::Kuvvet ve Hareket::Limit Hız": [
+    {
+      "soru": "Limit hız (terminal hız) kavramı, düşen bir cisim için hangi durumu ifade eder?",
+      "siklar": {
+        "A": "Cismin ivmesinin maksimum olduğu durumu",
+        "B": "Hava direnci ile yerçekimi kuvvetinin birbirine eşitlenip net kuvvetin sıfır olduğu durumu",
+        "C": "Cismin yere çarptığı anı",
+        "D": "Cismin hareketsiz kaldığı başlangıç anını"
+      },
+      "dogru": "B",
+      "aciklama": "Limit hızda hava direnci kuvveti ağırlığa eşitlenir, net kuvvet sıfır olur ve cisim sabit hızla hareket eder."
+    },
+    {
+      "soru": "Bir cisim limit hıza ulaştığında ivmesi kaç olur?",
+      "siklar": {
+        "A": "Maksimumdur",
+        "B": "g'ye eşittir",
+        "C": "Sıfırdır",
+        "D": "Sürekli artar"
+      },
+      "dogru": "C",
+      "aciklama": "Net kuvvet sıfır olduğundan (F=ma) limit hızdaki ivme de sıfırdır."
+    },
+    {
+      "soru": "Aynı kütleye sahip ancak kesit (yüzey) alanı daha büyük olan bir paraşütçü, daha küçük kesit alanlı birine göre limit hızına nasıl ulaşır?",
+      "siklar": {
+        "A": "Daha yüksek bir limit hızla",
+        "B": "Daha düşük bir limit hızla",
+        "C": "Limit hıza hiç ulaşamaz",
+        "D": "Yüzey alanı limit hızı etkilemez"
+      },
+      "dogru": "B",
+      "aciklama": "Yüzey alanı büyüdükçe hava direnci daha küçük hızlarda ağırlığa eşitlenir, dolayısıyla limit hız daha düşük olur."
+    },
+    {
+      "soru": "Bir cisme etki eden hava direnci kuvveti aşağıdakilerden hangisine bağlı DEĞİLDİR?",
+      "siklar": {
+        "A": "Cismin hızına",
+        "B": "Cismin şekline ve yüzey alanına",
+        "C": "Ortamın yoğunluğuna",
+        "D": "Cismin rengine"
+      },
+      "dogru": "D",
+      "aciklama": "Hava direnci hız, şekil/yüzey alanı ve ortam yoğunluğuna bağlıdır; cismin rengi hava direncini etkilemez."
+    }
+  ],
+  "fiz::Kuvvet ve Hareket::Düşey Doğrultuda Atış Hareketi": [
+    {
+      "soru": "Yukarı doğru 20 m/s ilk hızla fırlatılan bir cismin en yüksek noktaya ulaşma süresi kaç saniyedir? (g=10 m/s²)",
+      "siklar": {
+        "A": "2",
+        "B": "4",
+        "C": "1",
+        "D": "20"
+      },
+      "dogru": "A",
+      "aciklama": "En yüksek noktada hız sıfır olur: t = v₀/g = 20/10 = 2 s."
+    },
+    {
+      "soru": "Yukarı atılan bir cisim en yüksek noktasındayken hızı ve ivmesi için ne söylenebilir?",
+      "siklar": {
+        "A": "Hız da ivme de sıfırdır",
+        "B": "Hız sıfırdır, ivme g'ye eşittir (aşağı yönlü)",
+        "C": "Hız maksimumdur, ivme sıfırdır",
+        "D": "Hız ve ivme her ikisi de maksimumdur"
+      },
+      "dogru": "B",
+      "aciklama": "En yüksek noktada anlık hız sıfırdır, ancak yerçekimi ivmesi (g) her zaman aşağı yönlü ve sabittir."
+    },
+    {
+      "soru": "İlk hızı 30 m/s olan düşey atışta cismin ulaşacağı maksimum yükseklik kaç metredir? (g=10 m/s², h=v₀²/2g)",
+      "siklar": {
+        "A": "45",
+        "B": "90",
+        "C": "30",
+        "D": "15"
+      },
+      "dogru": "A",
+      "aciklama": "h = v₀²/2g = 30²/(2·10) = 900/20 = 45 m."
+    },
+    {
+      "soru": "Hava direnci ihmal edildiğinde, düşey atışta bir cismin yukarı çıkış süresi ile aynı noktaya geri düşüş süresi arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "Çıkış süresi düşüş süresinden büyüktür",
+        "B": "Düşüş süresi çıkış süresinden büyüktür",
+        "C": "Çıkış ve düşüş süreleri birbirine eşittir",
+        "D": "Aralarında sabit bir ilişki yoktur, duruma göre değişir"
+      },
+      "dogru": "C",
+      "aciklama": "Hava direnci yokken hareket simetriktir; çıkış süresi ile düşüş süresi birbirine eşittir."
     }
   ],
   "fiz::Kuvvet ve Hareket::İş-Enerji Teoremi": [
@@ -3807,6 +4215,612 @@ const QUESTIONS = {
       "aciklama": "Hund kuralı: Eşdeğer orbitaller önce birer elektron alır, hepsi aynı yönlü spin."
     }
   ],
+  "kim::Modern Atom Teorisi::Dalga Mekaniği (Kuantum Modeli)": [
+    {
+      "soru": "Elektronun hem parçacık hem dalga özelliği gösterdiğini (madde dalgaları hipotezi) ileri süren bilim insanı kimdir?",
+      "siklar": {
+        "A": "Niels Bohr",
+        "B": "Louis de Broglie",
+        "C": "Werner Heisenberg",
+        "D": "John Dalton"
+      },
+      "dogru": "B",
+      "aciklama": "de Broglie, elektron gibi parçacıkların aynı zamanda dalga özelliği de taşıdığını öne sürmüştür."
+    },
+    {
+      "soru": "Bir elektronun konumu ve momentumunun aynı anda tam bir kesinlikle ölçülemeyeceğini ifade eden ilke hangisidir?",
+      "siklar": {
+        "A": "Pauli dışarlama ilkesi",
+        "B": "Hund kuralı",
+        "C": "Heisenberg belirsizlik ilkesi",
+        "D": "Aufbau ilkesi"
+      },
+      "dogru": "C",
+      "aciklama": "Heisenberg belirsizlik ilkesine göre elektronun konumu ve momentumu aynı anda kesin olarak belirlenemez."
+    },
+    {
+      "soru": "Kuantum mekaniksel modele göre 'orbital' kavramı neyi ifade eder?",
+      "siklar": {
+        "A": "Elektronun izlediği dairesel yörünge",
+        "B": "Elektronun bulunma olasılığının yüksek olduğu üç boyutlu bölge",
+        "C": "Çekirdekteki nötron sayısı",
+        "D": "Atomun toplam kütlesi"
+      },
+      "dogru": "B",
+      "aciklama": "Orbital, elektronun çekirdek etrafında bulunma olasılığının en yüksek olduğu bölgedir; Bohr'daki gibi çizilmiş bir yol değildir."
+    },
+    {
+      "soru": "Bohr modeli ile Schrödinger'in kuantum mekaniksel modeli arasındaki temel fark nedir?",
+      "siklar": {
+        "A": "Bohr modelinde elektronlar kesin yörüngelerde, Schrödinger modelinde olasılık bulutlarında (orbitallerde) bulunur",
+        "B": "Bohr modeli sadece çok elektronlu atomlar için geçerlidir",
+        "C": "Schrödinger modelinde elektronlar çekirdeğe hiç yaklaşamaz",
+        "D": "İkisi arasında fark yoktur"
+      },
+      "dogru": "A",
+      "aciklama": "Bohr, elektronları belirli yarıçaplı dairesel yörüngelerle tanımlarken; Schrödinger modeli elektronun konumunu olasılık dağılımıyla (orbital) tanımlar."
+    },
+    {
+      "soru": "Aşağıdaki deneylerden hangisi elektronların dalga özelliği gösterdiğine (de Broglie hipotezine) doğrudan kanıt sağlar?",
+      "siklar": {
+        "A": "Rutherford'un altın yaprak deneyi",
+        "B": "Millikan'ın yağ damlası deneyi",
+        "C": "Elektron kırınımı deneyi",
+        "D": "Thomson'ın katot ışınları deneyi"
+      },
+      "dogru": "C",
+      "aciklama": "Elektron demetlerinin kristallerden kırınıma uğraması, elektronların dalga davranışı gösterdiğini deneysel olarak kanıtlamıştır."
+    },
+    {
+      "soru": "de Broglie'ye göre hareketli bir parçacığın dalga boyu (λ), parçacığın hangi büyüklüğüyle ters orantılıdır?",
+      "siklar": {
+        "A": "Sadece kütlesiyle",
+        "B": "Sadece hızıyla",
+        "C": "Momentumu (kütle × hız) ile",
+        "D": "Elektrik yüküyle"
+      },
+      "dogru": "C",
+      "aciklama": "λ = h / (m·v) bağıntısına göre dalga boyu, parçacığın momentumu ile ters orantılıdır."
+    },
+    {
+      "soru": "Kuantum mekaniksel modelde elektronun konumu hakkında nasıl bir ifade kullanılır?",
+      "siklar": {
+        "A": "Elektron tam olarak şu noktadadır şeklinde kesin konum verilir",
+        "B": "Elektronun belirli bir bölgede bulunma olasılığından söz edilir",
+        "C": "Elektronun konumu hiçbir zaman belirlenemez, bu konuda hiç bilgi verilmez",
+        "D": "Elektronun konumu sadece çekirdeğe olan uzaklığı ile ifade edilir, başka bilgi yoktur"
+      },
+      "dogru": "B",
+      "aciklama": "Belirsizlik ilkesi nedeniyle elektronun kesin konumu yerine, bir bölgede bulunma olasılığı (olasılık yoğunluğu) ile çalışılır."
+    },
+    {
+      "soru": "Atom modellerinin tarihsel gelişim sırası (eskiden yeniye) aşağıdakilerden hangisinde doğru verilmiştir?",
+      "siklar": {
+        "A": "Schrödinger → Bohr → Dalton",
+        "B": "Dalton → Bohr → Schrödinger (kuantum mekaniksel model)",
+        "C": "Kuantum mekaniksel model → Dalton → Bohr",
+        "D": "Bohr → Dalton → Schrödinger"
+      },
+      "dogru": "B",
+      "aciklama": "Atom modelleri kronolojik olarak Dalton, Thomson, Rutherford, Bohr ve son olarak Schrödinger'in kuantum mekaniksel modeli şeklinde gelişmiştir."
+    },
+    {
+      "soru": "Aşağıdakilerden hangisi modern atom teorisinin (kuantum mekaniksel modelin) bir sonucu DEĞİLDİR?",
+      "siklar": {
+        "A": "Elektronların dalga özelliği gösterebilmesi",
+        "B": "Orbital kavramının ortaya çıkması",
+        "C": "Elektronların kesin, çizilebilir yörüngelerde hareket ettiğinin kanıtlanması",
+        "D": "Elektronun konumunun olasılıksal olarak ifade edilmesi"
+      },
+      "dogru": "C",
+      "aciklama": "Modern atom teorisi, elektronların KESİN yörüngelerde DEĞİL, olasılık bulutları (orbitaller) içinde bulunduğunu öne sürer; bu yüzden C, modelle çelişen ifadedir."
+    },
+    {
+      "soru": "Elektronun dalga benzeri davranışını matematiksel olarak ifade eden dalga fonksiyonunu (Ψ) geliştiren bilim insanı kimdir?",
+      "siklar": {
+        "A": "Werner Heisenberg",
+        "B": "Niels Bohr",
+        "C": "Erwin Schrödinger",
+        "D": "Ernest Rutherford"
+      },
+      "dogru": "C",
+      "aciklama": "Schrödinger, elektronun dalga davranışını tanımlayan dalga denklemini geliştirmiştir; bu denklemin çözümleri orbitalleri verir."
+    }
+  ],
+  "kim::Modern Atom Teorisi::Orbitaller ve Şekilleri": [
+    {
+      "soru": "s orbitalinin geometrik şekli nasıldır?",
+      "siklar": {
+        "A": "Halter (dumbbell) şeklinde",
+        "B": "Küresel",
+        "C": "Yonca yaprağı şeklinde",
+        "D": "Düzlemsel halka şeklinde"
+      },
+      "dogru": "B",
+      "aciklama": "s orbitali çekirdek merkezli küresel simetriye sahiptir."
+    },
+    {
+      "soru": "p alt kabuğunda kaç orbital bulunur?",
+      "siklar": {
+        "A": "1",
+        "B": "3",
+        "C": "5",
+        "D": "7"
+      },
+      "dogru": "B",
+      "aciklama": "p alt kabuğu px, py, pz olmak üzere 3 orbitalden oluşur."
+    },
+    {
+      "soru": "p orbitallerinin karakteristik şekli nasıl tanımlanır?",
+      "siklar": {
+        "A": "Küresel",
+        "B": "İki loblu (halter) şeklinde",
+        "C": "Düzgün altıgen",
+        "D": "Tam dolu disk şeklinde"
+      },
+      "dogru": "B",
+      "aciklama": "p orbitalleri, çekirdeğin iki tarafında yer alan iki lobdan oluşan halter şekline sahiptir."
+    },
+    {
+      "soru": "d alt kabuğunda kaç orbital bulunur?",
+      "siklar": {
+        "A": "1",
+        "B": "3",
+        "C": "5",
+        "D": "7"
+      },
+      "dogru": "C",
+      "aciklama": "d alt kabuğu 5 orbitalden oluşur (dxy, dxz, dyz, dx²-y², dz²)."
+    },
+    {
+      "soru": "Bir orbitalde en fazla kaç elektron bulunabilir?",
+      "siklar": {
+        "A": "1",
+        "B": "2",
+        "C": "4",
+        "D": "8"
+      },
+      "dogru": "B",
+      "aciklama": "Pauli dışarlama ilkesine göre bir orbitalde zıt spinli en fazla 2 elektron bulunabilir."
+    },
+    {
+      "soru": "px, py ve pz orbitalleri arasındaki temel fark nedir?",
+      "siklar": {
+        "A": "Enerjileri birbirinden farklıdır",
+        "B": "Uzaydaki yönelimleri (x, y, z eksenleri boyunca) farklıdır",
+        "C": "Şekilleri tamamen birbirinden farklıdır",
+        "D": "Alabilecekleri elektron sayıları farklıdır"
+      },
+      "dogru": "B",
+      "aciklama": "px, py, pz orbitalleri aynı şekle (halter) sahip olup yalnızca uzaydaki yönelimleri (eksenleri) bakımından farklılık gösterir."
+    },
+    {
+      "soru": "f alt kabuğunda kaç orbital bulunur?",
+      "siklar": {
+        "A": "3",
+        "B": "5",
+        "C": "7",
+        "D": "9"
+      },
+      "dogru": "C",
+      "aciklama": "f alt kabuğu 7 orbitalden oluşur."
+    },
+    {
+      "soru": "Aynı baş kuantum sayısına (n) sahip s orbitalinin büyüklüğü, n arttıkça nasıl değişir?",
+      "siklar": {
+        "A": "Küçülür",
+        "B": "Büyür",
+        "C": "Değişmez",
+        "D": "Önce büyür sonra küçülür"
+      },
+      "dogru": "B",
+      "aciklama": "n arttıkça elektronun bulunma olasılığı çekirdekten daha uzak bölgelere yayılır, orbital büyür."
+    },
+    {
+      "soru": "Bir 'orbital' kavramı aşağıdakilerden hangisini ifade eder?",
+      "siklar": {
+        "A": "Elektronun izlediği kesin yörüngeyi",
+        "B": "Elektronun bulunma olasılığının yüksek olduğu üç boyutlu bölgeyi",
+        "C": "Çekirdeğin geometrik şeklini",
+        "D": "Atomun toplam yarıçapını"
+      },
+      "dogru": "B",
+      "aciklama": "Orbital, elektronun belirli bir anda bulunma olasılığının yüksek olduğu uzaysal bölgedir."
+    },
+    {
+      "soru": "Aynı alt kabuğa (örneğin 2p) ait orbitallerin (px, py, pz) enerjileri birbirine göre nasıldır?",
+      "siklar": {
+        "A": "Eşittir (dejenere orbitallerdir)",
+        "B": "px her zaman en düşük enerjilidir",
+        "C": "pz her zaman en yüksek enerjilidir",
+        "D": "Hepsi farklı enerjilere sahiptir"
+      },
+      "dogru": "A",
+      "aciklama": "Aynı alt kabuktaki orbitaller (örneğin 2px, 2py, 2pz) eşit enerjiye sahiptir; bunlara dejenere orbitaller denir."
+    }
+  ],
+  "kim::Modern Atom Teorisi::Elektron Dizilimi (Konfigürasyon)": [
+    {
+      "soru": "Sodyum (Na, Z=11) atomunun elektron dizilimi nedir?",
+      "siklar": {
+        "A": "1s² 2s² 2p⁶ 3s¹",
+        "B": "1s² 2s² 2p⁵ 3s²",
+        "C": "1s² 2s² 2p⁶ 3p¹",
+        "D": "1s² 2s² 2p⁶ 3s² 3p¹"
+      },
+      "dogru": "A",
+      "aciklama": "Na'nın 11 elektronu sırasıyla 1s,2s,2p,3s alt kabuklarına yerleşir: 1s² 2s² 2p⁶ 3s¹."
+    },
+    {
+      "soru": "Aufbau (yapım) ilkesine göre elektronlar orbitallere nasıl yerleşir?",
+      "siklar": {
+        "A": "Rastgele bir sırayla",
+        "B": "Önce en yüksek enerjili boş orbitalden başlanarak",
+        "C": "Enerjisi en düşük olan boş orbitalden başlanarak",
+        "D": "Sadece s orbitallerine"
+      },
+      "dogru": "C",
+      "aciklama": "Aufbau ilkesine göre elektronlar, enerjisi en düşük olan boş orbitalden başlayarak yerleşir."
+    },
+    {
+      "soru": "4s ve 3d orbitallerinden hangisi enerji bakımından önce dolar?",
+      "siklar": {
+        "A": "3d",
+        "B": "4s",
+        "C": "İkisi aynı anda dolar",
+        "D": "Elementten elemente değişir, genel bir kural yoktur"
+      },
+      "dogru": "B",
+      "aciklama": "(n+l) kuralına göre 4s (4+0=4) orbitali, 3d (3+2=5) orbitalinden önce dolar."
+    },
+    {
+      "soru": "Z=20 olan kalsiyum (Ca) atomunun değerlik elektron sayısı kaçtır?",
+      "siklar": {
+        "A": "1",
+        "B": "2",
+        "C": "8",
+        "D": "20"
+      },
+      "dogru": "B",
+      "aciklama": "Ca: [Ar] 4s²; en dış kabuktaki (4s²) 2 elektron değerlik elektronudur."
+    },
+    {
+      "soru": "Bir orbitalde iki elektron bulunuyorsa, bu elektronların spinleri için ne söylenebilir?",
+      "siklar": {
+        "A": "Aynı yönlü olmalıdır",
+        "B": "Zıt yönlü (eşleşmiş) olmalıdır",
+        "C": "Spin kavramı bu durumda tanımsızdır",
+        "D": "Spinlerinin toplamı her zaman sıfırdan farklıdır"
+      },
+      "dogru": "B",
+      "aciklama": "Pauli dışarlama ilkesine göre bir orbitaldeki iki elektron zıt spinli olmalıdır."
+    },
+    {
+      "soru": "Argon (Ar, Z=18) atomunun elektron dizilimi nedir?",
+      "siklar": {
+        "A": "1s² 2s² 2p⁶ 3s² 3p⁶",
+        "B": "1s² 2s² 2p⁶ 3s² 3p⁴",
+        "C": "1s² 2s² 2p⁶ 3s² 3p⁶ 4s²",
+        "D": "1s² 2s² 2p⁶ 3s²"
+      },
+      "dogru": "A",
+      "aciklama": "Ar'nin 18 elektronu 1s² 2s² 2p⁶ 3s² 3p⁶ şeklinde dizilir; toplam 2+2+6+2+6=18."
+    },
+    {
+      "soru": "Klor (Cl, Z=17) atomunun soy gaz kısaltması ile elektron dizilimi nasıl yazılır?",
+      "siklar": {
+        "A": "[Ne] 3s² 3p⁵",
+        "B": "[Ne] 3s² 3p⁶",
+        "C": "[Ar] 3s² 3p⁵",
+        "D": "[Ne] 3s¹ 3p⁶"
+      },
+      "dogru": "A",
+      "aciklama": "Ne (Z=10) çekirdeği üzerine Cl'nin kalan 7 elektronu 3s² 3p⁵ şeklinde eklenir: [Ne] 3s² 3p⁵."
+    },
+    {
+      "soru": "Hund kuralına göre aynı enerjili (dejenere) orbitallere elektronlar nasıl yerleşir?",
+      "siklar": {
+        "A": "Önce bir orbital tamamen doldurulur, sonra diğerine geçilir",
+        "B": "Her orbitale önce birer elektron aynı yönlü spinle yerleşir, hepsi tek elektronlu olduktan sonra eşleşme başlar",
+        "C": "Sadece en düşük indeksli orbitale yerleşir",
+        "D": "Yerleşim sırası tamamen rastgeledir"
+      },
+      "dogru": "B",
+      "aciklama": "Hund kuralına göre dejenere orbitaller önce birer elektron alır (aynı spin yönü), bu sayede enerji en düşük seviyede tutulur."
+    },
+    {
+      "soru": "Demir (Fe, Z=26) atomunun 3d orbitalindeki elektron sayısı kaçtır?",
+      "siklar": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "8"
+      },
+      "dogru": "C",
+      "aciklama": "Fe: [Ar] 4s² 3d⁶ → 3d orbitalinde 6 elektron bulunur (2+2+6+2+6+2+6=26)."
+    },
+    {
+      "soru": "Geçiş metalleri iyonlaşırken (elektron kaybederken) elektronlar genellikle hangi orbitalden önce ayrılır?",
+      "siklar": {
+        "A": "En düşük baş kuantum sayılı (n) orbitalden",
+        "B": "En yüksek baş kuantum sayılı (n) orbitalden (örneğin 3d'den önce 4s'den)",
+        "C": "Her zaman 3d orbitalinden",
+        "D": "Belirli bir kural yoktur, tamamen rastgeledir"
+      },
+      "dogru": "B",
+      "aciklama": "Geçiş metalleri iyonlaşırken önce en dış kabuktaki (en yüksek n'li, örneğin 4s) elektronlarını kaybeder; 3d elektronları daha sonra ayrılır."
+    }
+  ],
+  "kim::Modern Atom Teorisi::Periyodik Sistemde Elektron Dağılımı": [
+    {
+      "soru": "Bir elementin periyodik tablodaki periyot numarası, elektron diziliminde en yüksek hangi değere eşittir?",
+      "siklar": {
+        "A": "Toplam elektron sayısına",
+        "B": "Baş kuantum sayısına (n)",
+        "C": "Proton sayısına",
+        "D": "Nötron sayısına"
+      },
+      "dogru": "B",
+      "aciklama": "Bir elementin periyot numarası, elektron diziliminde dolu olan en yüksek baş kuantum sayısına (n) eşittir."
+    },
+    {
+      "soru": "Elektron dizilimi [Ne] 3s² 3p⁴ olan element periyodik tabloda hangi periyot ve grupta yer alır?",
+      "siklar": {
+        "A": "3. periyot, 16. grup (VIA)",
+        "B": "2. periyot, 14. grup (IVA)",
+        "C": "3. periyot, 14. grup (IVA)",
+        "D": "4. periyot, 16. grup (VIA)"
+      },
+      "dogru": "A",
+      "aciklama": "En yüksek n=3 → 3. periyot; değerlik elektron sayısı 3s²3p⁴ = 6 → 16. grup (VIA)."
+    },
+    {
+      "soru": "Elektron dizilimi ns² np⁶ ile biten elementler periyodik tabloda hangi grupta bulunur?",
+      "siklar": {
+        "A": "Alkali metaller (1A)",
+        "B": "Toprak alkali metaller (2A)",
+        "C": "Soy gazlar (8A/18A)",
+        "D": "Halojenler (7A)"
+      },
+      "dogru": "C",
+      "aciklama": "ns²np⁶ ile tamamlanan elektron dizilimi, kararlı (dolu) son kabuğa sahip soy gazların özelliğidir."
+    },
+    {
+      "soru": "Geçiş metalleri (d blok elementleri), elektron dizilimlerinde hangi alt kabuğun kısmen dolu olmasıyla karakterize edilir?",
+      "siklar": {
+        "A": "s",
+        "B": "p",
+        "C": "d",
+        "D": "f"
+      },
+      "dogru": "C",
+      "aciklama": "Geçiş metalleri (d blok), d alt kabuğunun elektronlarla kısmen doldurulduğu elementlerdir."
+    },
+    {
+      "soru": "Değerlik elektron dizilimi ns¹ olan bir element periyodik tabloda hangi grupta yer alır?",
+      "siklar": {
+        "A": "1A (Alkali metaller)",
+        "B": "2A (Toprak alkali metaller)",
+        "C": "7A (Halojenler)",
+        "D": "8A (Soy gazlar)"
+      },
+      "dogru": "A",
+      "aciklama": "Son katmanda ns¹ elektron dizilimine sahip elementler 1A grubunda (alkali metaller) bulunur."
+    },
+    {
+      "soru": "Periyodik tabloda aynı periyotta soldan sağa gidildikçe elektron diziliminde temel olarak ne değişir?",
+      "siklar": {
+        "A": "Baş kuantum sayısı (n) artar, alt kabuk sabit kalır",
+        "B": "Aynı n değerindeki alt kabuklara elektronlar sırayla eklenir",
+        "C": "Toplam elektron sayısı azalır",
+        "D": "s blok elementlerinden f blok elementlerine rastgele geçilir"
+      },
+      "dogru": "B",
+      "aciklama": "Aynı periyotta n sabit kalır; soldan sağa gidildikçe o periyodun alt kabukları (s, p veya d) sırayla elektronlarla doldurulur."
+    },
+    {
+      "soru": "f blok elementleri (lantanitler ve aktinitler) elektron dizilimlerinde hangi alt kabukların dolmasıyla oluşur?",
+      "siklar": {
+        "A": "4f ve 5f",
+        "B": "3d ve 4d",
+        "C": "2p ve 3p",
+        "D": "6s ve 7s"
+      },
+      "dogru": "A",
+      "aciklama": "Lantanitlerde 4f, aktinitlerde 5f alt kabuğu elektronlarla dolar."
+    },
+    {
+      "soru": "Elektron dizilimi 1s² 2s² 2p⁶ 3s² olan elementin periyodik tablodaki grubu nedir?",
+      "siklar": {
+        "A": "1A",
+        "B": "2A",
+        "C": "3A",
+        "D": "8A"
+      },
+      "dogru": "B",
+      "aciklama": "Değerlik elektron dizilimi 3s² olduğundan element 2A grubunda (toprak alkali metaller) yer alır (Mg)."
+    },
+    {
+      "soru": "A grubu elementleri için, bir elementin son katmanındaki (değerlik) elektron sayısı ile bulunduğu A grubu numarası arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "Değerlik elektron sayısı, A grup numarasına doğrudan eşittir",
+        "B": "Değerlik elektron sayısı her zaman 8'den çıkarılarak grup numarası bulunur",
+        "C": "İkisi arasında bir ilişki yoktur",
+        "D": "Bu ilişki sadece d blok elementleri için geçerlidir"
+      },
+      "dogru": "A",
+      "aciklama": "A grubu elementlerinde değerlik elektron sayısı, bulunduğu A grubunun numarasına eşittir (örn. 2 değerlik elektronu → 2A grubu)."
+    },
+    {
+      "soru": "Elektron dizilimi [Ar] 4s² 3d¹⁰ 4p¹ olan bir element kaçıncı periyotta ve hangi blokta yer alır?",
+      "siklar": {
+        "A": "4. periyot, p blok",
+        "B": "3. periyot, d blok",
+        "C": "4. periyot, s blok",
+        "D": "3. periyot, p blok"
+      },
+      "dogru": "A",
+      "aciklama": "En yüksek n=4 (4s,4p) → 4. periyot; son elektron 4p orbitaline yerleştiğinden element p blokta yer alır."
+    }
+  ],
+  "kim::Modern Atom Teorisi::Periyodik Özellikler": [
+    {
+      "soru": "Aynı periyotta soldan sağa gidildikçe atom yarıçapı nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Önce artar sonra azalır"
+      },
+      "dogru": "B",
+      "aciklama": "Aynı periyotta çekirdek yükü artarken kabuk sayısı sabit kalır; elektronlar daha kuvvetli çekilir ve atom yarıçapı azalır."
+    },
+    {
+      "soru": "Aynı grupta yukarıdan aşağıya gidildikçe atom yarıçapı nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Belirli bir kural izlemez"
+      },
+      "dogru": "A",
+      "aciklama": "Aynı grupta aşağı inildikçe yeni elektron katmanları eklenir, bu da atom yarıçapının artmasına yol açar."
+    },
+    {
+      "soru": "İyonlaşma enerjisi (bir atomdan elektron uzaklaştırmak için gereken enerji), aynı periyotta soldan sağa gidildikçe genel eğilim olarak nasıl değişir?",
+      "siklar": {
+        "A": "Artar",
+        "B": "Azalır",
+        "C": "Değişmez",
+        "D": "Sadece soy gazlarda değişir"
+      },
+      "dogru": "A",
+      "aciklama": "Atom yarıçapı azaldıkça çekirdek elektronları daha sıkı tutar, bu da iyonlaşma enerjisinin genel olarak artmasına yol açar."
+    },
+    {
+      "soru": "Periyodik tabloda elektronegatifliği en yüksek element hangisidir?",
+      "siklar": {
+        "A": "Oksijen (O)",
+        "B": "Flor (F)",
+        "C": "Klor (Cl)",
+        "D": "Sezyum (Cs)"
+      },
+      "dogru": "B",
+      "aciklama": "Flor, periyodik tablodaki en elektronegatif elementtir."
+    },
+    {
+      "soru": "Metalik özellik periyodik tabloda hangi yönde artar?",
+      "siklar": {
+        "A": "Sağdan sola ve yukarıdan aşağıya",
+        "B": "Soldan sağa ve yukarıdan aşağıya",
+        "C": "Sağdan sola ve aşağıdan yukarıya",
+        "D": "Soldan sağa ve aşağıdan yukarıya"
+      },
+      "dogru": "A",
+      "aciklama": "Metalik özellik, atom yarıçapının büyük ve iyonlaşma enerjisinin düşük olduğu yönde (sağdan sola, yukarıdan aşağıya) artar."
+    },
+    {
+      "soru": "Bir atomdan elektron uzaklaştırılarak oluşan katyonun yarıçapı, nötr atomun yarıçapına göre nasıldır?",
+      "siklar": {
+        "A": "Daha büyüktür",
+        "B": "Daha küçüktür",
+        "C": "Aynıdır",
+        "D": "Her zaman karşılaştırılamaz"
+      },
+      "dogru": "B",
+      "aciklama": "Elektron kaybı, çekirdeğin kalan elektronları daha kuvvetli çekmesine ve elektron-elektron itmesinin azalmasına yol açarak yarıçapı küçültür."
+    },
+    {
+      "soru": "Aynı periyotta soldan sağa gidildikçe atom yarıçapının azalmasının temel nedeni nedir?",
+      "siklar": {
+        "A": "Artan çekirdek yükünün elektronları daha kuvvetli çekmesi",
+        "B": "Elektron sayısının azalması",
+        "C": "Yeni bir elektron katmanının eklenmesi",
+        "D": "Ekranlama (perdeleme) etkisinin büyük ölçüde artması"
+      },
+      "dogru": "A",
+      "aciklama": "Aynı periyotta kabuk sayısı sabit kalırken proton sayısı (çekirdek yükü) artar; bu da elektronları daha kuvvetli çekerek yarıçapı azaltır."
+    },
+    {
+      "soru": "Li, Na ve K elementleri (aynı grup, alkali metaller) arasında atom yarıçapı en büyük olan hangisidir?",
+      "siklar": {
+        "A": "Li",
+        "B": "Na",
+        "C": "K",
+        "D": "Hepsi aynıdır"
+      },
+      "dogru": "C",
+      "aciklama": "Aynı grupta aşağı inildikçe atom yarıçapı arttığından, en alttaki element olan K en büyük yarıçapa sahiptir."
+    },
+    {
+      "soru": "Elektron ilgisi (elektron afinitesi) genel olarak en yüksek olan element grubu (soy gazlar hariç) hangisidir?",
+      "siklar": {
+        "A": "Alkali metaller (1A)",
+        "B": "Toprak alkali metaller (2A)",
+        "C": "Halojenler (7A)",
+        "D": "Geçiş metalleri"
+      },
+      "dogru": "C",
+      "aciklama": "Halojenler, kararlı soy gaz dizilimine ulaşmak için bir elektron almaya çok istekli olduklarından en yüksek elektron ilgisine sahiptir."
+    },
+    {
+      "soru": "Bir element (örneğin Na) ile bu elementin pozitif iyonu (Na⁺) karşılaştırıldığında, ikinci bir elektronu uzaklaştırmak (iyonlaşma enerjisi) için gereken enerji hangisinde daha yüksektir?",
+      "siklar": {
+        "A": "Nötr atomda (Na)",
+        "B": "Pozitif iyonda (Na⁺)",
+        "C": "İkisinde de eşittir",
+        "D": "Karşılaştırılamaz"
+      },
+      "dogru": "B",
+      "aciklama": "Pozitif yüklü bir iyondan elektron uzaklaştırmak, artan etkin çekirdek çekimi nedeniyle nötr atomdan elektron uzaklaştırmaktan daha fazla enerji gerektirir."
+    }
+  ],
+  "kim::Gazlar::Gaz Basıncı ve Ölçümü": [
+    {
+      "soru": "Gaz basıncı, gaz moleküllerinin kabın duvarına yaptığı hangi etki ile ilişkilidir?",
+      "siklar": {
+        "A": "Sürekli çarpışmalarla uyguladıkları kuvvetle",
+        "B": "Moleküllerin kütlesiyle doğrudan, çarpışmadan bağımsız olarak",
+        "C": "Moleküllerin renkleriyle",
+        "D": "Kabın hacmiyle ters orantılı, çarpışma içermeyen bir kuvvetle"
+      },
+      "dogru": "A",
+      "aciklama": "Gaz basıncı, gaz moleküllerinin kabın duvarlarına çarpması sonucu birim alana uyguladıkları kuvvettir."
+    },
+    {
+      "soru": "1 atmosfer (atm) basınç kaç mmHg'ya eşittir?",
+      "siklar": {
+        "A": "760",
+        "B": "100",
+        "C": "1013",
+        "D": "1"
+      },
+      "dogru": "A",
+      "aciklama": "1 atm = 760 mmHg (760 torr) olarak tanımlanır."
+    },
+    {
+      "soru": "Açık hava (atmosfer) basıncını ölçmek için kullanılan alet hangisidir?",
+      "siklar": {
+        "A": "Manometre",
+        "B": "Barometre",
+        "C": "Termometre",
+        "D": "Hidrometre"
+      },
+      "dogru": "B",
+      "aciklama": "Atmosfer basıncı barometre ile ölçülür."
+    },
+    {
+      "soru": "Kapalı bir kaptaki gazın basıncını ölçmek için kullanılan alet hangisidir?",
+      "siklar": {
+        "A": "Barometre",
+        "B": "Manometre",
+        "C": "Termometre",
+        "D": "Areometre"
+      },
+      "dogru": "B",
+      "aciklama": "Kapalı kaplardaki gaz basıncı manometre ile ölçülür."
+    }
+  ],
   "kim::Gazlar::İdeal Gaz Yasası (PV=nRT)": [
     {
       "soru": "0°C ve 1 atm'de 1 mol ideal gazın hacmi yaklaşık kaçtır?",
@@ -4477,6 +5491,322 @@ const QUESTIONS = {
       },
       "dogru": "B",
       "aciklama": "Medulla oblongata (omurilik soğanı) solunum, kalp atışı, kan basıncı gibi yaşamsal işlevleri yönetir."
+    }
+  ],
+  "bio::Denetleyici ve Düzenleyici Sistem::Sinir Sistemi Rahatsızlıkları ve Korunma": [
+    {
+      "soru": "Parkinson hastalığında beyinde eksikliği görülen ve kas hareketlerinin kontrolünde önemli rol oynayan nörotransmitter hangisidir?",
+      "siklar": {
+        "A": "Serotonin",
+        "B": "Dopamin",
+        "C": "Asetilkolin",
+        "D": "GABA"
+      },
+      "dogru": "B",
+      "aciklama": "Parkinson hastalığında dopamin üreten nöronların kaybı sonucu titreme ve hareket bozuklukları ortaya çıkar."
+    },
+    {
+      "soru": "Multipl Skleroz (MS) hastalığında bağışıklık sistemi sinir hücrelerinin hangi yapısına zarar verir?",
+      "siklar": {
+        "A": "Hücre gövdesine",
+        "B": "Miyelin kılıfına",
+        "C": "Dendritlere",
+        "D": "Sinaptik keseciklere"
+      },
+      "dogru": "B",
+      "aciklama": "MS'te bağışıklık sistemi miyelin kılıfına zarar verir; bu da sinir iletiminin yavaşlamasına/bozulmasına yol açar."
+    },
+    {
+      "soru": "Alzheimer hastalığının en belirgin belirtisi nedir?",
+      "siklar": {
+        "A": "Kas güçsüzlüğü ve felç",
+        "B": "İlerleyici hafıza kaybı ve zihinsel gerileme",
+        "C": "Ani görme kaybı",
+        "D": "İşitme kaybı"
+      },
+      "dogru": "B",
+      "aciklama": "Alzheimer, beyinde anormal protein birikimleri (amiloid plaklar) sonucu ilerleyici hafıza ve bilişsel gerilemeyle karakterizedir."
+    },
+    {
+      "soru": "Epilepsi (sara) nöbetlerinin temel nedeni nedir?",
+      "siklar": {
+        "A": "Beyinde ani ve aşırı, kontrolsüz elektriksel aktivite",
+        "B": "Kasların aşırı gevşemesi",
+        "C": "Kandaki şeker düzeyinin sürekli artması",
+        "D": "Kalp atış hızının yavaşlaması"
+      },
+      "dogru": "A",
+      "aciklama": "Epilepsi, beyin hücrelerinde ani ve anormal elektriksel deşarjların yol açtığı nöbetlerle karakterizedir."
+    },
+    {
+      "soru": "Sinir sistemi sağlığını korumak için aşağıdakilerden hangisi önerilir?",
+      "siklar": {
+        "A": "Düzenli uyku, dengeli beslenme ve düzenli fiziksel aktivite",
+        "B": "Sürekli yüksek stres altında kalmak",
+        "C": "Alkol ve sigara kullanımını artırmak",
+        "D": "Uzun süre hareketsiz ve uykusuz kalmak"
+      },
+      "dogru": "A",
+      "aciklama": "Düzenli uyku, dengeli beslenme ve egzersiz, sinir sistemi sağlığını korumada temel önlemlerdir."
+    },
+    {
+      "soru": "Beyne giden kan akışının ani olarak kesilmesi sonucu oluşan ve felce yol açabilen acil durum nedir?",
+      "siklar": {
+        "A": "Migren",
+        "B": "İnme (beyin felci/stroke)",
+        "C": "Nevralji",
+        "D": "Sinüzit"
+      },
+      "dogru": "B",
+      "aciklama": "İnme, beyne kan akışının kesilmesi veya kanama sonucu beyin dokusunun zarar görmesidir."
+    },
+    {
+      "soru": "Motosiklet veya bisiklet kullanırken kask takılması özellikle hangi tür yaralanmayı önlemeye yöneliktir?",
+      "siklar": {
+        "A": "Omurilik yaralanmalarını",
+        "B": "Beyin (kafa travması) yaralanmalarını",
+        "C": "Periferik sinir iltihaplanmalarını",
+        "D": "Migren ataklarını"
+      },
+      "dogru": "B",
+      "aciklama": "Kask, kafatasını ve beyni doğrudan travmaya karşı koruyarak beyin hasarı riskini azaltır."
+    },
+    {
+      "soru": "Menenjit hastalığı, sinir sisteminin hangi yapısının iltihaplanmasıyla oluşur?",
+      "siklar": {
+        "A": "Beyin ve omuriliği çevreleyen zarların (meninkslerin)",
+        "B": "Sadece derinin",
+        "C": "İskelet kaslarının",
+        "D": "Kemik dokusunun"
+      },
+      "dogru": "A",
+      "aciklama": "Menenjit, beyin ve omuriliği çevreleyen meninks zarlarının (genellikle bakteri veya virüs kaynaklı) iltihaplanmasıdır."
+    },
+    {
+      "soru": "Aşağıdakilerden hangisi sinir sistemi rahatsızlıklarından korunmada DOĞRU bir davranış DEĞİLDİR?",
+      "siklar": {
+        "A": "Kafa darbelerinde gecikmeden doktora başvurmak",
+        "B": "Düzenli sağlık kontrolü (check-up) yaptırmak",
+        "C": "Reçetesiz ilaç ve uyarıcı maddeleri sık ve kontrolsüz kullanmak",
+        "D": "Omega-3 içeren dengeli bir beslenme düzeni sürdürmek"
+      },
+      "dogru": "C",
+      "aciklama": "Reçetesiz ilaç ve uyarıcıların kontrolsüz kullanımı sinir sistemine zarar verebilir; bu, korunma için DOĞRU bir davranış değildir."
+    },
+    {
+      "soru": "Migren ile ilgili aşağıdaki ifadelerden hangisi doğrudur?",
+      "siklar": {
+        "A": "Migren, kemik dokusunun iltihaplanmasıdır",
+        "B": "Migren, genellikle tek taraflı ve zonklayıcı şiddetli baş ağrısıyla karakterizedir",
+        "C": "Migren bulaşıcı bir hastalıktır",
+        "D": "Migren sadece ileri yaşlarda görülen bir rahatsızlıktır"
+      },
+      "dogru": "B",
+      "aciklama": "Migren, tipik olarak tek taraflı, zonklayıcı şiddetli baş ağrısı, bulantı ve ışığa/sese hassasiyetle karakterize nörolojik bir durumdur."
+    }
+  ],
+  "bio::Denetleyici ve Düzenleyici Sistem::Endokrin Sistem ve Hormonlar": [
+    {
+      "soru": "Kan şekeri seviyesini düşüren hormon hangi organ tarafından, hangi isimle salgılanır?",
+      "siklar": {
+        "A": "Pankreas - Glukagon",
+        "B": "Pankreas - İnsülin",
+        "C": "Tiroid - Tiroksin",
+        "D": "Böbrek üstü bezi - Adrenalin"
+      },
+      "dogru": "B",
+      "aciklama": "İnsülin, pankreastan salgılanır ve hücrelere glikoz girişini artırarak kan şekerini düşürür."
+    },
+    {
+      "soru": "Vücut metabolizma hızını düzenleyen ve yapısında iyot bulunan hormon hangi bezden salgılanır?",
+      "siklar": {
+        "A": "Hipofiz",
+        "B": "Tiroid",
+        "C": "Pankreas",
+        "D": "Böbrek üstü bezi"
+      },
+      "dogru": "B",
+      "aciklama": "Tiroid bezinden salgılanan tiroksin, iyot içerir ve metabolizma hızını düzenler."
+    },
+    {
+      "soru": "Tehlike anında kalp atış hızını ve kan şekerini hızla artıran, 'kaç ya da savaş' tepkisinde rol oynayan hormon hangisidir?",
+      "siklar": {
+        "A": "İnsülin",
+        "B": "Adrenalin (Epinefrin)",
+        "C": "Melatonin",
+        "D": "Östrojen"
+      },
+      "dogru": "B",
+      "aciklama": "Böbrek üstü bezinin öz (medulla) kısmından salgılanan adrenalin, vücudu ani tehlikelere karşı hazırlar."
+    },
+    {
+      "soru": "Hipofiz bezi, diğer birçok endokrin bezi uyaran hormonlar salgıladığı için hangi isimle anılır?",
+      "siklar": {
+        "A": "Master bez (ana bez)",
+        "B": "Yardımcı bez",
+        "C": "Atıl bez",
+        "D": "Ekzokrin bez"
+      },
+      "dogru": "A",
+      "aciklama": "Hipofiz, tiroid, böbrek üstü bezi ve gonadlar gibi diğer bezleri uyaran hormonlar salgıladığı için 'master bez' olarak adlandırılır."
+    },
+    {
+      "soru": "Kandaki kalsiyum düzeyini düzenleyen paratiroit hormonu (PTH) hangi bezden salgılanır?",
+      "siklar": {
+        "A": "Tiroid",
+        "B": "Paratiroit",
+        "C": "Pankreas",
+        "D": "Timus"
+      },
+      "dogru": "B",
+      "aciklama": "Paratiroit bezlerinden salgılanan PTH, kandaki kalsiyum düzeyini düzenler."
+    },
+    {
+      "soru": "Büyüme hormonu (GH) eksikliği çocuklarda hangi duruma yol açar?",
+      "siklar": {
+        "A": "Cüceliğe (boy kısalığına)",
+        "B": "Devliğe (gigantizme)",
+        "C": "Şeker hastalığına (diyabet)",
+        "D": "Guatra (tiroid büyümesine)"
+      },
+      "dogru": "A",
+      "aciklama": "Çocukluk döneminde büyüme hormonu (GH) eksikliği, kemik ve doku büyümesinin yetersiz kalmasıyla cüceliğe yol açar."
+    },
+    {
+      "soru": "Uyku-uyanıklık döngüsünü (sirkadiyen ritmi) düzenleyen hormon ve salgılandığı bez hangisidir?",
+      "siklar": {
+        "A": "Melatonin - Epifiz (pineal) bez",
+        "B": "Kortizol - Böbrek üstü bezi",
+        "C": "Tiroksin - Tiroid bezi",
+        "D": "Oksitosin - Hipofiz bezi"
+      },
+      "dogru": "A",
+      "aciklama": "Epifiz (pineal) bezden salgılanan melatonin, uyku-uyanıklık döngüsünü düzenler."
+    },
+    {
+      "soru": "Doğum sırasında rahim kasılmalarını ve emzirme sırasında süt salınımını uyaran hormon hangisidir?",
+      "siklar": {
+        "A": "Progesteron",
+        "B": "Oksitosin",
+        "C": "FSH",
+        "D": "Glukagon"
+      },
+      "dogru": "B",
+      "aciklama": "Hipofizin arka lobundan salgılanan oksitosin, doğum sırasında rahim kasılmalarını ve süt salınımını uyarır."
+    },
+    {
+      "soru": "Vücuttaki su dengesini düzenleyen ve böbreklerden suyun geri emilimini artıran antidiüretik hormon (ADH) hangi bezden salgılanır?",
+      "siklar": {
+        "A": "Tiroid",
+        "B": "Pankreas",
+        "C": "Hipofiz (arka lob)",
+        "D": "Böbrek üstü bezi (korteks)"
+      },
+      "dogru": "C",
+      "aciklama": "ADH, hipofizin arka lobundan salgılanır ve böbreklerden su geri emilimini artırarak vücut su dengesini korur."
+    },
+    {
+      "soru": "İnsülin ve glukagon hormonları arasındaki ilişki için aşağıdakilerden hangisi doğrudur?",
+      "siklar": {
+        "A": "İkisi de kan şekerini düşürür",
+        "B": "İnsülin kan şekerini düşürür, glukagon yükseltir; birlikte negatif geri besleme ile kan şekeri dengelenir",
+        "C": "İkisi de kan şekerini yükseltir",
+        "D": "Glukagon kan şekerini düşürür, insülin yükseltir"
+      },
+      "dogru": "B",
+      "aciklama": "İnsülin ve glukagon, kan şekeri düzeyini zıt etkileriyle dengede tutan antagonist (karşıt) hormonlardır."
+    }
+  ],
+  "bio::Denetleyici ve Düzenleyici Sistem::Duyu Organlarının Yapısı ve İşlevi": [
+    {
+      "soru": "Gözde ışığa duyarlı reseptör hücrelerin (koni ve basil hücrelerinin) bulunduğu tabaka hangisidir?",
+      "siklar": {
+        "A": "Kornea",
+        "B": "Retina (ağ tabaka)",
+        "C": "Sklera (ak tabaka)",
+        "D": "İris"
+      },
+      "dogru": "B",
+      "aciklama": "Işığa duyarlı koni ve basil (rod) hücreleri gözün en iç tabakası olan retinada bulunur."
+    },
+    {
+      "soru": "Kulakta denge duyusundan sorumlu yapı hangisidir?",
+      "siklar": {
+        "A": "Kohlea (salyangoz)",
+        "B": "Yarım daire kanalları",
+        "C": "Kulak zarı (timpan)",
+        "D": "Östaki borusu"
+      },
+      "dogru": "B",
+      "aciklama": "İç kulaktaki yarım daire kanalları, baş hareketlerini algılayarak denge duyusunu sağlar."
+    },
+    {
+      "soru": "Derideki duyu reseptörleri aşağıdaki uyaranlardan hangisini DOĞRUDAN algılamaz?",
+      "siklar": {
+        "A": "Dokunma ve basınç",
+        "B": "Sıcaklık",
+        "C": "Ağrı",
+        "D": "Ses dalgalarının frekansı"
+      },
+      "dogru": "D",
+      "aciklama": "Deri reseptörleri dokunma, basınç, sıcaklık ve ağrıyı algılar; ses frekansı kulak tarafından algılanır."
+    },
+    {
+      "soru": "Gözde ışığın kırılmasını sağlayan ve kaslarla şekli değiştirilebilen, görüntünün retinaya net olarak düşmesini sağlayan yapı hangisidir?",
+      "siklar": {
+        "A": "Retina",
+        "B": "Göz merceği (lens)",
+        "C": "İris",
+        "D": "Sklera"
+      },
+      "dogru": "B",
+      "aciklama": "Göz merceği, kirpiksi kaslar yardımıyla şeklini değiştirerek ışığı retina üzerine odaklar."
+    }
+  ],
+  "bio::Denetleyici ve Düzenleyici Sistem::Duyu Organları Rahatsızlıkları ve Korunma": [
+    {
+      "soru": "Göz merceğinin esnekliğini kaybetmesi sonucu yakındaki cisimlerin net görülememesi durumu (genellikle yaşla ilişkilidir) nedir?",
+      "siklar": {
+        "A": "Miyopi (uzağı görememe)",
+        "B": "Hipermetropi (yakını görememe)",
+        "C": "Astigmatizma",
+        "D": "Katarakt"
+      },
+      "dogru": "B",
+      "aciklama": "Göz merceğinin esnekliğinin azalması yakın cisimlere odaklanmayı zorlaştırır; bu duruma hipermetropi (presbiyopi) denir."
+    },
+    {
+      "soru": "Göz merceğinin saydamlığını kaybederek bulanıklaşması sonucu görme kaybına yol açan rahatsızlık nedir?",
+      "siklar": {
+        "A": "Katarakt",
+        "B": "Glokom",
+        "C": "Miyopi",
+        "D": "Renk körlüğü"
+      },
+      "dogru": "A",
+      "aciklama": "Katarakt, göz merceğinin saydamlığını kaybetmesiyle oluşan bulanık görmeye yol açan bir rahatsızlıktır."
+    },
+    {
+      "soru": "Göz içi basıncının artması sonucu göz sinirine zarar veren ve tedavi edilmezse görme kaybına yol açabilen rahatsızlık nedir?",
+      "siklar": {
+        "A": "Katarakt",
+        "B": "Glokom",
+        "C": "Konjonktivit",
+        "D": "Hipermetropi"
+      },
+      "dogru": "B",
+      "aciklama": "Glokom, göz içi basıncının artarak optik sinire zarar vermesiyle oluşan bir rahatsızlıktır."
+    },
+    {
+      "soru": "Kulak sağlığını korumak için aşağıdakilerden hangisi önerilir?",
+      "siklar": {
+        "A": "Kulaklıkla sürekli yüksek sesle müzik dinlemek",
+        "B": "Yüksek gürültülü ortamlarda kulak koruyucu kullanmak",
+        "C": "Kulağa sivri cisimler sokarak temizlik yapmak",
+        "D": "Yüzme sonrası kulağı kurutmadan bırakmak"
+      },
+      "dogru": "B",
+      "aciklama": "Yüksek gürültülü ortamlarda kulak koruyucu kullanmak, işitme kaybını önlemede etkili bir korunma yöntemidir."
     }
   ],
   "bio::Dolaşım Sistemi ve Bağışıklık::Bağışıklık Çeşitleri ve Doğal Savunma": [
