@@ -389,6 +389,7 @@ const PROGRAM = [
 // ── STATE ─────────────────────────────────────────────────────────────────
 let aktif = "mat", selUnite = null, selKonu = null;
 let sorular = [], cevaplar = [];
+const SORU_SAYISI = 3; // bir testte sorulacak soru sayısı (tik almak için hepsi doğru olmalı)
 let tamamlananlar = {};
 try { tamamlananlar = JSON.parse(localStorage.getItem("muf11_q") || "{}"); } catch(e) {}
 function kaydet(){ try{ localStorage.setItem("muf11_q", JSON.stringify(tamamlananlar)); }catch(e){} }
@@ -457,7 +458,7 @@ function renderProgram(){
     <div class="program-wrap">
       <div class="pgw-head">
         <h2 class="w-title">📅 15 Günlük Program</h2>
-        <p class="w-sub">${tamGun} / ${PROGRAM.length} gün tamamlandı${ilkEksik?` · Sıradaki: Gün ${ilkEksik}`:' · Tüm program bitti 🎉'}. Bir konuya tıkla, 2 soru çöz, tamamla.</p>
+        <p class="w-sub">${tamGun} / ${PROGRAM.length} gün tamamlandı${ilkEksik?` · Sıradaki: Gün ${ilkEksik}`:' · Tüm program bitti 🎉'}. Bir konuya tıkla, ${SORU_SAYISI} soru çöz, tamamla.</p>
       </div>
       ${renderKrono()}
       ${renderOzet()}
@@ -737,7 +738,7 @@ function showWelcome(){
     <div class="welcome">
       <div class="w-icon">📚</div>
       <h2 class="w-title">${DERSLER[aktif].ad}</h2>
-      <p class="w-sub">Sol taraftan bir konuya tıkla. 2 soru çıkacak — ikisini de doğru yaparsan konu tamamlanır.</p>
+      <p class="w-sub">Sol taraftan bir konuya tıkla. ${SORU_SAYISI} soru çıkacak — hepsini doğru yaparsan konu tamamlanır.</p>
     </div>`;
 }
 
@@ -766,9 +767,9 @@ function startQuiz(unite, konu){
     return;
   }
 
-  // Havuzdan rastgele 2 soru seç
+  // Havuzdan rastgele SORU_SAYISI kadar soru seç
   const shuffled = [...havuz].sort(() => Math.random() - 0.5);
-  sorular = shuffled.slice(0, 2);
+  sorular = shuffled.slice(0, Math.min(SORU_SAYISI, havuz.length));
   renderSoru(0);
 }
 
@@ -835,7 +836,7 @@ function showSonuc(){
       <div class="score-badge ${gecti?"sc-pass":"sc-fail"}">${dogru} / ${sorular.length} doğru</div>
       <p class="r-sub">${gecti
         ? `"<strong>${selKonu}</strong>" konusu tamamlandı ve işaretlendi.`
-        : `2/2 tam doğru yapman gerekiyor. Konuyu tekrar çalış ve dene.`}</p>
+        : `${sorular.length}/${sorular.length} tam doğru yapman gerekiyor. Konuyu tekrar çalış ve dene.`}</p>
       <div class="r-btns">
         ${!gecti?`<button class="btn btn-${aktif}" onclick="startQuiz('${selUnite.replace(/'/g,"\\'")}','${selKonu.replace(/'/g,"\\'")}')">Tekrar dene</button>`:""}
         <button class="btn btn-ghost" onclick="showWelcome();selKonu=null;selUnite=null;renderSidebar()">Konulara dön</button>
