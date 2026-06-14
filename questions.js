@@ -1053,6 +1053,52 @@ const QUESTIONS = {
       "aciklama": "D, grafiğin dikey eksen boyunca ne kadar kaydığını gösterir."
     }
   ],
+  "mat::Fonksiyonlarda Uygulamalar::Fonksiyonlarda Tanım Kümesi, Artan-Azalanlık ve Ekstremum": [
+    {
+      "soru": "f(x) = 1/(x-3) fonksiyonunun tanım kümesi nedir?",
+      "siklar": {
+        "A": "R",
+        "B": "R - {3}",
+        "C": "R - {0}",
+        "D": "(3, ∞)"
+      },
+      "dogru": "B",
+      "aciklama": "Paydanın sıfır olduğu x=3 değeri tanım kümesinden çıkarılır."
+    },
+    {
+      "soru": "f(x) = √(x-2) fonksiyonunun tanım kümesi nedir?",
+      "siklar": {
+        "A": "R",
+        "B": "[2, ∞)",
+        "C": "(-∞, 2]",
+        "D": "R - {2}"
+      },
+      "dogru": "B",
+      "aciklama": "Karekök içindeki ifade negatif olamaz: x-2≥0 → x≥2."
+    },
+    {
+      "soru": "Bir fonksiyonun grafiği soldan sağa doğru gidildiğinde yükseliyorsa, bu aralıkta fonksiyon nasıl tanımlanır?",
+      "siklar": {
+        "A": "Azalan",
+        "B": "Artan",
+        "C": "Sabit",
+        "D": "Periyodik"
+      },
+      "dogru": "B",
+      "aciklama": "x değeri arttıkça f(x) değeri de artıyorsa fonksiyon o aralıkta artandır."
+    },
+    {
+      "soru": "Bir fonksiyonun yerel maksimum noktasında, fonksiyonun artan/azalan durumu nasıl değişir?",
+      "siklar": {
+        "A": "Artandan azalana geçer",
+        "B": "Azalandan artana geçer",
+        "C": "Sürekli artar",
+        "D": "Sürekli azalır"
+      },
+      "dogru": "A",
+      "aciklama": "Yerel maksimum noktasından önce fonksiyon artar, sonra azalmaya başlar."
+    }
+  ],
   "mat::Fonksiyonlarda Uygulamalar::Fonksiyonlarda Tek-Çift Simetri": [
     {
       "soru": "f(x) = x³ - x fonksiyonu ne tür bir fonksiyondur?",
@@ -1163,6 +1209,52 @@ const QUESTIONS = {
       },
       "dogru": "C",
       "aciklama": "f(-x)=0=f(x) → çift; f(-x)=0=-f(x)=0 → tek; her ikisi de sağlanır."
+    }
+  ],
+  "mat::Fonksiyonlarda Uygulamalar::Fonksiyonlarda Dönüşümler": [
+    {
+      "soru": "f(x) fonksiyonunun grafiği g(x)=f(x)+3 şeklinde değiştirilirse grafik nasıl ötelenir?",
+      "siklar": {
+        "A": "Sağa 3 birim",
+        "B": "Sola 3 birim",
+        "C": "Yukarı 3 birim",
+        "D": "Aşağı 3 birim"
+      },
+      "dogru": "C",
+      "aciklama": "f(x)'e eklenen sabit, grafiği dikey (yukarı) yönde öteler."
+    },
+    {
+      "soru": "g(x)=f(x-2) fonksiyonunun grafiği, f(x) grafiğine göre nasıl ötelenmiştir?",
+      "siklar": {
+        "A": "Yukarı 2 birim",
+        "B": "Aşağı 2 birim",
+        "C": "Sağa 2 birim",
+        "D": "Sola 2 birim"
+      },
+      "dogru": "C",
+      "aciklama": "f(x-c) şeklindeki dönüşüm grafiği yatayda sağa c birim öteler (c>0 için)."
+    },
+    {
+      "soru": "g(x)=-f(x) fonksiyonunun grafiği, f(x) grafiğine göre hangi eksene göre yansıtılmıştır?",
+      "siklar": {
+        "A": "x-eksenine göre",
+        "B": "y-eksenine göre",
+        "C": "y=x doğrusuna göre",
+        "D": "Orijine göre"
+      },
+      "dogru": "A",
+      "aciklama": "-f(x), her y değerinin işaretini değiştirir; bu x-eksenine göre yansımadır."
+    },
+    {
+      "soru": "g(x)=f(-x) fonksiyonunun grafiği, f(x) grafiğine göre hangi eksene göre yansıtılmıştır?",
+      "siklar": {
+        "A": "x-eksenine göre",
+        "B": "y-eksenine göre",
+        "C": "y=x doğrusuna göre",
+        "D": "Orijine göre"
+      },
+      "dogru": "B",
+      "aciklama": "f(-x), her x değerinin işaretini değiştirir; bu y-eksenine göre yansımadır."
     }
   ],
   "mat::Fonksiyonlarda Uygulamalar::Bileşke Fonksiyon": [
@@ -1387,6 +1479,52 @@ const QUESTIONS = {
       },
       "dogru": "A",
       "aciklama": "f⁻¹(x) = √x; görüntü kümesi x ≥ 0 olduğundan f⁻¹ de x ≥ 0'da tanımlı."
+    }
+  ],
+  "mat::Fonksiyonlarda Uygulamalar::İkinci Dereceden Fonksiyonlar ve Grafikleri (Parabol)": [
+    {
+      "soru": "f(x)=ax²+bx+c (a≠0) fonksiyonunun grafiği olan parabolün tepe noktasının x-koordinatı hangi formülle bulunur?",
+      "siklar": {
+        "A": "x = -b/2a",
+        "B": "x = b/2a",
+        "C": "x = -c/b",
+        "D": "x = a/b"
+      },
+      "dogru": "A",
+      "aciklama": "Parabolün tepe noktasının x-koordinatı x=-b/2a formülüyle bulunur."
+    },
+    {
+      "soru": "f(x)=2x²+4x+1 parabolünün kolları hangi yöne bakar? (a=2>0)",
+      "siklar": {
+        "A": "Yukarı",
+        "B": "Aşağı",
+        "C": "Sağa",
+        "D": "Sola"
+      },
+      "dogru": "A",
+      "aciklama": "a>0 olduğunda parabolün kolları yukarı doğru açılır."
+    },
+    {
+      "soru": "f(x)=x²-4x+3 parabolünün simetri ekseni hangi doğrudur?",
+      "siklar": {
+        "A": "x = 2",
+        "B": "x = -2",
+        "C": "x = 4",
+        "D": "x = 0"
+      },
+      "dogru": "A",
+      "aciklama": "Simetri ekseni x=-b/2a=-(-4)/(2·1)=2'dir."
+    },
+    {
+      "soru": "a<0 olan bir f(x)=ax²+bx+c fonksiyonunun tepe noktası, fonksiyonun hangi türden noktasıdır?",
+      "siklar": {
+        "A": "Yerel minimum",
+        "B": "Yerel maksimum",
+        "C": "Kök",
+        "D": "Y-eksenini kestiği nokta"
+      },
+      "dogru": "B",
+      "aciklama": "a<0 olduğunda parabolün kolları aşağı açılır ve tepe noktası fonksiyonun maksimum değerini verir."
     }
   ],
   "mat::Fonksiyonlarda Uygulamalar::Üstel Fonksiyon ve Grafiği": [
@@ -2173,6 +2311,52 @@ const QUESTIONS = {
       "aciklama": "İkinci denklem birincinin 2 katı; aynı doğruyu temsil eder."
     }
   ],
+  "mat::Denklem ve Eşitsizlik Sistemleri::İkinci Dereceden İki Bilinmeyenli Denklem Sistemleri": [
+    {
+      "soru": "Bir doğru (y=ax+b) ile bir parabolün (y=x²) kesişim noktalarını bulmak için hangi yöntem kullanılır?",
+      "siklar": {
+        "A": "İki denklem taraf tarafa toplanır",
+        "B": "Doğru denklemindeki y, parabol denkleminde yerine yazılarak ortak bir denklem elde edilir (yerine koyma)",
+        "C": "İki denklem birbirinden çıkarılır",
+        "D": "Sadece grafikten tahmin edilir, cebirsel çözüm yoktur"
+      },
+      "dogru": "B",
+      "aciklama": "Yerine koyma yöntemiyle iki bilinmeyenden biri elenir ve tek değişkenli bir denklem elde edilir."
+    },
+    {
+      "soru": "y=x ve y=x² denklem sistemini çözmek için x=x² denklemi elde edilir. Bu denklemin kökleri nedir?",
+      "siklar": {
+        "A": "x=0 ve x=1",
+        "B": "x=1 ve x=-1",
+        "C": "x=0 ve x=-1",
+        "D": "Sadece x=0"
+      },
+      "dogru": "A",
+      "aciklama": "x=x² → x²-x=0 → x(x-1)=0 → x=0 veya x=1."
+    },
+    {
+      "soru": "Bir doğru ile bir çemberin (x²+y²=r²) kesişim noktalarının sayısı, doğrunun çemberin merkezine olan uzaklığına (d) ve yarıçapa (r) göre belirlenir. d>r durumunda kaç kesişim noktası vardır?",
+      "siklar": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "Sonsuz"
+      },
+      "dogru": "A",
+      "aciklama": "Doğru çembere merkeze yarıçaptan daha uzak olduğundan (d>r), doğru ile çember kesişmez."
+    },
+    {
+      "soru": "İkinci derece iki fonksiyonun (y=f(x) biçiminde, ikisi de parabol) grafiklerinin kesişim noktalarının sayısı en fazla kaçtır?",
+      "siklar": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "dogru": "B",
+      "aciklama": "İki denklem birbirinden çıkarıldığında en fazla ikinci dereceden bir denklem elde edilir; bu da en fazla 2 kök (kesişim noktası) verir."
+    }
+  ],
   "mat::Denklem ve Eşitsizlik Sistemleri::Eşitsizlik Sistemleri": [
     {
       "soru": "x > 2 ve x < 5 eşitsizlik sisteminin çözümü hangisidir?",
@@ -2397,6 +2581,52 @@ const QUESTIONS = {
       "aciklama": "2 = 3a - 1 → 3a = 3 → a = 1."
     }
   ],
+  "mat::Analitik Geometri::İki Nokta Arasındaki Uzaklık": [
+    {
+      "soru": "A(x₁,y₁) ve B(x₂,y₂) noktaları arasındaki uzaklık (|AB|) hangi formülle hesaplanır?",
+      "siklar": {
+        "A": "|AB| = √((x₂-x₁)² + (y₂-y₁)²)",
+        "B": "|AB| = (x₂-x₁) + (y₂-y₁)",
+        "C": "|AB| = √(x₂² + y₂²)",
+        "D": "|AB| = (x₂-x₁)·(y₂-y₁)"
+      },
+      "dogru": "A",
+      "aciklama": "İki nokta arasındaki uzaklık formülü, x ve y koordinat farklarının karelerinin toplamının karekökü olarak hesaplanır."
+    },
+    {
+      "soru": "A(1,2) ve B(4,6) noktaları arasındaki uzaklık kaç birimdir?",
+      "siklar": {
+        "A": "5",
+        "B": "7",
+        "C": "25",
+        "D": "√7"
+      },
+      "dogru": "A",
+      "aciklama": "|AB| = √((4-1)²+(6-2)²) = √(9+16) = √25 = 5."
+    },
+    {
+      "soru": "İki nokta arasındaki uzaklık formülü hangi geometrik teoreme dayanır?",
+      "siklar": {
+        "A": "Thales teoremi",
+        "B": "Pisagor teoremi",
+        "C": "Kosinüs teoremi",
+        "D": "Sinüs teoremi"
+      },
+      "dogru": "B",
+      "aciklama": "Uzaklık formülü, x ve y farklarının dik kenar olduğu bir dik üçgende hipotenüsü veren Pisagor teoreminden türetilir."
+    },
+    {
+      "soru": "A(2,3) noktasının orijine (0,0) olan uzaklığı kaç birimdir?",
+      "siklar": {
+        "A": "√13",
+        "B": "5",
+        "C": "13",
+        "D": "6"
+      },
+      "dogru": "A",
+      "aciklama": "d = √(2²+3²) = √(4+9) = √13."
+    }
+  ],
   "mat::Analitik Geometri::Noktanın Doğruya Uzaklığı": [
     {
       "soru": "P(3, -2) noktasının 3x + 4y - 5 = 0 doğrusuna uzaklığı kaçtır?",
@@ -2507,6 +2737,144 @@ const QUESTIONS = {
       },
       "dogru": "A",
       "aciklama": "|3a-4a+10|/5=2 → |-a+10|=10 → -a+10=10 (a=0) veya -a+10=-10 (a=20); şıklarda 0 ve 2 var, a=0 kesin."
+    }
+  ],
+  "mat::Analitik Geometri::Doğruların Paralelliği ve Dikliği": [
+    {
+      "soru": "İki doğrunun paralel olması için eğimleri (m₁ ve m₂) arasındaki ilişki nedir?",
+      "siklar": {
+        "A": "m₁ = m₂",
+        "B": "m₁·m₂ = -1",
+        "C": "m₁ = -m₂",
+        "D": "m₁ + m₂ = 0"
+      },
+      "dogru": "A",
+      "aciklama": "Paralel doğruların eğimleri birbirine eşittir."
+    },
+    {
+      "soru": "İki doğrunun birbirine dik olması için eğimleri arasındaki ilişki nedir? (eğimler sıfırdan farklı)",
+      "siklar": {
+        "A": "m₁ = m₂",
+        "B": "m₁·m₂ = -1",
+        "C": "m₁ = 1/m₂",
+        "D": "m₁ + m₂ = 1"
+      },
+      "dogru": "B",
+      "aciklama": "Dik doğruların eğimlerinin çarpımı -1'dir."
+    },
+    {
+      "soru": "Eğimi 2 olan bir doğruya dik olan bir doğrunun eğimi kaçtır?",
+      "siklar": {
+        "A": "-1/2",
+        "B": "2",
+        "C": "-2",
+        "D": "1/2"
+      },
+      "dogru": "A",
+      "aciklama": "m₁·m₂=-1 → 2·m₂=-1 → m₂=-1/2."
+    },
+    {
+      "soru": "Eğimi 3 olan bir doğruya paralel olan bir doğrunun eğimi kaçtır?",
+      "siklar": {
+        "A": "3",
+        "B": "-3",
+        "C": "1/3",
+        "D": "-1/3"
+      },
+      "dogru": "A",
+      "aciklama": "Paralel doğruların eğimleri eşit olduğundan, paralel doğrunun eğimi de 3'tür."
+    }
+  ],
+  "mat::Analitik Geometri::İki Doğru Arasındaki Açı": [
+    {
+      "soru": "İki doğru arasındaki açı (θ), doğruların eğimleri (m₁, m₂) kullanılarak hangi formülle bulunur?",
+      "siklar": {
+        "A": "tanθ = |(m₂-m₁)/(1+m₁·m₂)|",
+        "B": "tanθ = m₁·m₂",
+        "C": "tanθ = m₁+m₂",
+        "D": "tanθ = (m₁-m₂)/(m₁·m₂)"
+      },
+      "dogru": "A",
+      "aciklama": "İki doğru arasındaki açı, tanθ=|(m₂-m₁)/(1+m₁m₂)| formülüyle bulunur."
+    },
+    {
+      "soru": "İki doğrunun eğimleri çarpımı -1 ise (m₁·m₂=-1), bu doğrular arasındaki açı kaç derecedir?",
+      "siklar": {
+        "A": "0°",
+        "B": "45°",
+        "C": "90°",
+        "D": "180°"
+      },
+      "dogru": "C",
+      "aciklama": "m₁·m₂=-1 olması doğruların dik (90°) olduğunu gösterir."
+    },
+    {
+      "soru": "Eğimleri eşit olan (m₁=m₂) iki doğru arasındaki açı kaç derecedir?",
+      "siklar": {
+        "A": "0°",
+        "B": "45°",
+        "C": "90°",
+        "D": "Tanımsızdır"
+      },
+      "dogru": "A",
+      "aciklama": "Eğimleri eşit olan doğrular paraleldir ve aralarındaki açı 0°'dir."
+    },
+    {
+      "soru": "Eğimleri m₁=1 ve m₂=0 olan iki doğru arasındaki açı kaç derecedir?",
+      "siklar": {
+        "A": "30°",
+        "B": "45°",
+        "C": "60°",
+        "D": "90°"
+      },
+      "dogru": "B",
+      "aciklama": "tanθ=|(0-1)/(1+0)|=1 → θ=45°."
+    }
+  ],
+  "mat::Analitik Geometri::Modüler Aritmetik ve İşlemler": [
+    {
+      "soru": "17 sayısının 5'e bölümünden kalan (17 mod 5) kaçtır?",
+      "siklar": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "0"
+      },
+      "dogru": "A",
+      "aciklama": "17 = 3·5 + 2, kalan 2'dir."
+    },
+    {
+      "soru": "a ≡ b (mod n) ifadesi ne anlama gelir?",
+      "siklar": {
+        "A": "a ve b'nin n'e bölümünden kalanları birbirine eşittir",
+        "B": "a ve b sayıları birbirine eşittir",
+        "C": "a, b'ye tam bölünür",
+        "D": "n, a ile b'nin toplamına eşittir"
+      },
+      "dogru": "A",
+      "aciklama": "a≡b (mod n), a ve b'nin n'e bölümünden aynı kalanı verdiği anlamına gelir."
+    },
+    {
+      "soru": "Modüler aritmetikte (a+b) mod n işlemi nasıl hesaplanabilir?",
+      "siklar": {
+        "A": "[(a mod n) + (b mod n)] mod n şeklinde hesaplanabilir",
+        "B": "Sadece a mod n hesaplanır, b göz ardı edilir",
+        "C": "a+b toplanır, mod işlemi uygulanamaz",
+        "D": "(a+b) her zaman n'den büyük olmalıdır"
+      },
+      "dogru": "A",
+      "aciklama": "Modüler toplama, önce her terimin mod n alınıp toplanması ve sonucun tekrar mod n alınmasıyla yapılabilir."
+    },
+    {
+      "soru": "7² sayısının 5'e bölümünden kalan (7² mod 5) kaçtır?",
+      "siklar": {
+        "A": "4",
+        "B": "1",
+        "C": "2",
+        "D": "0"
+      },
+      "dogru": "A",
+      "aciklama": "7 mod 5 = 2, 2² = 4, 4 mod 5 = 4."
     }
   ],
   "mat::Analitik Geometri::Çemberin Analitik İncelenmesi": [
