@@ -123,11 +123,37 @@
   /* ── NO Q FALLBACK ── */
   .no-q{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center;color:var(--muted);font-size:14px;max-width:480px}
 
+  /* ── PROGRAM ── */
+  .program-wrap{display:flex;flex-direction:column;gap:14px;max-width:960px;width:100%}
+  .pgw-head{margin-bottom:2px}
+  .pgw-head .w-sub{text-align:left;margin:4px 0 0;max-width:none}
+  .pg-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;transition:border-color .15s}
+  .pg-card.current{border-color:var(--mat)}
+  .pg-card.done{opacity:.6}
+  .pg-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;gap:10px}
+  .pg-gun{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;letter-spacing:-.2px;display:flex;align-items:center;gap:8px}
+  .pg-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:rgba(240,165,0,.15);color:var(--mat);letter-spacing:.04em}
+  .pg-prog{font-size:11px;color:var(--muted);font-weight:700;font-family:'Syne',sans-serif;white-space:nowrap}
+  .pg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .pg-ders-lbl{font-size:10px;font-weight:700;letter-spacing:.07em;margin-bottom:6px;font-family:'Syne',sans-serif}
+  .pgl-mat{color:var(--mat)}.pgl-fiz{color:var(--fiz)}.pgl-kim{color:var(--kim)}.pgl-bio{color:var(--bio)}
+  .pg-item{display:flex;align-items:flex-start;gap:7px;padding:4px 6px;margin:0 -6px;cursor:pointer;font-size:12px;line-height:1.4;color:var(--text);border-radius:6px;transition:background .1s}
+  .pg-item:hover{background:var(--surface2)}
+  .pg-item.done{color:var(--muted);text-decoration:line-through}
+  .pg-chk{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--faint);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:8px;color:transparent}
+  .pg-chk.d-mat{border-color:var(--mat)}.pg-chk.d-fiz{border-color:var(--fiz)}.pg-chk.d-kim{border-color:var(--kim)}.pg-chk.d-bio{border-color:var(--bio)}
+  .pg-item.done .pg-chk.d-mat{background:var(--mat);color:#000}
+  .pg-item.done .pg-chk.d-fiz{background:var(--fiz);color:#000}
+  .pg-item.done .pg-chk.d-kim{background:var(--kim);color:#000}
+  .pg-item.done .pg-chk.d-bio{background:var(--bio);color:#000}
+  .program-btn{width:100%;font-size:12px;padding:9px 0;margin-top:2px}
+
   @media(max-width:680px){
     .app{grid-template-columns:1fr;grid-template-rows:auto 1fr}
     .sidebar{height:auto;position:static;max-height:320px}
     .konu-list{max-height:200px}
     .main{padding:20px 16px}
+    .pg-grid{grid-template-columns:1fr 1fr}
   }
 </style>
 </head>
@@ -141,12 +167,16 @@
     <div class="sb-sub">Konu seç → Test çöz → Tik al</div>
   </div>
   <div class="ders-tabs" id="ders-tabs"></div>
+  <div style="padding:0 10px 10px">
+    <button class="btn btn-mat program-btn" onclick="renderProgram()">📅 15 Günlük Program</button>
+  </div>
   <div class="prog-wrap">
     <div class="prog-row"><span id="prog-lbl">0 / 0 tamamlandı</span><span class="prog-pct" id="prog-pct">%0</span></div>
     <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
   </div>
   <div class="konu-list" id="konu-list"></div>
 </aside>
+
 
 <!-- ══ MAIN ═════════════════════════════════════════════════════════════ -->
 <main class="main" id="main"></main>
@@ -165,17 +195,17 @@
 // ── MÜFREDAT YAPISI ──────────────────────────────────────────────────────
 const DERSLER = {
   mat:{ad:"Matematik",kisa:"MAT",c:"mat",uniteler:[
-    {ad:"Trigonometri",konular:["Yönlü Açılar ve Esas Ölçü","Trigonometrik Fonksiyonlar (sin, cos, tan, cot)","Birim Çember ve Trigonometrik Değerler","Trigonometrik Özdeşlikler","Toplam-Fark Formülleri","İki Kat Açı Formülleri","Trigonometrik Denklemler","Trigonometrik Fonksiyonların Grafikleri"]},
-    {ad:"Fonksiyonlarda Uygulamalar",konular:["Fonksiyonlarda Tek-Çift Simetri","Fonksiyonlarda Dönüşümler","Bileşke Fonksiyon","Ters Fonksiyon","Üstel Fonksiyon ve Grafiği","Logaritma Fonksiyonu ve Grafiği","Üstel ve Logaritmik Denklemler","Üstel ve Logaritmik Eşitsizlikler"]},
-    {ad:"Denklem ve Eşitsizlik Sistemleri",konular:["Parametreli Denklemler","Mutlak Değer İçeren Denklem ve Eşitsizlikler","Doğrusal Denklem Sistemleri","Doğrusal Olmayan Denklem Sistemleri","Eşitsizlik Sistemleri"]},
-    {ad:"Analitik Geometri",konular:["Koordinat Sisteminde Nokta ve Doğru","İki Nokta Arasındaki Uzaklık","Noktanın Doğruya Uzaklığı","Doğruların Paralelliği ve Dikliği","İki Doğru Arasındaki Açı","Çemberin Analitik İncelenmesi","Çembere Teğet Doğrular","İki Çemberin Birbirine Göre Konumu"]},
+    {ad:"Trigonometri",konular:["Yönlü Açılar ve Esas Ölçü","Trigonometrik Fonksiyonlar (sin, cos, tan, cot)","Birim Çember ve Trigonometrik Değerler","Trigonometrik Özdeşlikler","Toplam-Fark Formülleri","İki Kat Açı Formülleri","Kosinüs Teoremi ve Üçgende Trigonometri","Trigonometrik Denklemler","Ters Trigonometrik Fonksiyonlar","Trigonometrik Fonksiyonların Grafikleri"]},
+    {ad:"Fonksiyonlarda Uygulamalar",konular:["Fonksiyonlarda Tanım Kümesi, Artan-Azalanlık ve Ekstremum","Fonksiyonlarda Tek-Çift Simetri","Fonksiyonlarda Dönüşümler","Bileşke Fonksiyon","Ters Fonksiyon","İkinci Dereceden Fonksiyonlar ve Grafikleri (Parabol)","Üstel Fonksiyon ve Grafiği","Logaritma Fonksiyonu ve Grafiği","Üstel ve Logaritmik Denklemler","Üstel ve Logaritmik Eşitsizlikler"]},
+    {ad:"Denklem ve Eşitsizlik Sistemleri",konular:["Parametreli Denklemler","Mutlak Değer İçeren Denklem ve Eşitsizlikler","Doğrusal Denklem Sistemleri","İkinci Dereceden İki Bilinmeyenli Denklem Sistemleri","Doğrusal Olmayan Denklem Sistemleri","Eşitsizlik Sistemleri"]},
+    {ad:"Analitik Geometri",konular:["Koordinat Sisteminde Nokta ve Doğru","İki Nokta Arasındaki Uzaklık","Noktanın Doğruya Uzaklığı","Doğruların Paralelliği ve Dikliği","İki Doğru Arasındaki Açı","Modüler Aritmetik ve İşlemler","Çemberin Analitik İncelenmesi","Çembere Teğet Doğrular","İki Çemberin Birbirine Göre Konumu"]},
     {ad:"Çember ve Daire",konular:["Çemberde Açılar (Merkez, Çevre, İç-Dış)","Çemberde Kiriş ve Bağıntılar","Çembere Çizilen Teğet","Çevrel Çember ve İç Teğet Çember","Daire Dilimi ve Yay Uzunluğu"]},
     {ad:"Uzay Geometri",konular:["Uzayda Doğru ve Düzlem İlişkileri","Prizmalar (Yüzey Alanı ve Hacim)","Piramitler (Yüzey Alanı ve Hacim)","Silindir (Yüzey Alanı ve Hacim)","Koni (Yüzey Alanı ve Hacim)","Küre (Yüzey Alanı ve Hacim)","Katı Cisimlerin Kesitleri"]},
     {ad:"Olasılık",konular:["Olaylar ve Olay Çeşitleri","Klasik Olasılık Tanımı","Toplama Kuralı","Çarpma Kuralı","Koşullu Olasılık","Bağımsız ve Bağımlı Olaylar","Deneysel ve Teorik Olasılık"]},
   ]},
   fiz:{ad:"Fizik",kisa:"FİZ",c:"fiz",uniteler:[
     {ad:"Kuvvet ve Hareket",konular:["Vektörler","Bağıl Hareket","Newton'ın Hareket Yasaları","Bir Boyutta Sabit İvmeli Hareket","Serbest Düşme","Limit Hız","Düşey Doğrultuda Atış Hareketi","İki Boyutta Hareket (Eğik Atış)","Dairesel Hareket","Basit Harmonik Hareket","Tork (Kuvvet Momenti)","Statik Denge","İş-Enerji Teoremi","Mekanik Enerjinin Korunumu","Sürtünmeli Yüzeylerde Enerji","İtme ve Çizgisel Momentum","Momentumun Korunumu","Çarpışmalar (Elastik ve İnelastik)","Basit Makineler"]},
-    {ad:"Elektrik ve Manyetizma",konular:["Elektriksel Kuvvet ve Coulomb Yasası","Noktasal Yük Elektrik Alanı","Elektrik Alan Çizgileri","Elektriksel Potansiyel Enerji","Elektriksel Potansiyel Fark","Sığa ve Kondansatörler","Elektrik Akımı ve Devre Elemanları","Ohm Yasası","Seri ve Paralel Devreler","Kirchhoff Yasaları","Elektrik Enerjisi ve Güç","Manyetik Alan","Manyetik Kuvvet (Lorentz)","Elektromanyetik İndüksiyon","Faraday Yasası","Alternatif Akım Temel Kavramlar"]},
+    {ad:"Elektrik ve Manyetizma",konular:["Elektriksel Kuvvet ve Coulomb Yasası","Noktasal Yük Elektrik Alanı","Elektrik Alan Çizgileri","Elektriksel Potansiyel Enerji","Elektriksel Potansiyel Fark","Sığa ve Kondansatörler","Elektrik Akımı ve Devre Elemanları","Ohm Yasası","Seri ve Paralel Devreler","Kirchhoff Yasaları","Elektrik Enerjisi ve Güç","Manyetik Alan","Manyetik Kuvvet (Lorentz)","Elektromanyetik İndüksiyon","Faraday Yasası","Alternatif Akım Temel Kavramlar","Transformatörler"]},
   ]},
   kim:{ad:"Kimya",kisa:"KİM",c:"kim",uniteler:[
     {ad:"Modern Atom Teorisi",konular:["Dalga Mekaniği (Kuantum Modeli)","Kuantum Sayıları","Orbitaller ve Şekilleri","Elektron Dizilimi (Konfigürasyon)","Periyodik Sistemde Elektron Dağılımı","Periyodik Özellikler"]},
@@ -195,8 +225,104 @@ const DERSLER = {
     {ad:"Üreme Sistemi",konular:["Üreme Sisteminin Yapısı ve İşlevi","Üreme Sisteminin Sağlıklı Yapısının Korunması","İnsanda Embriyonik Gelişim Süreci"]},
     {ad:"Komünite Ekolojisi",konular:["Komünitenin Yapısına Etki Eden Faktörler","Tür İçi ve Türler Arası Rekabet","Simbiyotik İlişkiler","Yırtıcı-Av İlişkisi","Sükseyon (Ekolojik Ardışıklık)"]},
     {ad:"Popülasyon Ekolojisi",konular:["Popülasyon Dinamiğine Etki Eden Faktörler","Büyüme Modelleri (J ve S eğrisi)","Taşıma Kapasitesi","Popülasyon Yoğunluğunu Düzenleyen Faktörler"]},
+    {ad:"Çevre ve Ekosistem Ekolojisi",konular:["Madde Döngüleri ve Enerji Akışı","Güncel Çevre Sorunları"]},
   ]},
 };
+
+// ── 15 GÜNLÜK PROGRAM ────────────────────────────────────────────────────
+// Her gün için 4 dersten ilgili konular (DERSLER içindeki ünite/konu adlarıyla eşleşir)
+const PROGRAM = [
+  { gun:1, konular:{
+    mat:[{u:"Trigonometri",k:"Yönlü Açılar ve Esas Ölçü"},{u:"Trigonometri",k:"Birim Çember ve Trigonometrik Değerler"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"Vektörler"}],
+    kim:[{u:"Modern Atom Teorisi",k:"Dalga Mekaniği (Kuantum Modeli)"}],
+    bio:[{u:"Denetleyici ve Düzenleyici Sistem",k:"Sinir Sisteminin Yapısı ve İşlevi"}],
+  }},
+  { gun:2, konular:{
+    mat:[{u:"Trigonometri",k:"Trigonometrik Fonksiyonlar (sin, cos, tan, cot)"},{u:"Trigonometri",k:"Trigonometrik Fonksiyonların Grafikleri"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"Bağıl Hareket"}],
+    kim:[{u:"Modern Atom Teorisi",k:"Kuantum Sayıları"},{u:"Modern Atom Teorisi",k:"Orbitaller ve Şekilleri"},{u:"Modern Atom Teorisi",k:"Elektron Dizilimi (Konfigürasyon)"}],
+    bio:[{u:"Denetleyici ve Düzenleyici Sistem",k:"Sinir Sistemi Rahatsızlıkları ve Korunma"}],
+  }},
+  { gun:3, konular:{
+    mat:[{u:"Trigonometri",k:"Trigonometrik Özdeşlikler"},{u:"Trigonometri",k:"Toplam-Fark Formülleri"},{u:"Trigonometri",k:"İki Kat Açı Formülleri"},{u:"Trigonometri",k:"Kosinüs Teoremi ve Üçgende Trigonometri"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"Newton'ın Hareket Yasaları"}],
+    kim:[{u:"Modern Atom Teorisi",k:"Periyodik Sistemde Elektron Dağılımı"},{u:"Modern Atom Teorisi",k:"Periyodik Özellikler"}],
+    bio:[{u:"Denetleyici ve Düzenleyici Sistem",k:"Endokrin Sistem ve Hormonlar"}],
+  }},
+  { gun:4, konular:{
+    mat:[{u:"Trigonometri",k:"Trigonometrik Denklemler"},{u:"Trigonometri",k:"Ters Trigonometrik Fonksiyonlar"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"Bir Boyutta Sabit İvmeli Hareket"},{u:"Kuvvet ve Hareket",k:"Serbest Düşme"},{u:"Kuvvet ve Hareket",k:"Limit Hız"},{u:"Kuvvet ve Hareket",k:"Düşey Doğrultuda Atış Hareketi"}],
+    kim:[{u:"Gazlar",k:"Gaz Basıncı ve Ölçümü"}],
+    bio:[{u:"Denetleyici ve Düzenleyici Sistem",k:"Duyu Organlarının Yapısı ve İşlevi"},{u:"Denetleyici ve Düzenleyici Sistem",k:"Duyu Organları Rahatsızlıkları ve Korunma"}],
+  }},
+  { gun:5, konular:{
+    mat:[{u:"Analitik Geometri",k:"Koordinat Sisteminde Nokta ve Doğru"},{u:"Analitik Geometri",k:"İki Nokta Arasındaki Uzaklık"},{u:"Analitik Geometri",k:"Noktanın Doğruya Uzaklığı"},{u:"Analitik Geometri",k:"Doğruların Paralelliği ve Dikliği"},{u:"Analitik Geometri",k:"İki Doğru Arasındaki Açı"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"İki Boyutta Hareket (Eğik Atış)"}],
+    kim:[{u:"Gazlar",k:"Boyle Yasası"},{u:"Gazlar",k:"Charles Yasası"},{u:"Gazlar",k:"Gay-Lussac Yasası"}],
+    bio:[{u:"Destek ve Hareket Sistemi",k:"Destek ve Hareket Sisteminin Yapısı ve İşlevi"},{u:"Destek ve Hareket Sistemi",k:"Destek ve Hareket Sistemi Rahatsızlıkları"},{u:"Destek ve Hareket Sistemi",k:"Destek ve Hareket Sisteminin Korunması"}],
+  }},
+  { gun:6, konular:{
+    mat:[{u:"Analitik Geometri",k:"Modüler Aritmetik ve İşlemler"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"İş-Enerji Teoremi"},{u:"Kuvvet ve Hareket",k:"Mekanik Enerjinin Korunumu"},{u:"Kuvvet ve Hareket",k:"Sürtünmeli Yüzeylerde Enerji"}],
+    kim:[{u:"Gazlar",k:"Avogadro İlkesi"},{u:"Gazlar",k:"İdeal Gaz Yasası (PV=nRT)"},{u:"Gazlar",k:"Dalton'ın Kısmi Basınçlar Yasası"},{u:"Gazlar",k:"Graham'ın Yayılma Yasası"},{u:"Gazlar",k:"Gaz Stokiyometrisi"},{u:"Gazlar",k:"Gerçek Gazlar"}],
+    bio:[{u:"Sindirim Sistemi",k:"Sindirim Sisteminin Yapısı ve İşlevi"}],
+  }},
+  { gun:7, konular:{
+    mat:[{u:"Fonksiyonlarda Uygulamalar",k:"Fonksiyonlarda Tanım Kümesi, Artan-Azalanlık ve Ekstremum"},{u:"Fonksiyonlarda Uygulamalar",k:"Fonksiyonlarda Tek-Çift Simetri"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"İtme ve Çizgisel Momentum"},{u:"Kuvvet ve Hareket",k:"Momentumun Korunumu"},{u:"Kuvvet ve Hareket",k:"Çarpışmalar (Elastik ve İnelastik)"}],
+    kim:[{u:"Sıvı Çözeltiler ve Çözünürlük",k:"Çözünme Süreci ve Entalpisi"},{u:"Sıvı Çözeltiler ve Çözünürlük",k:"Çözünürlük ve Bunu Etkileyen Faktörler"}],
+    bio:[{u:"Sindirim Sistemi",k:"Emilim ve Besinlerin Taşınması"},{u:"Sindirim Sistemi",k:"Sindirim Sistemi Rahatsızlıkları"},{u:"Sindirim Sistemi",k:"Sindirim Sisteminin Korunması"}],
+  }},
+  { gun:8, konular:{
+    mat:[{u:"Fonksiyonlarda Uygulamalar",k:"İkinci Dereceden Fonksiyonlar ve Grafikleri (Parabol)"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"Tork (Kuvvet Momenti)"}],
+    kim:[{u:"Sıvı Çözeltiler ve Çözünürlük",k:"Derişim Birimleri"},{u:"Sıvı Çözeltiler ve Çözünürlük",k:"Donma Noktası Düşmesi"},{u:"Sıvı Çözeltiler ve Çözünürlük",k:"Kaynama Noktası Yükselmesi"},{u:"Sıvı Çözeltiler ve Çözünürlük",k:"Osmotik Basınç"}],
+    bio:[{u:"Dolaşım Sistemi ve Bağışıklık",k:"Kalp, Kan ve Damarların Yapısı ve İşlevi"},{u:"Dolaşım Sistemi ve Bağışıklık",k:"Lenf Dolaşımı"},{u:"Dolaşım Sistemi ve Bağışıklık",k:"Dolaşım Sistemi Rahatsızlıkları ve Korunma"}],
+  }},
+  { gun:9, konular:{
+    mat:[{u:"Fonksiyonlarda Uygulamalar",k:"Fonksiyonlarda Dönüşümler"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"Statik Denge"}],
+    kim:[{u:"Kimyasal Tepkimelerde Enerji",k:"İç Enerji ve Entalpi"},{u:"Kimyasal Tepkimelerde Enerji",k:"Ekzotermik ve Endotermik Tepkimeler"}],
+    bio:[{u:"Dolaşım Sistemi ve Bağışıklık",k:"Bağışıklık Çeşitleri ve Doğal Savunma"},{u:"Dolaşım Sistemi ve Bağışıklık",k:"Edinilmiş Bağışıklık, Aşı ve Serum"}],
+  }},
+  { gun:10, konular:{
+    mat:[{u:"Denklem ve Eşitsizlik Sistemleri",k:"İkinci Dereceden İki Bilinmeyenli Denklem Sistemleri"},{u:"Denklem ve Eşitsizlik Sistemleri",k:"Doğrusal Olmayan Denklem Sistemleri"}],
+    fiz:[{u:"Kuvvet ve Hareket",k:"Basit Makineler"}],
+    kim:[{u:"Kimyasal Tepkimelerde Enerji",k:"Hess Yasası"},{u:"Kimyasal Tepkimelerde Enerji",k:"Standart Oluşum Entalpileri"},{u:"Kimyasal Tepkimelerde Enerji",k:"Bağ Enerjileri"},{u:"Kimyasal Tepkimelerde Enerji",k:"Kalorimetri"}],
+    bio:[{u:"Solunum Sistemi",k:"Solunum Sisteminin Yapısı ve İşlevi"},{u:"Solunum Sistemi",k:"Soluk Alıp Verme Mekanizması"},{u:"Solunum Sistemi",k:"Alveollerden Dokulara Gaz Taşınması"},{u:"Solunum Sistemi",k:"Solunum Sistemi Rahatsızlıkları ve Korunma"}],
+  }},
+  { gun:11, konular:{
+    mat:[{u:"Denklem ve Eşitsizlik Sistemleri",k:"Eşitsizlik Sistemleri"},{u:"Denklem ve Eşitsizlik Sistemleri",k:"Mutlak Değer İçeren Denklem ve Eşitsizlikler"}],
+    fiz:[{u:"Elektrik ve Manyetizma",k:"Elektriksel Kuvvet ve Coulomb Yasası"},{u:"Elektrik ve Manyetizma",k:"Noktasal Yük Elektrik Alanı"},{u:"Elektrik ve Manyetizma",k:"Elektrik Alan Çizgileri"}],
+    kim:[{u:"Kimyasal Tepkimelerde Hız",k:"Reaksiyon Hızı ve Ölçümü"},{u:"Kimyasal Tepkimelerde Hız",k:"Hız Sabiti ve Hız Denklemi"}],
+    bio:[{u:"Üriner Sistem",k:"Üriner Sistemin Yapısı ve İşlevi"},{u:"Üriner Sistem",k:"Homeostasinin Sağlanmasında Böbreklerin Rolü"},{u:"Üriner Sistem",k:"Üriner Sistem Rahatsızlıkları ve Korunma"}],
+  }},
+  { gun:12, konular:{
+    mat:[{u:"Çember ve Daire",k:"Çemberde Açılar (Merkez, Çevre, İç-Dış)"},{u:"Çember ve Daire",k:"Çemberde Kiriş ve Bağıntılar"}],
+    fiz:[{u:"Elektrik ve Manyetizma",k:"Elektriksel Potansiyel Enerji"},{u:"Elektrik ve Manyetizma",k:"Elektriksel Potansiyel Fark"}],
+    kim:[{u:"Kimyasal Tepkimelerde Hız",k:"Reaksiyon Hızına Etki Eden Faktörler"},{u:"Kimyasal Tepkimelerde Hız",k:"Aktifleşme Enerjisi"},{u:"Kimyasal Tepkimelerde Hız",k:"Reaksiyon Mekanizması"}],
+    bio:[{u:"Üreme Sistemi",k:"Üreme Sisteminin Yapısı ve İşlevi"},{u:"Üreme Sistemi",k:"Üreme Sisteminin Sağlıklı Yapısının Korunması"},{u:"Üreme Sistemi",k:"İnsanda Embriyonik Gelişim Süreci"}],
+  }},
+  { gun:13, konular:{
+    mat:[{u:"Çember ve Daire",k:"Çembere Çizilen Teğet"},{u:"Çember ve Daire",k:"Çevrel Çember ve İç Teğet Çember"},{u:"Çember ve Daire",k:"Daire Dilimi ve Yay Uzunluğu"}],
+    fiz:[{u:"Elektrik ve Manyetizma",k:"Sığa ve Kondansatörler"}],
+    kim:[{u:"Kimyasal Tepkimelerde Denge",k:"Kimyasal Denge Kavramı"},{u:"Kimyasal Tepkimelerde Denge",k:"Denge Sabiti (Kc ve Kp)"},{u:"Kimyasal Tepkimelerde Denge",k:"Le Chatelier İlkesi"},{u:"Kimyasal Tepkimelerde Denge",k:"Dengeyi Etkileyen Faktörler"}],
+    bio:[{u:"Komünite Ekolojisi",k:"Komünitenin Yapısına Etki Eden Faktörler"},{u:"Komünite Ekolojisi",k:"Tür İçi ve Türler Arası Rekabet"},{u:"Komünite Ekolojisi",k:"Simbiyotik İlişkiler"},{u:"Komünite Ekolojisi",k:"Yırtıcı-Av İlişkisi"},{u:"Komünite Ekolojisi",k:"Sükseyon (Ekolojik Ardışıklık)"}],
+  }},
+  { gun:14, konular:{
+    mat:[{u:"Uzay Geometri",k:"Uzayda Doğru ve Düzlem İlişkileri"},{u:"Uzay Geometri",k:"Prizmalar (Yüzey Alanı ve Hacim)"},{u:"Uzay Geometri",k:"Piramitler (Yüzey Alanı ve Hacim)"},{u:"Uzay Geometri",k:"Silindir (Yüzey Alanı ve Hacim)"},{u:"Uzay Geometri",k:"Koni (Yüzey Alanı ve Hacim)"},{u:"Uzay Geometri",k:"Küre (Yüzey Alanı ve Hacim)"},{u:"Uzay Geometri",k:"Katı Cisimlerin Kesitleri"}],
+    fiz:[{u:"Elektrik ve Manyetizma",k:"Manyetik Alan"},{u:"Elektrik ve Manyetizma",k:"Manyetik Kuvvet (Lorentz)"},{u:"Elektrik ve Manyetizma",k:"Elektromanyetik İndüksiyon"},{u:"Elektrik ve Manyetizma",k:"Faraday Yasası"}],
+    kim:[{u:"Kimyasal Tepkimelerde Denge",k:"Asit-Baz Dengesi"},{u:"Kimyasal Tepkimelerde Denge",k:"pH ve pOH Hesaplamaları"}],
+    bio:[{u:"Popülasyon Ekolojisi",k:"Popülasyon Dinamiğine Etki Eden Faktörler"},{u:"Popülasyon Ekolojisi",k:"Büyüme Modelleri (J ve S eğrisi)"},{u:"Popülasyon Ekolojisi",k:"Taşıma Kapasitesi"},{u:"Popülasyon Ekolojisi",k:"Popülasyon Yoğunluğunu Düzenleyen Faktörler"},{u:"Çevre ve Ekosistem Ekolojisi",k:"Madde Döngüleri ve Enerji Akışı"}],
+  }},
+  { gun:15, konular:{
+    mat:[{u:"Olasılık",k:"Olaylar ve Olay Çeşitleri"},{u:"Olasılık",k:"Klasik Olasılık Tanımı"},{u:"Olasılık",k:"Toplama Kuralı"},{u:"Olasılık",k:"Çarpma Kuralı"},{u:"Olasılık",k:"Koşullu Olasılık"},{u:"Olasılık",k:"Bağımsız ve Bağımlı Olaylar"},{u:"Olasılık",k:"Deneysel ve Teorik Olasılık"}],
+    fiz:[{u:"Elektrik ve Manyetizma",k:"Alternatif Akım Temel Kavramlar"},{u:"Elektrik ve Manyetizma",k:"Transformatörler"}],
+    kim:[{u:"Kimyasal Tepkimelerde Denge",k:"Tampon Çözeltiler"},{u:"Kimyasal Tepkimelerde Denge",k:"Hidroliz"},{u:"Kimyasal Tepkimelerde Denge",k:"Çözünürlük Dengesi"},{u:"Sıvı Çözeltiler ve Çözünürlük",k:"Çözünürlük Çarpımı (Kçç)"}],
+    bio:[{u:"Çevre ve Ekosistem Ekolojisi",k:"Güncel Çevre Sorunları"}],
+  }},
+];
 
 // ── STATE ─────────────────────────────────────────────────────────────────
 let aktif = "mat", selUnite = null, selKonu = null;
@@ -205,6 +331,64 @@ let tamamlananlar = {};
 try { tamamlananlar = JSON.parse(localStorage.getItem("muf11_q") || "{}"); } catch(e) {}
 function kaydet(){ try{ localStorage.setItem("muf11_q", JSON.stringify(tamamlananlar)); }catch(e){} }
 const key = (d,u,k) => `${d}::${u}::${k}`;
+
+// ── 15 GÜNLÜK PROGRAM ───────────────────────────────────────────────────
+function gunDurumu(gun){
+  let tot=0, don=0;
+  Object.entries(gun.konular).forEach(([d,list]) => {
+    list.forEach(({u,k}) => { tot++; if(tamamlananlar[key(d,u,k)]) don++; });
+  });
+  return {tot, don};
+}
+
+function renderProgram(){
+  let tamGun=0, ilkEksik=null;
+  const durumlar = PROGRAM.map(g => {
+    const d = gunDurumu(g);
+    const tam = d.tot>0 && d.don===d.tot;
+    if(tam) tamGun++;
+    else if(ilkEksik===null) ilkEksik = g.gun;
+    return {g, d, tam};
+  });
+
+  const cards = durumlar.map(({g,d,tam}) => {
+    const dersHtml = Object.entries(g.konular).map(([ders,list]) => {
+      const items = list.map(({u,k}) => {
+        const ok = !!tamamlananlar[key(ders,u,k)];
+        const uEsc = u.replace(/'/g,"\\'"), kEsc = k.replace(/'/g,"\\'");
+        return `<div class="pg-item${ok?' done':''}" onclick="gotoKonu('${ders}','${uEsc}','${kEsc}')">
+          <span class="pg-chk d-${ders}">${ok?'✓':''}</span><span>${k}</span>
+        </div>`;
+      }).join("");
+      return `<div>
+        <div class="pg-ders-lbl pgl-${ders}">${DERSLER[ders].kisa}</div>
+        ${items}
+      </div>`;
+    }).join("");
+
+    return `<div class="pg-card${g.gun===ilkEksik?' current':''}${tam?' done':''}">
+      <div class="pg-head">
+        <div class="pg-gun">Gün ${g.gun}${g.gun===ilkEksik?'<span class="pg-tag">SIRADAKİ</span>':''}${tam?'<span class="pg-tag" style="background:rgba(78,203,113,.15);color:var(--ok)">✓ TAMAMLANDI</span>':''}</div>
+        <div class="pg-prog">${d.don} / ${d.tot} konu</div>
+      </div>
+      <div class="pg-grid">${dersHtml}</div>
+    </div>`;
+  }).join("");
+
+  document.getElementById("main").innerHTML = `
+    <div class="program-wrap">
+      <div class="pgw-head">
+        <h2 class="w-title">📅 15 Günlük Program</h2>
+        <p class="w-sub">${tamGun} / ${PROGRAM.length} gün tamamlandı${ilkEksik?` · Sıradaki: Gün ${ilkEksik}`:' · Tüm program bitti 🎉'}. Bir konuya tıkla, 2 soru çöz, tamamla.</p>
+      </div>
+      ${cards}
+    </div>`;
+}
+
+function gotoKonu(d,u,k){
+  aktif = d;
+  startQuiz(u,k);
+}
 
 // ── SIDEBAR ───────────────────────────────────────────────────────────────
 function renderSidebar(){
@@ -353,6 +537,7 @@ function showSonuc(){
       <div class="r-btns">
         ${!gecti?`<button class="btn btn-${aktif}" onclick="startQuiz('${selUnite.replace(/'/g,"\\'")}','${selKonu.replace(/'/g,"\\'")}')">Tekrar dene</button>`:""}
         <button class="btn btn-ghost" onclick="showWelcome();selKonu=null;selUnite=null;renderSidebar()">Konulara dön</button>
+        <button class="btn btn-ghost" onclick="renderProgram()">📅 Programa dön</button>
       </div>
     </div>`;
 }
