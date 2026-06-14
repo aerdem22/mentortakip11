@@ -162,6 +162,25 @@
   .oz-fiz{background:rgba(61,155,255,.15);color:var(--fiz)}
   .oz-kim{background:rgba(78,203,113,.15);color:var(--kim)}
   .oz-bio{background:rgba(176,126,255,.15);color:var(--bio)}
+  .oz-sure{white-space:nowrap}
+  .oz-sil{cursor:pointer;margin-left:6px;color:var(--muted);font-size:11px;transition:color .15s}
+  .oz-sil:hover{color:var(--err)}
+
+  /* ── KRONOMETRE ── */
+  .krono-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 18px}
+  .krono-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .krono-live{display:flex;align-items:center;gap:10px}
+  .krono-time{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;letter-spacing:.04em}
+  .krono-pulse{width:9px;height:9px;border-radius:50%;background:var(--err);animation:krono-blink 1.2s infinite}
+  @keyframes krono-blink{0%,100%{opacity:1}50%{opacity:.2}}
+  .btn-err{background:var(--err);color:#000}
+  .krono-card select{background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:9px 10px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer}
+  .sure-manuel{border-top:1px solid var(--border);margin-top:12px;padding-top:10px}
+  .sure-manuel-lbl{font-size:11px;color:var(--muted);display:block;margin-bottom:8px}
+  .sure-manuel-row{display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:8px}
+  .sure-manuel-row select,.sure-manuel-row input{background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:8px 9px;font-size:12px;font-family:'DM Sans',sans-serif;width:100%}
+  .sure-manuel-row input::placeholder{color:var(--muted)}
+  .sure-manuel-row .btn{font-size:12px;padding:8px 0}
 
   /* ── ÇALIŞMA NOTLARI ── */
   .not-section{border-top:1px solid var(--border);margin-top:14px;padding-top:12px}
@@ -194,6 +213,9 @@
     .pg-grid{grid-template-columns:1fr 1fr}
     .not-form-grid{grid-template-columns:repeat(2,1fr)}
     .oz-table{font-size:11px}
+    .sure-manuel-row{grid-template-columns:1fr 1fr}
+    .krono-row{flex-direction:column;align-items:stretch}
+    .krono-row .btn{width:100%}
   }
 </style>
 </head>
@@ -377,6 +399,16 @@ let notlar = {};
 try { notlar = JSON.parse(localStorage.getItem("muf11_notlar") || "{}"); } catch(e) {}
 function notlarKaydet(){ try{ localStorage.setItem("muf11_notlar", JSON.stringify(notlar)); }catch(e){} }
 
+// Çalışma süreleri (ders bazlı toplam, saniye): {mat:0, fiz:0, kim:0, bio:0}
+let calismaSureleri = {mat:0, fiz:0, kim:0, bio:0};
+try { calismaSureleri = {...calismaSureleri, ...JSON.parse(localStorage.getItem("muf11_sure") || "{}")}; } catch(e) {}
+function sureKaydet(){ try{ localStorage.setItem("muf11_sure", JSON.stringify(calismaSureleri)); }catch(e){} }
+
+// Çalışan kronometre: {ders, baslangic(ms)} | null
+let krono = null;
+try { krono = JSON.parse(localStorage.getItem("muf11_krono") || "null"); } catch(e) {}
+let kronoInterval = null;
+
 // ── 15 GÜNLÜK PROGRAM ───────────────────────────────────────────────────
 function gunDurumu(gun){
   let tot=0, don=0;
@@ -427,6 +459,7 @@ function renderProgram(){
         <h2 class="w-title">📅 15 Günlük Program</h2>
         <p class="w-sub">${tamGun} / ${PROGRAM.length} gün tamamlandı${ilkEksik?` · Sıradaki: Gün ${ilkEksik}`:' · Tüm program bitti 🎉'}. Bir konuya tıkla, 2 soru çöz, tamamla.</p>
       </div>
+      ${renderKrono()}
       ${renderOzet()}
       ${cards}
     </div>`;
@@ -473,6 +506,109 @@ function notSil(gun, idx){
   renderProgram();
 }
 
+// ── ÇALIŞMA SÜRESİ / KRONOMETRE ──────────────────────────────────────────
+function sureFormat(sn){
+  sn = Math.max(0, Math.round(sn));
+  const h = Math.floor(sn/3600), m = Math.floor((sn%3600)/60);
+  if(h>0) return `${h} sa ${m} dk`;
+  if(m>0) return `${m} dk`;
+  return `${sn} sn`;
+}
+
+function sureFormatHMS(sn){
+  sn = Math.max(0, Math.floor(sn));
+  const h = String(Math.floor(sn/3600)).padStart(2,'0');
+  const m = String(Math.floor((sn%3600)/60)).padStart(2,'0');
+  const s = String(sn%60).padStart(2,'0');
+  return `${h}:${m}:${s}`;
+}
+
+function kronoBaslat(){
+  const ders = document.getElementById("krono-ders").value;
+  krono = {ders, baslangic: Date.now()};
+  try{ localStorage.setItem("muf11_krono", JSON.stringify(krono)); }catch(e){}
+  kronoIntervalBaslat();
+  renderProgram();
+}
+
+function kronoDurdur(){
+  if(!krono) return;
+  const gecenSn = Math.floor((Date.now()-krono.baslangic)/1000);
+  calismaSureleri[krono.ders] = (calismaSureleri[krono.ders]||0) + gecenSn;
+  sureKaydet();
+  krono = null;
+  try{ localStorage.removeItem("muf11_krono"); }catch(e){}
+  if(kronoInterval){ clearInterval(kronoInterval); kronoInterval=null; }
+  renderProgram();
+}
+
+function kronoIntervalBaslat(){
+  if(kronoInterval) clearInterval(kronoInterval);
+  kronoInterval = setInterval(()=>{
+    const el = document.getElementById("krono-sure");
+    if(el && krono) el.textContent = sureFormatHMS((Date.now()-krono.baslangic)/1000);
+  }, 1000);
+}
+
+function sureEkle(){
+  const ders = document.getElementById("sure-ders").value;
+  const saat = +document.getElementById("sure-saat").value || 0;
+  const dk = +document.getElementById("sure-dk").value || 0;
+  const sn = Math.round(saat*3600 + dk*60);
+  if(sn<=0) return;
+  calismaSureleri[ders] = (calismaSureleri[ders]||0) + sn;
+  sureKaydet();
+  renderProgram();
+}
+
+function sureSifirla(ders){
+  calismaSureleri[ders] = 0;
+  sureKaydet();
+  renderProgram();
+}
+
+function renderSureManuel(){
+  return `<div class="sure-manuel">
+    <span class="sure-manuel-lbl">⏱ Kronometre açmayı unuttuysan, süreyi elle ekle:</span>
+    <div class="sure-manuel-row">
+      <select id="sure-ders">
+        <option value="mat">Matematik</option>
+        <option value="fiz">Fizik</option>
+        <option value="kim">Kimya</option>
+        <option value="bio">Biyoloji</option>
+      </select>
+      <input type="number" min="0" id="sure-saat" placeholder="sa">
+      <input type="number" min="0" max="59" id="sure-dk" placeholder="dk">
+      <button class="btn btn-ghost" onclick="sureEkle()">+ Ekle</button>
+    </div>
+  </div>`;
+}
+
+function renderKrono(){
+  const dersOpts = `<option value="mat">Matematik</option><option value="fiz">Fizik</option><option value="kim">Kimya</option><option value="bio">Biyoloji</option>`;
+  if(krono){
+    const sn = (Date.now()-krono.baslangic)/1000;
+    return `<div class="krono-card">
+      <div class="krono-row">
+        <div class="krono-live">
+          <span class="not-badge nb-${krono.ders}">${DERSLER[krono.ders].kisa}</span>
+          <span class="krono-time" id="krono-sure">${sureFormatHMS(sn)}</span>
+          <span class="krono-pulse"></span>
+        </div>
+        <button class="btn btn-err" onclick="kronoDurdur()">⏹ Durdur</button>
+      </div>
+      ${renderSureManuel()}
+    </div>`;
+  }
+  return `<div class="krono-card">
+    <div class="krono-row">
+      <select id="krono-ders">${dersOpts}</select>
+      <button class="btn btn-mat" onclick="kronoBaslat()">▶ Kronometreyi Başlat</button>
+    </div>
+    ${renderSureManuel()}
+  </div>`;
+}
+
 function ozetHesapla(){
   const t = {mat:{test:0,soru:0,dogru:0,yanlis:0,bos:0}, fiz:{test:0,soru:0,dogru:0,yanlis:0,bos:0},
              kim:{test:0,soru:0,dogru:0,yanlis:0,bos:0}, bio:{test:0,soru:0,dogru:0,yanlis:0,bos:0}};
@@ -486,27 +622,30 @@ function ozetHesapla(){
 function renderOzet(){
   const t = ozetHesapla();
   const dersler = ["mat","fiz","kim","bio"];
-  const genel = {test:0,soru:0,dogru:0,yanlis:0,bos:0};
+  const genel = {test:0,soru:0,dogru:0,yanlis:0,bos:0,sure:0};
   const rows = dersler.map(d => {
     const x = t[d];
     const has = x.test||x.soru||x.dogru||x.yanlis||x.bos;
     genel.test+=x.test; genel.soru+=x.soru; genel.dogru+=x.dogru; genel.yanlis+=x.yanlis; genel.bos+=x.bos;
     const net = (x.dogru - x.yanlis/4).toFixed(2);
+    const sure = calismaSureleri[d]||0;
+    genel.sure += sure;
     return `<tr class="oz-row">
       <td><span class="oz-badge oz-${d}">${DERSLER[d].kisa}</span></td>
       <td>${has?x.test:'—'}</td>
       <td>${has?x.soru:'—'}</td>
       <td>${has?`${x.dogru} / ${x.yanlis} / ${x.bos}`:'— / — / —'}</td>
       <td>${has?net:'—'}</td>
+      <td class="oz-sure">${sure>0?sureFormat(sure):'—'}${sure>0?`<span class="oz-sil" onclick="sureSifirla('${d}')" title="Süreyi sıfırla">🗑</span>`:''}</td>
     </tr>`;
   }).join("");
   const genelNet = (genel.dogru - genel.yanlis/4).toFixed(2);
   return `<div class="oz-card">
     <div class="oz-title">📊 Genel Özet</div>
     <table class="oz-table">
-      <tr class="oz-head"><td>Ders</td><td>Test</td><td>Soru</td><td>D / Y / B</td><td>Net</td></tr>
+      <tr class="oz-head"><td>Ders</td><td>Test</td><td>Soru</td><td>D / Y / B</td><td>Net</td><td>Süre</td></tr>
       ${rows}
-      <tr class="oz-total"><td>Toplam</td><td>${genel.test}</td><td>${genel.soru}</td><td>${genel.dogru} / ${genel.yanlis} / ${genel.bos}</td><td>${genelNet}</td></tr>
+      <tr class="oz-total"><td>Toplam</td><td>${genel.test}</td><td>${genel.soru}</td><td>${genel.dogru} / ${genel.yanlis} / ${genel.bos}</td><td>${genelNet}</td><td>${genel.sure>0?sureFormat(genel.sure):'—'}</td></tr>
     </table>
   </div>`;
 }
@@ -707,6 +846,7 @@ function showSonuc(){
 
 // ── INIT ─────────────────────────────────────────────────────────────────
 switchDers("mat");
+if(krono) kronoIntervalBaslat();
 </script>
 </body>
 </html>
