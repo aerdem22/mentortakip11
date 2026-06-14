@@ -148,12 +148,52 @@
   .pg-item.done .pg-chk.d-bio{background:var(--bio);color:#000}
   .program-btn{width:100%;font-size:12px;padding:9px 0;margin-top:2px}
 
+  /* ── ÖZET ── */
+  .oz-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+  .oz-title{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;margin-bottom:10px}
+  .oz-table{width:100%;font-size:12px;border-collapse:collapse}
+  .oz-table td{padding:6px 4px;text-align:right}
+  .oz-table td:first-child{text-align:left}
+  .oz-head td{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  .oz-row{border-top:1px solid var(--border)}
+  .oz-total{border-top:1px solid var(--faint);font-weight:700;font-family:'Syne',sans-serif}
+  .oz-badge{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;font-family:'Syne',sans-serif}
+  .oz-mat{background:rgba(240,165,0,.15);color:var(--mat)}
+  .oz-fiz{background:rgba(61,155,255,.15);color:var(--fiz)}
+  .oz-kim{background:rgba(78,203,113,.15);color:var(--kim)}
+  .oz-bio{background:rgba(176,126,255,.15);color:var(--bio)}
+
+  /* ── ÇALIŞMA NOTLARI ── */
+  .not-section{border-top:1px solid var(--border);margin-top:14px;padding-top:12px}
+  .not-baslik{font-family:'Syne',sans-serif;font-weight:700;font-size:12px;margin-bottom:8px}
+  .not-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 9px;background:var(--surface2);border-radius:8px;margin-bottom:6px}
+  .not-item-main{display:flex;align-items:center;gap:8px;min-width:0}
+  .not-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;flex-shrink:0;font-family:'Syne',sans-serif}
+  .nb-mat{background:rgba(240,165,0,.15);color:var(--mat)}
+  .nb-fiz{background:rgba(61,155,255,.15);color:var(--fiz)}
+  .nb-kim{background:rgba(78,203,113,.15);color:var(--kim)}
+  .nb-bio{background:rgba(176,126,255,.15);color:var(--bio)}
+  .not-item-txt{min-width:0}
+  .not-kaynak{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .not-detay{font-size:11px;color:var(--muted)}
+  .not-sil{cursor:pointer;color:var(--muted);font-size:13px;flex-shrink:0;transition:color .15s}
+  .not-sil:hover{color:var(--err)}
+  .not-form{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+  .not-form-row{display:grid;grid-template-columns:1fr 1.4fr;gap:8px}
+  .not-form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .not-form input,.not-form select{background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:8px;padding:8px 9px;font-size:12px;font-family:'DM Sans',sans-serif;width:100%}
+  .not-form input::placeholder{color:var(--muted)}
+  .not-form select{cursor:pointer}
+  .not-form .btn{font-size:12px;padding:8px 0}
+
   @media(max-width:680px){
     .app{grid-template-columns:1fr;grid-template-rows:auto 1fr}
     .sidebar{height:auto;position:static;max-height:320px}
     .konu-list{max-height:200px}
     .main{padding:20px 16px}
     .pg-grid{grid-template-columns:1fr 1fr}
+    .not-form-grid{grid-template-columns:repeat(2,1fr)}
+    .oz-table{font-size:11px}
   }
 </style>
 </head>
@@ -332,6 +372,11 @@ try { tamamlananlar = JSON.parse(localStorage.getItem("muf11_q") || "{}"); } cat
 function kaydet(){ try{ localStorage.setItem("muf11_q", JSON.stringify(tamamlananlar)); }catch(e){} }
 const key = (d,u,k) => `${d}::${u}::${k}`;
 
+// Çalışma notları: { "1": [ {ders,konu,kaynak,test,soru,dogru,yanlis,bos}, ... ], "2": [...] }
+let notlar = {};
+try { notlar = JSON.parse(localStorage.getItem("muf11_notlar") || "{}"); } catch(e) {}
+function notlarKaydet(){ try{ localStorage.setItem("muf11_notlar", JSON.stringify(notlar)); }catch(e){} }
+
 // ── 15 GÜNLÜK PROGRAM ───────────────────────────────────────────────────
 function gunDurumu(gun){
   let tot=0, don=0;
@@ -372,6 +417,7 @@ function renderProgram(){
         <div class="pg-prog">${d.don} / ${d.tot} konu</div>
       </div>
       <div class="pg-grid">${dersHtml}</div>
+      ${renderNotlar(g.gun)}
     </div>`;
   }).join("");
 
@@ -381,6 +427,7 @@ function renderProgram(){
         <h2 class="w-title">📅 15 Günlük Program</h2>
         <p class="w-sub">${tamGun} / ${PROGRAM.length} gün tamamlandı${ilkEksik?` · Sıradaki: Gün ${ilkEksik}`:' · Tüm program bitti 🎉'}. Bir konuya tıkla, 2 soru çöz, tamamla.</p>
       </div>
+      ${renderOzet()}
       ${cards}
     </div>`;
 }
@@ -388,6 +435,122 @@ function renderProgram(){
 function gotoKonu(d,u,k){
   aktif = d;
   startQuiz(u,k);
+}
+
+// ── ÇALIŞMA NOTLARI ──────────────────────────────────────────────────────
+function notKonuOptions(gun, ders){
+  const g = PROGRAM[gun-1];
+  const list = (g.konular[ders] || []);
+  const opts = list.map(({k}) => `<option value="${k.replace(/"/g,'&quot;')}">${k}</option>`).join("");
+  return opts + `<option value="Genel / Diğer">Genel / Diğer</option>`;
+}
+
+function notFormDersDegis(gun){
+  const ders = document.getElementById(`nf-ders-${gun}`).value;
+  document.getElementById(`nf-konu-${gun}`).innerHTML = notKonuOptions(gun, ders);
+}
+
+function notEkle(gun){
+  const ders = document.getElementById(`nf-ders-${gun}`).value;
+  const konu = document.getElementById(`nf-konu-${gun}`).value;
+  const kaynak = document.getElementById(`nf-kaynak-${gun}`).value.trim();
+  const test = +document.getElementById(`nf-test-${gun}`).value || 0;
+  const soru = +document.getElementById(`nf-soru-${gun}`).value || 0;
+  const dogru = +document.getElementById(`nf-dogru-${gun}`).value || 0;
+  const yanlis = +document.getElementById(`nf-yanlis-${gun}`).value || 0;
+  const bos = +document.getElementById(`nf-bos-${gun}`).value || 0;
+  if(!kaynak && !test && !soru && !dogru && !yanlis && !bos) return;
+  if(!notlar[gun]) notlar[gun] = [];
+  notlar[gun].push({ders, konu, kaynak, test, soru, dogru, yanlis, bos});
+  notlarKaydet();
+  renderProgram();
+}
+
+function notSil(gun, idx){
+  notlar[gun].splice(idx,1);
+  if(notlar[gun].length===0) delete notlar[gun];
+  notlarKaydet();
+  renderProgram();
+}
+
+function ozetHesapla(){
+  const t = {mat:{test:0,soru:0,dogru:0,yanlis:0,bos:0}, fiz:{test:0,soru:0,dogru:0,yanlis:0,bos:0},
+             kim:{test:0,soru:0,dogru:0,yanlis:0,bos:0}, bio:{test:0,soru:0,dogru:0,yanlis:0,bos:0}};
+  Object.values(notlar).forEach(list => (list||[]).forEach(n => {
+    const x = t[n.ders]; if(!x) return;
+    x.test+=n.test; x.soru+=n.soru; x.dogru+=n.dogru; x.yanlis+=n.yanlis; x.bos+=n.bos;
+  }));
+  return t;
+}
+
+function renderOzet(){
+  const t = ozetHesapla();
+  const dersler = ["mat","fiz","kim","bio"];
+  const genel = {test:0,soru:0,dogru:0,yanlis:0,bos:0};
+  const rows = dersler.map(d => {
+    const x = t[d];
+    const has = x.test||x.soru||x.dogru||x.yanlis||x.bos;
+    genel.test+=x.test; genel.soru+=x.soru; genel.dogru+=x.dogru; genel.yanlis+=x.yanlis; genel.bos+=x.bos;
+    const net = (x.dogru - x.yanlis/4).toFixed(2);
+    return `<tr class="oz-row">
+      <td><span class="oz-badge oz-${d}">${DERSLER[d].kisa}</span></td>
+      <td>${has?x.test:'—'}</td>
+      <td>${has?x.soru:'—'}</td>
+      <td>${has?`${x.dogru} / ${x.yanlis} / ${x.bos}`:'— / — / —'}</td>
+      <td>${has?net:'—'}</td>
+    </tr>`;
+  }).join("");
+  const genelNet = (genel.dogru - genel.yanlis/4).toFixed(2);
+  return `<div class="oz-card">
+    <div class="oz-title">📊 Genel Özet</div>
+    <table class="oz-table">
+      <tr class="oz-head"><td>Ders</td><td>Test</td><td>Soru</td><td>D / Y / B</td><td>Net</td></tr>
+      ${rows}
+      <tr class="oz-total"><td>Toplam</td><td>${genel.test}</td><td>${genel.soru}</td><td>${genel.dogru} / ${genel.yanlis} / ${genel.bos}</td><td>${genelNet}</td></tr>
+    </table>
+  </div>`;
+}
+
+function renderNotlar(gun){
+  const list = notlar[gun] || [];
+  const items = list.map((n,idx) => {
+    const ust = n.kaynak && n.konu ? `${n.kaynak} · ${n.konu}` : (n.kaynak || n.konu || "—");
+    return `<div class="not-item">
+      <div class="not-item-main">
+        <span class="not-badge nb-${n.ders}">${DERSLER[n.ders].kisa}</span>
+        <div class="not-item-txt">
+          <div class="not-kaynak">${ust}</div>
+          <div class="not-detay">${n.test} test · ${n.soru} soru · ${n.dogru}D ${n.yanlis}Y ${n.bos}B</div>
+        </div>
+      </div>
+      <span class="not-sil" onclick="notSil(${gun},${idx})">🗑</span>
+    </div>`;
+  }).join("");
+
+  return `<div class="not-section">
+    <div class="not-baslik">📝 Çalışma notların</div>
+    ${items}
+    <div class="not-form">
+      <div class="not-form-row">
+        <select id="nf-ders-${gun}" onchange="notFormDersDegis(${gun})">
+          <option value="mat">Matematik</option>
+          <option value="fiz">Fizik</option>
+          <option value="kim">Kimya</option>
+          <option value="bio">Biyoloji</option>
+        </select>
+        <select id="nf-konu-${gun}">${notKonuOptions(gun,'mat')}</select>
+      </div>
+      <input id="nf-kaynak-${gun}" type="text" placeholder="Kaynak adı (örn. Orijinal 11)">
+      <div class="not-form-grid">
+        <input id="nf-test-${gun}" type="number" min="0" placeholder="Test">
+        <input id="nf-soru-${gun}" type="number" min="0" placeholder="Soru">
+        <input id="nf-dogru-${gun}" type="number" min="0" placeholder="Doğru">
+        <input id="nf-yanlis-${gun}" type="number" min="0" placeholder="Yanlış">
+        <input id="nf-bos-${gun}" type="number" min="0" placeholder="Boş">
+        <button class="btn btn-mat" onclick="notEkle(${gun})">+ Ekle</button>
+      </div>
+    </div>
+  </div>`;
 }
 
 // ── SIDEBAR ───────────────────────────────────────────────────────────────
