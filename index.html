@@ -389,7 +389,8 @@ const PROGRAM = [
 // ── STATE ─────────────────────────────────────────────────────────────────
 let aktif = "mat", selUnite = null, selKonu = null;
 let sorular = [], cevaplar = [];
-const SORU_SAYISI = 3; // bir testte sorulacak soru sayısı (tik almak için hepsi doğru olmalı)
+const SORU_SAYISI = 4; // bir testte sorulacak soru sayısı
+const GECME_LIMIT = 3; // tik almak için gereken minimum doğru sayısı
 let tamamlananlar = {};
 try { tamamlananlar = JSON.parse(localStorage.getItem("muf11_q") || "{}"); } catch(e) {}
 function kaydet(){ try{ localStorage.setItem("muf11_q", JSON.stringify(tamamlananlar)); }catch(e){} }
@@ -458,7 +459,7 @@ function renderProgram(){
     <div class="program-wrap">
       <div class="pgw-head">
         <h2 class="w-title">📅 15 Günlük Program</h2>
-        <p class="w-sub">${tamGun} / ${PROGRAM.length} gün tamamlandı${ilkEksik?` · Sıradaki: Gün ${ilkEksik}`:' · Tüm program bitti 🎉'}. Bir konuya tıkla, ${SORU_SAYISI} soru çöz, tamamla.</p>
+        <p class="w-sub">${tamGun} / ${PROGRAM.length} gün tamamlandı${ilkEksik?` · Sıradaki: Gün ${ilkEksik}`:' · Tüm program bitti 🎉'}. Bir konuya tıkla, ${SORU_SAYISI} soru çöz, en az ${GECME_LIMIT}'ünü doğru yap, tamamla.</p>
       </div>
       ${renderKrono()}
       ${renderOzet()}
@@ -738,7 +739,7 @@ function showWelcome(){
     <div class="welcome">
       <div class="w-icon">📚</div>
       <h2 class="w-title">${DERSLER[aktif].ad}</h2>
-      <p class="w-sub">Sol taraftan bir konuya tıkla. ${SORU_SAYISI} soru çıkacak — hepsini doğru yaparsan konu tamamlanır.</p>
+      <p class="w-sub">Sol taraftan bir konuya tıkla. ${SORU_SAYISI} soru çıkacak — ${GECME_LIMIT} veya daha fazlasını doğru yaparsan konu tamamlanır.</p>
     </div>`;
 }
 
@@ -826,7 +827,7 @@ function cevapla(sec, idx){
 
 function showSonuc(){
   const dogru = cevaplar.filter(c=>c.ok).length;
-  const gecti = dogru === sorular.length;
+  const gecti = dogru >= GECME_LIMIT;
   if(gecti){ tamamlananlar[key(aktif,selUnite,selKonu)]=true; kaydet(); renderSidebar(); }
 
   document.getElementById("main").innerHTML = `
@@ -836,7 +837,7 @@ function showSonuc(){
       <div class="score-badge ${gecti?"sc-pass":"sc-fail"}">${dogru} / ${sorular.length} doğru</div>
       <p class="r-sub">${gecti
         ? `"<strong>${selKonu}</strong>" konusu tamamlandı ve işaretlendi.`
-        : `${sorular.length}/${sorular.length} tam doğru yapman gerekiyor. Konuyu tekrar çalış ve dene.`}</p>
+        : `Tik almak için en az ${GECME_LIMIT}/${sorular.length} doğru yapman gerekiyor. Konuyu tekrar çalış ve dene.`}</p>
       <div class="r-btns">
         ${!gecti?`<button class="btn btn-${aktif}" onclick="startQuiz('${selUnite.replace(/'/g,"\\'")}','${selKonu.replace(/'/g,"\\'")}')">Tekrar dene</button>`:""}
         <button class="btn btn-ghost" onclick="showWelcome();selKonu=null;selUnite=null;renderSidebar()">Konulara dön</button>
