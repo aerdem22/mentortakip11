@@ -406,6 +406,21 @@ let calismaSureleri = {mat:0, fiz:0, kim:0, bio:0};
 try { calismaSureleri = {...calismaSureleri, ...JSON.parse(localStorage.getItem("muf11_sure") || "{}")}; } catch(e) {}
 function sureKaydet(){ try{ localStorage.setItem("muf11_sure", JSON.stringify(calismaSureleri)); }catch(e){} }
 
+// Çalışma süreleri (tarih bazlı, saniye): {"2026-06-16": {mat:0, fiz:0, kim:0, bio:0}, ...}
+let sureGunluk = {};
+try { sureGunluk = JSON.parse(localStorage.getItem("muf11_sure_gunluk") || "{}"); } catch(e) {}
+function sureGunlukKaydet(){ try{ localStorage.setItem("muf11_sure_gunluk", JSON.stringify(sureGunluk)); }catch(e){} }
+function bugunKey(){
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function sureGunlukEkle(ders, sn){
+  const tarih = bugunKey();
+  if(!sureGunluk[tarih]) sureGunluk[tarih] = {mat:0,fiz:0,kim:0,bio:0};
+  sureGunluk[tarih][ders] = (sureGunluk[tarih][ders]||0) + sn;
+  sureGunlukKaydet();
+}
+
 // Çalışan kronometre: {ders, baslangic(ms)} | null
 let krono = null;
 try { krono = JSON.parse(localStorage.getItem("muf11_krono") || "null"); } catch(e) {}
@@ -462,6 +477,7 @@ function renderProgram(){
         <p class="w-sub">${tamGun} / ${PROGRAM.length} gün tamamlandı${ilkEksik?` · Sıradaki: Gün ${ilkEksik}`:' · Tüm program bitti 🎉'}. Bir konuya tıkla, ${SORU_SAYISI} soru çöz, en az ${GECME_LIMIT}'ünü doğru yap, tamamla.</p>
       </div>
       ${renderKrono()}
+      ${renderBugunOzet()}
       ${renderOzet()}
       ${cards}
     </div>`;
@@ -496,7 +512,7 @@ function notEkle(gun){
   const bos = +document.getElementById(`nf-bos-${gun}`).value || 0;
   if(!kaynak && !test && !soru && !dogru && !yanlis && !bos) return;
   if(!notlar[gun]) notlar[gun] = [];
-  notlar[gun].push({ders, konu, kaynak, test, soru, dogru, yanlis, bos});
+  notlar[gun].push({ders, konu, kaynak, test, soru, dogru, yanlis, bos, tarih: bugunKey()});
   notlarKaydet();
   renderProgram();
 }
@@ -538,6 +554,7 @@ function kronoDurdur(){
   const gecenSn = Math.floor((Date.now()-krono.baslangic)/1000);
   calismaSureleri[krono.ders] = (calismaSureleri[krono.ders]||0) + gecenSn;
   sureKaydet();
+  sureGunlukEkle(krono.ders, gecenSn);
   krono = null;
   try{ localStorage.removeItem("muf11_krono"); }catch(e){}
   if(kronoInterval){ clearInterval(kronoInterval); kronoInterval=null; }
@@ -560,6 +577,7 @@ function sureEkle(){
   if(sn<=0) return;
   calismaSureleri[ders] = (calismaSureleri[ders]||0) + sn;
   sureKaydet();
+  sureGunlukEkle(ders, sn);
   renderProgram();
 }
 
@@ -619,6 +637,54 @@ function ozetHesapla(){
     x.test+=n.test; x.soru+=n.soru; x.dogru+=n.dogru; x.yanlis+=n.yanlis; x.bos+=n.bos;
   }));
   return t;
+}
+
+function bugunOzetHesapla(){
+  const tarih = bugunKey();
+  const t = {mat:{test:0,soru:0,dogru:0,yanlis:0,bos:0}, fiz:{test:0,soru:0,dogru:0,yanlis:0,bos:0},
+             kim:{test:0,soru:0,dogru:0,yanlis:0,bos:0}, bio:{test:0,soru:0,dogru:0,yanlis:0,bos:0}};
+  Object.values(notlar).forEach(list => (list||[]).forEach(n => {
+    if(n.tarih !== tarih) return;
+    const x = t[n.ders]; if(!x) return;
+    x.test+=n.test; x.soru+=n.soru; x.dogru+=n.dogru; x.yanlis+=n.yanlis; x.bos+=n.bos;
+  }));
+  const sureler = sureGunluk[tarih] || {mat:0,fiz:0,kim:0,bio:0};
+  return {t, sureler};
+}
+
+function renderBugunOzet(){
+  const {t, sureler} = bugunOzetHesapla();
+  const dersler = ["mat","fiz","kim","bio"];
+  const genel = {test:0,soru:0,dogru:0,yanlis:0,bos:0,sure:0};
+  const rows = dersler.map(d => {
+    const x = t[d];
+    const sure = sureler[d]||0;
+    const has = x.test||x.soru||x.dogru||x.yanlis||x.bos||sure;
+    genel.test+=x.test; genel.soru+=x.soru; genel.dogru+=x.dogru; genel.yanlis+=x.yanlis; genel.bos+=x.bos; genel.sure+=sure;
+    if(!has) return "";
+    const net = (x.dogru - x.yanlis/4).toFixed(2);
+    return `<tr class="oz-row">
+      <td><span class="oz-badge oz-${d}">${DERSLER[d].kisa}</span></td>
+      <td>${x.test||'—'}</td>
+      <td>${x.soru||'—'}</td>
+      <td>${(x.dogru||x.yanlis||x.bos)?`${x.dogru} / ${x.yanlis} / ${x.bos}`:'— / — / —'}</td>
+      <td>${(x.dogru||x.yanlis)?net:'—'}</td>
+      <td class="oz-sure">${sure>0?sureFormat(sure):'—'}</td>
+    </tr>`;
+  }).join("");
+  if(!rows) return `<div class="oz-card">
+    <div class="oz-title">📆 Bugün</div>
+    <p class="w-sub" style="margin:0">Bugün henüz kayıtlı bir çalışma yok. Kronometre çalıştır veya not ekle.</p>
+  </div>`;
+  const genelNet = (genel.dogru - genel.yanlis/4).toFixed(2);
+  return `<div class="oz-card">
+    <div class="oz-title">📆 Bugün</div>
+    <table class="oz-table">
+      <tr class="oz-head"><td>Ders</td><td>Test</td><td>Soru</td><td>D / Y / B</td><td>Net</td><td>Süre</td></tr>
+      ${rows}
+      <tr class="oz-total"><td>Toplam</td><td>${genel.test}</td><td>${genel.soru}</td><td>${genel.dogru} / ${genel.yanlis} / ${genel.bos}</td><td>${genelNet}</td><td>${genel.sure>0?sureFormat(genel.sure):'—'}</td></tr>
+    </table>
+  </div>`;
 }
 
 function renderOzet(){
